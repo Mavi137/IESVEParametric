@@ -266,6 +266,74 @@ def revise_gain(project, value, type):
                     template.add_gain(find_gain(project, value))
                     template.apply_changes()
 
+def set_people_number(project, value):
+
+    """Para templates activos: ajusta el número de personas en gains de tipo People
+
+    Args:
+        project (iesve object): proyecto VE
+        value (float): número de personas
+    """
+
+    # Recorre los templates en uso y localiza gains de tipo People
+    for template in get_thermal_templates(project):
+        gains = template.get_casual_gains()
+        for gain in gains:
+            try:
+                info = gain.get()
+            except Exception:
+                continue
+
+            if 'type_val' in info and info['type_val'] == iesve.PeopleGain_type.people:
+                # Ajusta el número de personas; mantiene el perfil existente
+                try:
+                    gain.set({'number_of_people': float(value)})
+                except Exception:
+                    # Si el tipo no soporta la clave, ignora silenciosamente
+                    continue
+        # Aplicar cambios del template
+        template.apply_changes()
+
+def set_dhw_flow_per_person(project, value):
+
+    """Para templates activos: intenta ajustar el caudal ACS l/(h·pers)
+
+    Dado que el API puede exponer nombres de clave distintos según versión,
+    se prueban varias claves conocidas y se aplica la primera disponible.
+
+    Args:
+        project (iesve object): proyecto VE
+        value (float): caudal l/(h·pers)
+    """
+
+    candidate_keys = [
+        # Claves habituales según versiones de VE
+        'dhw',  # valor directo de caudal en l/h o l/h/p, según 'dhw_units'
+        'dhw_lph_per_person',
+        'services_dhw_lph_per_person',
+        'dhw_per_person_flowrate',
+        'dhw_occupancy_flow'
+    ]
+
+    for template in get_thermal_templates(project):
+        try:
+            room_conditions = template.get_room_conditions()
+        except Exception:
+            continue
+
+        applied = False
+        for key in candidate_keys:
+            if key in room_conditions:
+                try:
+                    template.set_room_conditions({key: float(value)})
+                    applied = True
+                    break
+                except Exception:
+                    continue
+
+        if applied:
+            template.apply_changes()
+
 def get_all_rooms(model):
     """Gets a list all the rooms in the given model
        Body subtype is also tested to exclude void, ra_plenum, sa_plenum
@@ -1113,6 +1181,12 @@ def apply_model_modifications(project, model, mod_categories, row):
     # ... renewables assignments
     if 'pv_area' in mod_categories:
         revise_pv_area(row.pv_area)
+
+    # ... people and DHW (nuevas claves)
+    if 'people_number' in mod_categories:
+        set_people_number(project, row.people_number)
+    if 'dhw_lph_per_person' in mod_categories:
+        set_dhw_flow_per_person(project, row.dhw_lph_per_person)
 
     # ... set simulation options - HVAC file
     if 'asp_file' in mod_categories:
