@@ -285,14 +285,47 @@ def set_people_number(project, value):
                 continue
 
             if 'type_val' in info and info['type_val'] == iesve.PeopleGain_type.people:
-                # Ajusta el número de personas; mantiene el perfil existente
+                # Forzar unidades a "people" si fuera necesario y ajustar número de personas
                 try:
-                    gain.set({'number_of_people': float(value)})
+                    payload = {'number_of_people': float(value)}
+                    # Si no está en unidades "people", forzarlas
+                    if info.get('units_val', None) != 1:
+                        payload['units_val'] = 1  # 1 => people
+                    gain.set(payload)
                 except Exception:
                     # Si el tipo no soporta la clave, ignora silenciosamente
                     continue
         # Aplicar cambios del template
         template.apply_changes()
+
+def set_people_density_m2_per_person(project, value):
+
+    """Para templates activos: ajusta la densidad de ocupación (m²/person)
+
+    Args:
+        project (iesve object): proyecto VE
+        value (float): m²/person
+    """
+
+    for template in get_thermal_templates(project):
+        gains = template.get_casual_gains()
+        changed = False
+        for gain in gains:
+            try:
+                info = gain.get()
+            except Exception:
+                continue
+
+            if 'type_val' in info and info['type_val'] == iesve.PeopleGain_type.people:
+                # Solo si el gain está en unidades m²/person
+                if info.get('units_val', None) == 0 and 'occupancy_density' in info:
+                    try:
+                        gain.set({'occupancy_density': float(value)})
+                        changed = True
+                    except Exception:
+                        continue
+        if changed:
+            template.apply_changes()
 
 def set_dhw_flow_per_person(project, value):
 
@@ -1185,6 +1218,8 @@ def apply_model_modifications(project, model, mod_categories, row):
     # ... people and DHW (nuevas claves)
     if 'people_number' in mod_categories:
         set_people_number(project, row.people_number)
+    if 'people_m2_per_person' in mod_categories:
+        set_people_density_m2_per_person(project, row.people_m2_per_person)
     if 'dhw_lph_per_person' in mod_categories:
         set_dhw_flow_per_person(project, row.dhw_lph_per_person)
 
