@@ -1,0 +1,1180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-04-07 14:01+GMT Daylight Time\n"
+"PO-Revision-Date: 2021-04-09 09:43+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1338
+msgid "Project Name: "
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1339
+msgid "Date: "
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1339
+msgid "Project Address: "
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1343
+msgid "Designer of Record: "
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1343
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1345
+msgid "Email: "
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1344
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1346
+msgid "Telephone: "
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1345
+msgid "Contact Person: "
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1357
+msgid "City: "
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1357
+msgid "Principal Heating Source"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1358
+msgid "Fossil Fuel"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1358
+msgid "Weather Data: "
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1359
+msgid "Electricity"
+msgstr ""
+
+msgid "Gas"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1360
+msgid "Solar/site recovered"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1361
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3876
+msgid "Other"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1364
+msgid "Number of hours simulated: "
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1479
+msgid "Building Use"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1479
+msgid ""
+"Conditioned\n"
+" Area (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1479
+msgid "Total Area (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1479
+msgid ""
+"Unconditioned\n"
+" Area (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1492
+msgid "Total"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1512
+msgid "Space Summary"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1673
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1762
+msgid ""
+"Proposed Building\n"
+"Design"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1674
+msgid "Simulation Program"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1674
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1675
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4324
+msgid "Yes"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1675
+msgid "Weather Data"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1676
+msgid "Climate Zone"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1677
+msgid "Heating Calculation Data"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1677
+msgid "Principal heating source:"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1678
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1681
+msgid "Results file:"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1679
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1682
+msgid "Calculated:"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1680
+msgid "Cooling Calculation Data"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1680
+msgid "Principal cooling source:"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1720
+msgid "Simulation General"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1762
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1764
+msgid "Number of hours heating loads not met (system/plant)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1765
+msgid "Number of hours cooling loads not met (system/plant)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1766
+msgid "Number of warnings"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1767
+msgid "Number of errors"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1770
+msgid "Number of defaults overridden"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1800
+msgid "Advisory Messages"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1960
+msgid "Energy Type"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1960
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3794
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3903
+msgid "Proposed Building"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1960
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4257
+msgid "End Use"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1961
+msgid ""
+"Energy\n"
+"(%s/yr)"
+msgstr ""
+
+msgid "Energy"
+msgstr ""
+
+msgid ""
+"Energy\n"
+"(%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:1961
+msgid ""
+"Peak\n"
+"(%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:2118
+msgid "Total building consumption"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:2148
+msgid "Energy Results"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:2663
+msgid "Total ex Onsite Generation"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:2711
+msgid "Total inc Onsite Generation"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:2739
+msgid "Energy Summary by Fuel Type"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3665
+msgid "Ext. wall"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3666
+msgid "Roof"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3669
+msgid "Ground floor"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3670
+msgid "Skylight"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3671
+msgid "Ext. glazing"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3673
+msgid "Door"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3688
+msgid "Assembly Type"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3688
+msgid "Proposed"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3688
+msgid "Reference"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3689
+msgid ""
+"U-value\n"
+"(%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3689
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3861
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3904
+msgid "Description"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3763
+msgid "Comparison of Proposed versus Reference - Assemblies"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3794
+msgid "Element Type"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3794
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3903
+msgid "Reference Building"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3795
+msgid "External walls Gross Area (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3796
+msgid "Fenestration - Windows Gross Area (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3797
+msgid "Fenestration - Skylights Gross Area (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3798
+msgid "Roofs Gross Area (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3799
+msgid "Doors Gross Area (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3800
+msgid "External floors Gross Area (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3802
+msgid "Window / wall area ratio %"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3803
+msgid "Skylight / roof area ratio %"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3804
+msgid "Window area-weighted U-value (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3805
+msgid "Window area-weighted VLT value"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3806
+msgid "Window area-weighted SHGC value"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3807
+msgid "Above grade air leakage (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3835
+msgid "Comparison of Proposed versus Reference - Envelope"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3846
+msgid "Mixed"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3848
+msgid "Building area"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3850
+msgid "Space by space"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3853
+msgid "Neither"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3861
+msgid ""
+"Proposed Building\n"
+"(Area-weighted)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3861
+msgid ""
+"Reference Building\n"
+"(Area-weighted)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3861
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3903
+msgid "Parameter"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3862
+msgid "Interior Lighting Method & Power"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3863
+msgid "Lighting categorisation"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3863
+msgid "Method"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3864
+msgid "Interior Lighting Power"
+msgstr ""
+
+msgid "Interior Lighting Power (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3864
+msgid "Lighting power"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3865
+msgid "Interior Lighting Power Density"
+msgstr ""
+
+msgid "Interior Lighting Power Density (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3865
+msgid "Lighting power density"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3867
+msgid "Interior Lighting Controls"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3868
+msgid "Manual"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3868
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3869
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3872
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3873
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3874
+msgid "Adjustment factor"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3869
+msgid "Restricted to manual ON"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3870
+msgid "Automatic side-daylighting daylight controls"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3870
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3871
+msgid "RadianceIES simulation"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3871
+msgid "Automatic top-daylighting daylight controls"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3872
+msgid "Automatic partial OFF"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3873
+msgid "Automatic full OFF"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3874
+msgid "Scheduled shut OFF"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3877
+msgid "Receptacle equipment"
+msgstr ""
+
+msgid "Receptacle equipment (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3877
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3878
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3879
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3880
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3881
+msgid "Total power density"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3878
+msgid "Process lighting"
+msgstr ""
+
+msgid "Process lighting (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3879
+msgid "Elevators / Escalators"
+msgstr ""
+
+msgid "Elevators / Escalators (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3880
+msgid "Cooking equipment"
+msgstr ""
+
+msgid "Cooking equipment (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3881
+msgid "Data processing / centre equipment"
+msgstr ""
+
+msgid "Data processing / centre equipment (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3895
+msgid "Comparison of Proposed versus Reference - Interior Lighting"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3904
+msgid ""
+"Performance\n"
+"SCoP/ SSEER /\n"
+"cfm / kW"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3949
+msgid "Comparison of Proposed versus Reference - HVAC"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3959
+msgid "Cooling setpoint (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3959
+msgid "Heating setpoint (%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3959
+msgid "ID"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3959
+msgid ""
+"Minimum\n"
+"outside air\n"
+"(%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3959
+msgid "Space"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3959
+msgid ""
+"Ventilation\n"
+"basis"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3960
+msgid ""
+"Proposed\n"
+"Building"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3960
+msgid ""
+"Reference\n"
+"Building"
+msgstr ""
+
+msgid ""
+"Same in \n"
+"Proposed/Reference"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:3997
+msgid "Comparison of Proposed versus Reference - Space temperature setpoints & ventilation"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4023
+msgid "Description of Changes"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4024
+msgid "Geometry"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4025
+msgid "Spaces"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4026
+msgid "Envelope"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4027
+msgid "Interior Lighting"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4028
+msgid "HVAC Systems"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4029
+msgid "Service Hot Water"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4030
+msgid "Miscellaneous"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4050
+msgid "User Revision in the Reference Model"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4168
+msgid "Unmet cooling load hours for Proposed and Reference building differ by more than 10%."
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4212
+msgid "FAIL"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4216
+msgid "PASS"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4220
+msgid ""
+"GHGI\n"
+"(%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4220
+msgid "NECB Result"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4220
+msgid ""
+"TEDI\n"
+"(%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4220
+msgid ""
+"TEUI\n"
+"(%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4242
+msgid "Compliance"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4244
+msgid "TEDI: Thermal Energy Demand Intensity"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4245
+msgid "TEUI: Total Energy Use Intensity"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4246
+msgid "GHGI: Greenhouse Gas Intensity"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4257
+msgid "Application"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4257
+msgid ""
+"Area, length\n"
+"etc."
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4257
+msgid "Category"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4257
+msgid ""
+"Proposed\n"
+"(W)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4257
+msgid ""
+"Reference\n"
+"(W)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4257
+msgid "Unit"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4324
+msgid "No"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4328
+msgid "Fail"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4328
+msgid "Pass"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4332
+msgid "Part 4 Prescriptive requirements met confirmed by user (ext. lighting excluded from energy simulation)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4333
+msgid "Lighting zone"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4334
+msgid "Part 4 Prescriptive check - Reference (W)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4335
+msgid "Part 4 Prescriptive check - Proposed (W)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4336
+msgid "Part 4 Prescriptive check - Status"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4351
+msgid "Comparison of Proposed versus Reference - Exterior Lighting"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4540
+msgid ""
+"Annual Energy\n"
+"Generated\n"
+"(%s)"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4540
+msgid ""
+"Back-up Energy\n"
+"Type"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4570
+msgid "On-Site Renewable Energy"
+msgstr ""
+
+#: C:\psource\rel_2021_1\bin\Scripts\Navigator\ECBCompliance\report_tables.py:4572
+msgid "NECB assesses energy reduction (of loads) and does not include On-Site Generation; this data is shown for information only."
+msgstr ""
+
+msgid " | National Energy Code of Canada for Buildings"
+msgstr ""
+
+msgid "Compliance Forms"
+msgstr ""
+
+msgid ""
+"Proposed/\n"
+"Reference\n"
+"Energy\n"
+"(%)"
+msgstr ""
+
+msgid "Lighting - conditioned"
+msgstr ""
+
+msgid "Lighting - unconditioned"
+msgstr ""
+
+msgid "Space Heating"
+msgstr ""
+
+msgid "Space Cooling"
+msgstr ""
+
+msgid "Heat Rejection"
+msgstr ""
+
+msgid "Pumps"
+msgstr ""
+
+msgid "Fans Interior"
+msgstr ""
+
+msgid "Fans Exhaust"
+msgstr ""
+
+msgid "Garage"
+msgstr ""
+
+msgid "Services Water Heating"
+msgstr ""
+
+msgid "Fans Process"
+msgstr ""
+
+msgid "Receptacle Equipment"
+msgstr ""
+
+msgid "Office Equipment"
+msgstr ""
+
+msgid "Data Center Equipment"
+msgstr ""
+
+msgid "Primary HVAC system"
+msgstr ""
+
+msgid "Other HVAC system"
+msgstr ""
+
+msgid "Fan supply power"
+msgstr ""
+
+msgid "Fan power"
+msgstr ""
+
+msgid "Economiser control"
+msgstr ""
+
+msgid "Demand control ventilation"
+msgstr ""
+
+msgid "Unitary equip cooling efficiency"
+msgstr ""
+
+msgid "Unitary equip heating efficiency"
+msgstr ""
+
+msgid "Chiller"
+msgstr ""
+
+msgid "Chilled water loop and pump"
+msgstr ""
+
+msgid "Boiler"
+msgstr ""
+
+msgid "Hot water loop and pump"
+msgstr ""
+
+msgid "Cooling tower"
+msgstr ""
+
+msgid "Condenser water loop and pump"
+msgstr ""
+
+msgid "Generate Compliance Report"
+msgstr ""
+
+msgid "Select Vista Results File:"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid ""
+"Proposed\n"
+"Building\n"
+"(%s/yr)"
+msgstr ""
+
+msgid ""
+"Reference\n"
+"Building\n"
+"(%s/yr)"
+msgstr ""
+
+msgid ""
+"Proposed\n"
+"Building\n"
+"(%s)"
+msgstr ""
+
+msgid ""
+"Reference\n"
+"Building\n"
+"(%s)"
+msgstr ""
+
+msgid "kWh/yr"
+msgstr ""
+
+msgid ""
+"Proposed/\n"
+"Reference\n"
+"(%)"
+msgstr ""
+
+msgid "NECB 2017 Division B, Part 8 Report"
+msgstr ""
+
+msgid "NECB 2020 Division B, Part 8 Report"
+msgstr ""
+
+msgid "The results are based on %d simulated hours"
+msgstr ""
+
+msgid "%d Rooms included in the unmet load hours check"
+msgstr ""
+
+msgid "Proposed unmet heating loads exceed 100 hours."
+msgstr ""
+
+msgid "Reference unmet heating loads exceed 100 hours."
+msgstr ""
+
+msgid "Building facades (facade lighting)"
+msgstr ""
+
+msgid "W/m2 per illuminated wall or surface"
+msgstr ""
+
+msgid "W/ft2 per illuminated wall or surface"
+msgstr ""
+
+msgid "W/m per illuminated wall or surface length"
+msgstr ""
+
+msgid "W/ft per illuminated wall or surface length"
+msgstr ""
+
+msgid "W per additional ATM per location"
+msgstr ""
+
+msgid "Entrances and gatehouse inspection stations at guarded facilities"
+msgstr ""
+
+msgid "Covered and uncovered area"
+msgstr ""
+
+msgid "Loading areas for law enforcement, fire, ambulance, and other emergency service vehicles"
+msgstr ""
+
+msgid "Drive-up windows and doors"
+msgstr ""
+
+msgid "Parking near 24-hour retail entrances"
+msgstr ""
+
+msgid "Walkways less than 3.0m wide"
+msgstr ""
+
+msgid "Walkways less than 10 ft wide"
+msgstr ""
+
+msgid "Walkways 3.0m wide or greater, plaza areas, special feature areas"
+msgstr ""
+
+msgid "Walkways 10 ft wide or greater, plaza areas, special feature areas"
+msgstr ""
+
+msgid "Building entrances and exits"
+msgstr ""
+
+msgid "Pedestrian and vehicular entrances and exits (W/m of door width)"
+msgstr ""
+
+msgid "Pedestrian and vehicular entrances and exits (W/ft of door width)"
+msgstr ""
+
+msgid "Pedestrian and vehicular entrances and exits (W/m of opening)"
+msgstr ""
+
+msgid "Pedestrian and vehicular entrances and exits (W/ft of opening)"
+msgstr ""
+
+msgid "Free-standing and attached"
+msgstr ""
+
+msgid "Open areas (including vehicle sales lots)"
+msgstr ""
+
+msgid "Street frontage for vehicle sales lots"
+msgstr ""
+
+msgid "Renewable Source"
+msgstr ""
+
+msgid "Page %d of %d"
+msgstr ""
+
+msgid "ATMs and night depositories"
+msgstr ""
+
+msgid "W per location"
+msgstr ""
+
+msgid "W per drive-through"
+msgstr ""
+
+msgid "W per main entry"
+msgstr ""
+
+msgid "Uncovered parking areas"
+msgstr ""
+
+msgid "Parking areas and drives"
+msgstr ""
+
+msgid "Stairways"
+msgstr ""
+
+msgid "Pedestrian tunnels"
+msgstr ""
+
+msgid "Landscape lighting"
+msgstr ""
+
+msgid "Entry canopies (W/m2)"
+msgstr ""
+
+msgid "Entry canopies (W/ft2)"
+msgstr ""
+
+msgid "Sales Canopies"
+msgstr ""
+
+msgid "Outdoor sales"
+msgstr ""
+
+msgid "Building grounds"
+msgstr ""
+
+msgid "Base Site Allowance"
+msgstr ""
+
+msgid "Basic"
+msgstr ""
+
+msgid "Specific"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Metrics"
+msgstr ""
+
+msgid "NECB 2017 Division B, Part 8 Compliance Report"
+msgstr ""
+
+msgid "NECB 2020 Division B, Part 8 Compliance Report"
+msgstr ""
+
+msgid "Failed Criteria"
+msgstr ""
+
+msgid "Total energy usage of Proposed exceeds Baseline."
+msgstr ""
+
+msgid "Proposed Energy Cost exceeds Reference Energy Cost"
+msgstr ""
+
+# ---------------------------
+
+msgid "Free-standing panel"
+msgstr ""
+
+msgid "Parametric panel"
+msgstr ""
+
+msgid "High concentration panel"
+msgstr ""
+
+msgid "Flat panel"
+msgstr ""
+
+msgid "Parabolic"
+msgstr ""
+
+msgid "Electricity Generation PV (%s)"
+msgstr ""
+
+msgid "Electricity Generation Wind (%s)"
+msgstr ""
+
+msgid "Electricity Generation CHP (%s)"
+msgstr ""
+
+msgid "Photovoltaic"
+msgstr ""
+
+msgid "Wind Power"
+msgstr ""
+
+msgid "Combined Heat & Power"
+msgstr ""
+
+msgid "Solar Water Heating"
+msgstr ""
+
+msgid "%s (Multiple)"
+msgstr ""
+
+msgid "kgCO2/m².year"
+msgstr ""
+
+msgid "kWh/m².year"
+msgstr ""
+
+msgid "lbCO2/ft².year"
+msgstr ""
+
+msgid "kBtu/ft².year"
+msgstr ""
+
+msgid "Restricted to partial automatic ON"
+msgstr ""
+
+msgid "Bi-level"
+msgstr ""
+
+msgid "Copyright © %d-%d Integrated Environmental Solutions. All rights reserved."
+msgstr ""
+
+msgid "Zero Area"
+msgstr ""
+
+msgid "Refrigeration"
+msgstr ""
+
+msgid "Part 10 Energy Performance Tier"
+msgstr ""
+
+msgid "NECB 2020 Compliance Report"
+msgstr ""
+
+msgid "Energy performance tier: the % improvement of the annual energy consumption of the proposed building relative to the building energy target of the reference building, expressed as a percent improvement (0 = Fail, 1 ≥ 0%, 2 ≥ 25%, 3 ≥ 50%, 4 ≥ 60%)"
+msgstr ""
+
+msgid "Dining Areas"
+msgstr ""
+
+msgid "Loading Docks"
+msgstr ""
+
+msgid "Unlisted"
+msgstr ""
+
+msgid "Bldg. exterior applications"
+msgstr ""
+
+msgid "All 4.2.3.1.(5)"
+msgstr ""
+
+msgid "All 4.2.3.1 (5)"
+msgstr ""
+
+msgid "Clause 4.2.3.1.(5) check - Status"
+msgstr ""
+
+msgid "Part 4 Prescriptive Check"
+msgstr ""
+
+msgid "Difference Proposed/Reference"
+msgstr ""
+
+msgid "Difference\n"
+"Proposed/Reference"
+msgstr ""
+
+msgid "Spaces Excluded from UMLH Test per space type or application:"
+msgstr ""
+
+msgid "Voids, plenums, unconditioned spaces, and non-master rooms in an HVAC zone are always excluded."
+msgstr ""
+
+msgid "Spaces Excluded from UMLH Test per inclusion in ASHRAE 55 Thermal Comfort Analysis:"
+msgstr ""
+
+msgid "N/A"
+msgstr ""
+
+msgid "Building exterior applications"
+msgstr ""
+

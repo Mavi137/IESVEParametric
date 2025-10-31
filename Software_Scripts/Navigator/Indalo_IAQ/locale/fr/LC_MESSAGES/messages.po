@@ -1,0 +1,435 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2023-12-15 16:47+0000\n"
+"PO-Revision-Date: 2023-12-15 16:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 3.4.1\n"
+
+#: Indalo_authentication.py:40 Indalo_material_assignment.py:48
+#: Indalo_simulation_options.py:50
+msgid "Indoor air quality"
+msgstr "Qualité de l'air intérieur"
+
+#: Indalo_authentication.py:67
+msgid "Enter your Octopus account details:"
+msgstr "Entrez les détails de votre compte Octopus:"
+
+#: Indalo_authentication.py:74
+msgid "Username:"
+msgstr "Nom d'utilisateur:"
+
+#: Indalo_authentication.py:84
+msgid "Password:"
+msgstr "Mot de passe:"
+
+#: Indalo_authentication.py:97
+msgid "OK"
+msgstr "OK"
+
+#: Indalo_authentication.py:101 Indalo_material_assignment.py:266
+#: Indalo_simulation_options.py:153
+msgid "Cancel"
+msgstr "Annuler"
+
+#: Indalo_authentication.py:129
+msgid "Could not connect to the Indalo API"
+msgstr "Impossible de se connecter à l'API Indalo"
+
+#: Indalo_authentication.py:129 Indalo_material_assignment.py:109
+msgid "Error"
+msgstr "Erreur"
+
+#: Indalo_authentication.py:144
+msgid "Authentication complete"
+msgstr "Authentification terminée"
+
+#: Indalo_authentication.py:144
+msgid "Done"
+msgstr "Fait"
+
+#: Indalo_authentication.py:160 Indalo_material_assignment.py:655
+#: Indalo_simulation_options.py:364
+msgid "Error occurred:"
+msgstr "Une erreur est survenue :"
+
+#: Indalo_authentication.py:162 Indalo_material_assignment.py:657
+#: Indalo_simulation_options.py:366
+msgid "See VE Script Python Console for more information."
+msgstr "Consultez la console Python VE Script pour plus d’informations."
+
+#: Indalo_authentication.py:163 Indalo_material_assignment.py:658
+#: Indalo_simulation_options.py:367
+msgid "Error:"
+msgstr "Erreur :"
+
+#: Indalo_material_assignment.py:80
+msgid "Make assignments:"
+msgstr "Assignations:"
+
+#: Indalo_material_assignment.py:102
+msgid "Select group:          "
+msgstr "Sélectionnez un groupe: "
+
+#: Indalo_material_assignment.py:109 Indalo_utilities.py:71
+msgid "Error: Grouping scheme has not been created"
+msgstr "Erreur : le schéma de regroupement n'a pas été créé"
+
+#: Indalo_material_assignment.py:127
+msgid "Filtration standards (common):"
+msgstr "Normes de filtration (communes):"
+
+#: Indalo_material_assignment.py:134
+msgid "Supply air:      "
+msgstr "Air soufflé:     "
+
+#: Indalo_material_assignment.py:142
+msgid "Return air:      "
+msgstr "Air repris:     "
+
+#: Indalo_material_assignment.py:192
+msgid "Materials (pick 1 or 2)"
+msgstr "Matériaux (choisissez 1 ou 2)"
+
+#: Indalo_material_assignment.py:195
+msgid "Finishes (pick 0 or 1)"
+msgstr "Finitions (choisissez 0 ou 1)"
+
+#: Indalo_material_assignment.py:198
+msgid "Ceilings:"
+msgstr "Plafonds:"
+
+#: Indalo_material_assignment.py:198
+msgid "Floors:"
+msgstr "Planchers:"
+
+#: Indalo_material_assignment.py:199
+msgid "Doors:"
+msgstr "Portes:"
+
+#: Indalo_material_assignment.py:199
+msgid "External walls:"
+msgstr "Murs extérieurs:"
+
+#: Indalo_material_assignment.py:199
+msgid "Partitions:"
+msgstr "Partitions:"
+
+#: Indalo_material_assignment.py:199
+msgid "Windows:"
+msgstr "Fenêtres:"
+
+#: Indalo_material_assignment.py:263
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: Indalo_material_assignment.py:301
+msgid ""
+"indalo_material.json settings file not found. Dialog defaults will be used."
+msgstr ""
+"Fichier de paramètres indalo_material.json introuvable. Les valeurs par "
+"défaut de la boîte de dialogue seront utilisées."
+
+#: Indalo_material_assignment.py:318
+msgid "Supply Air"
+msgstr "Air soufflé"
+
+#: Indalo_material_assignment.py:320
+msgid "Return Air"
+msgstr "Air repris"
+
+#: Indalo_material_assignment.py:389
+msgid "Unmatched material groups detected (new or renamed):"
+msgstr ""
+"Groupes de matériaux sans correspondance détectés (nouveaux ou renommés) :"
+
+#: Indalo_material_assignment.py:393
+msgid "Unmatched material groups from previous setting (deleted or renamed):"
+msgstr ""
+"Groupes de matériaux sans correspondance du paramètre précédent (supprimés "
+"ou renommés) :"
+
+#: Indalo_material_assignment.py:397
+msgid "Unmatched filtration standards from previous setting:"
+msgstr ""
+"Normes de filtration sans correspondance avec le paramètre précédent :"
+
+#: Indalo_material_assignment.py:401
+msgid "Assignment Loading Information"
+msgstr "Informations sur le chargement des affectations"
+
+#: Indalo_material_assignment.py:609
+msgid "Please assign at least one material for: "
+msgstr "Veuillez attribuer au moins un matériau pour: "
+
+#: Indalo_material_assignment.py:619
+msgid "Missing Material Assignments"
+msgstr "Affectations de matériaux manquantes"
+
+#: Indalo_room_group.py:36
+msgid "Materials group 1"
+msgstr "Groupe de matériaux 1"
+
+#: Indalo_room_group.py:37
+msgid "Materials group 2"
+msgstr "Groupe de matériaux 2"
+
+#: Indalo_room_group.py:38
+msgid "Materials group 3"
+msgstr "Groupe de matériaux 3"
+
+#: Indalo_room_group.py:41 Indalo_utilities.py:67
+msgid "IAQ Analysis"
+msgstr "Analyse de la QAI"
+
+#: Indalo_room_group.py:66
+msgid "Add the rooms you wish to be analyzed to a materials group"
+msgstr ""
+"Ajoutez les pièces que vous souhaitez analyser à un groupe de matériaux"
+
+#: Indalo_room_group.py:66 Indalo_room_group.py:68 Indalo_room_group.py:70
+msgid "Grouping scheme"
+msgstr "Schéma de regroupement"
+
+#: Indalo_room_group.py:68
+msgid "Grouping scheme updated"
+msgstr "Schéma de regroupement mis à jour"
+
+#: Indalo_room_group.py:70
+msgid "Grouping scheme already exists"
+msgstr "Le schéma de regroupement existe déjà"
+
+#: Indalo_simulation_options.py:59
+msgid "Authentication missing: run authentication"
+msgstr "Authentification manquante : exécuter l'authentification"
+
+#: Indalo_simulation_options.py:60
+msgid "Authentication"
+msgstr "Authentification"
+
+#: Indalo_simulation_options.py:78
+msgid "Simulation options:"
+msgstr "Options de simulation:"
+
+#: Indalo_simulation_options.py:82
+msgid "Results file (aps):"
+msgstr "Fichier de résultats (aps):"
+
+#: Indalo_simulation_options.py:88
+msgid ""
+"No APS files found. Air quality simulation requires apache simulation file."
+msgstr ""
+"Aucun fichier APS trouvé. La simulation de la qualité de l'air nécessite un "
+"fichier de simulation Apache."
+
+#: Indalo_simulation_options.py:96
+msgid "Month & starting Monday date:"
+msgstr "Mois et date du lundi de départ :"
+
+#: Indalo_simulation_options.py:99
+msgid "April"
+msgstr "Avril"
+
+#: Indalo_simulation_options.py:99
+msgid "February"
+msgstr "Février"
+
+#: Indalo_simulation_options.py:99
+msgid "January"
+msgstr "Janvier"
+
+#: Indalo_simulation_options.py:99
+msgid "March"
+msgstr "Mars"
+
+#: Indalo_simulation_options.py:99
+msgid "May"
+msgstr "Mai"
+
+#: Indalo_simulation_options.py:100
+msgid "August"
+msgstr "Août"
+
+#: Indalo_simulation_options.py:100
+msgid "July"
+msgstr "Juillet"
+
+#: Indalo_simulation_options.py:100
+msgid "June"
+msgstr "Juin"
+
+#: Indalo_simulation_options.py:100
+msgid "October"
+msgstr "Octobre"
+
+#: Indalo_simulation_options.py:100
+msgid "September"
+msgstr "Septembre"
+
+#: Indalo_simulation_options.py:101
+msgid "December"
+msgstr "Décembre"
+
+#: Indalo_simulation_options.py:101
+msgid "November"
+msgstr "Novembre"
+
+#: Indalo_simulation_options.py:109 Indalo_simulation_options.py:187
+msgid "Select"
+msgstr "Sélectionner"
+
+#: Indalo_simulation_options.py:117
+msgid "Pollutants required:"
+msgstr "Polluants requis:"
+
+#: Indalo_simulation_options.py:135
+msgid "Set internal windows & door as open:"
+msgstr "Définir les fenêtres et les portes internes comme ouvertes:"
+
+#: Indalo_simulation_options.py:149
+msgid "Simulate"
+msgstr "Simuler"
+
+#: Indalo_simulation_options.py:227
+msgid "You must pick a starting Monday date"
+msgstr "Vous devez choisir une date lundi de départ"
+
+#: Indalo_simulation_options.py:228 Indalo_simulation_options.py:293
+msgid "Error!"
+msgstr "Erreur!"
+
+#: Indalo_simulation_options.py:333
+msgid "Indalo job created successfully. Job number: "
+msgstr "Tâche Indalo créée avec succès. Numéro de tâche: "
+
+#: Indalo_simulation_options.py:334 Indalo_simulation_options.py:339
+msgid "Indalo server"
+msgstr "Serveur Indalo"
+
+#: Indalo_simulation_options.py:338
+msgid "Indalo job creation failed. See script output pane"
+msgstr ""
+"La création de tâche à Indalo a échoué. Voir le volet de sortie du script"
+
+#: Indalo_simulation_options.py:342
+msgid "Status code:"
+msgstr "Code d'état:"
+
+#: Indalo_simulation_options.py:343
+msgid "Reason:"
+msgstr "Raison:"
+
+#: Indalo_utilities.py:78
+msgid "Could not connect to the Indalo API "
+msgstr "Impossible de se connecter à l'API Indalo "
+
+#: Indalo_utilities.py:79
+msgid "|  Status code:"
+msgstr "| Code d'état:"
+
+#: Indalo_utilities.py:80
+msgid "|  Reason:"
+msgstr "| Raison:"
+
+#: Indalo_utilities.py:635
+msgid "Error: Only weekly & compact occupancy profiles are supported"
+msgstr ""
+"Erreur : Seuls les profils d'occupation hebdomadaires et compacts sont pris "
+"en charge"
+
+#: Indalo_utilities.py:727
+msgid "Level ID of room could not be found"
+msgstr "L'ID du niveau de la pièce est introuvable"
+
+#: Indalo_utilities.py:1327 Indalo_utilities.py:1375
+msgid "Error opening APS File"
+msgstr "Erreur lors de l'ouverture du fichier APS"
+
+#: Indalo_utilities.py:1328
+msgid ""
+"\n"
+"\n"
+"Does the selected APS file use an ApSys network, but the current model is "
+"set for ApHVAC methodology? The model and APS file must match."
+msgstr ""
+"\n"
+"\n"
+"Le fichier APS sélectionné utilise-t-il un réseau ApSys, mais le modèle "
+"actuel est défini pour la méthodologie ApHVAC? Le modèle et le fichier APS "
+"doivent correspondre."
+
+#: Indalo_utilities.py:1345
+msgid ""
+"Unable to access room data for HVAC network. Please check HVAC Network and "
+"Systems.\n"
+"\n"
+" Room ID: "
+msgstr ""
+"Impossible d'accéder aux données de la pièce pour le réseau CVC. Veuillez "
+"vérifier le réseau et les systèmes CVC. \n"
+"\n"
+"Identifiant de la pièce : "
+
+#: Indalo_utilities.py:1376
+msgid ""
+"\n"
+"\n"
+"Does the selected APS file use an ApHVAC network, but the current model is "
+"set for ApSys methodology? The model and APS file must match."
+msgstr ""
+"\n"
+"\n"
+"Le fichier APS sélectionné utilise-t-il un réseau ApHVAC, mais le modèle "
+"actuel est défini pour la méthodologie ApSys? Le modèle et le fichier APS "
+"doivent correspondre."
+
+#~ msgid "Ceiling"
+#~ msgstr "Plafond"
+
+#~ msgid "Floor"
+#~ msgstr "Plancher"
+
+#~ msgid "Wall"
+#~ msgstr "Mur"
+
+#~ msgid "Door"
+#~ msgstr "Porte"
+
+#~ msgid "Window"
+#~ msgstr "Fenêtre"
+
+#~ msgid "Finish"
+#~ msgstr "Finition"
+
+#~ msgid "Crude material"
+#~ msgstr "Matière brute"
+
+#~ msgid "Seal-Adhesive"
+#~ msgstr "Joint adhésif"
+
+#~ msgid "Filter material lists by (warning: this resets listboxes):"
+#~ msgstr ""
+#~ "Filtrer les listes de matériaux par (attention : cela réinitialise les "
+#~ "listbox):"
+
+#~ msgid "Labels:      "
+#~ msgstr "Étiquettes:     "
+
+#~ msgid "Kind:      "
+#~ msgstr "Type:      "
+
+#~ msgid "Start day & month:"
+#~ msgstr "Jour et mois de début:"
+
+#~ msgid "Duration (days):"
+#~ msgstr "Durée (jours):"

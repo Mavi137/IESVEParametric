@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<scripts category="IES sample scripts" id="0EB15DBA-1358-44C5-9DBF-15574592AFD62019" VEversion="2024" scriptversion="2024">
+	<script desc="Plot wind rose" path="windrose.py" args=""  help="Windrose.pdf"/>
+	<script desc="Plot profiles in use" path="plot_profiles.py" args=""  help="PlotProfilesOverview.pdf"/>
+	<script desc="Unmet load hours (PRM)" path="unmet_load_hours_test.py" args="" help="UnmetLoadHoursOverview.pdf"/>
+	<script desc="Overheating test" path="overheating_test.py" args="" />
+	<script desc="Room data (model input)" path="room_data.py" args="" />
+	<script desc="Sensible heat balance" path="heat_balance_test.py" args="" />
+	<script desc="Create Annual Data for Free-form Profile (.csv file)" path="FFD_csv.py" args="" help="FFDCreate.pdf"/>
+	<script desc="Create Annual Load Free-form Profile (.ffd file)" path="FFD_create.py" args="" help="FFDImport.pdf" />
+</scripts>

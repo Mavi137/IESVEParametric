@@ -1,0 +1,2108 @@
+{
+    "rates": [
+        {
+            "country": "USA",
+			"aducustomerchargeunits": "$/day",
+            "aducustomercharges": [
+                [
+                    {
+                        "adumin": 0,
+						"adumax": 5.0,
+						"rate": 0.27048,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 5.0,
+						"adumax": 16.0,
+						"rate": 0.52106,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 16.0,
+						"adumax": 41.0,
+						"rate": 0.95482,
+						"unit": "Therms"
+                    }
+				],
+                [
+                    {
+                        "adumin": 41.0,
+						"adumax": 123.0,
+						"rate": 1.66489,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 123.0,
+						"adumax": 99999999.0,
+						"rate": 2.14936,
+						"unit": "Therms"
+                    }
+                ]						
+            ],
+            "description": "Core Commercial Gas Rate. Based on customer’s highest Average Daily Usage (ADU) determined from among the billing periods occurring within the last twelve months, including current billing period. PG&E calculates the ADU for each billing period by dividing the total usage by the number of days in the billing period",
+            "procurementcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "procuremin": 0.0,
+						"procuremax": 4000.0,					
+                        "rate": 0.42,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "procuremin": 4000.0,
+						"procuremax": 99999999.0,										
+                        "rate": 0.42,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "procuremin": 0.0,
+						"procuremax": 4000.0,										
+                        "rate": 0.42,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "procuremin": 4000.0,
+						"procuremax": 99999999.0,										
+                        "rate": 0.42,
+                        "unit": "Therms"
+                    }
+                ]
+            ],
+            "transportationcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "transportationmin": 0.0,
+						"transportationmax": 4000.0,					
+                        "rate": 0.70,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "transportationmin": 4000.0,
+						"transportationmax": 99999999.0,										
+                        "rate": 0.42,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "transportationmin": 0.0,
+						"transportationmax": 4000.0,										
+                        "rate": 0.82,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "transportationmin": 4000.0,
+						"transportationmax": 99999999.0,										
+                        "rate": 0.49,
+                        "unit": "Therms"
+                    }
+				]	
+                ],			
+            "schedulegppscharges": [
+                [
+                    {
+					    "season": "summer",
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 4000.0,					
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 4000.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 4000.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 4000.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ]
+            ],						
+            "seasonchedule": [
+                [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ]
+            ],
+            "flatcustomercharge": 0.0,
+            "flatcustomerchargeunits": "$/day",
+            "name": "Schedule G-NR1",
+            "thermspermonthmax": 20800,
+			"thermspermonthmin": 200,
+            "sector": "Commercial",
+            "source": "https://www.pge.com/tariffs/GRF0120.pdf",
+            "startdate": 1556694000,
+			"enddate": 1561878000,
+            "utility": "Pacific Gas & Electric Co",
+            "category": "Small Commercial"
+        },
+        {
+            "country": "USA",
+			"aducustomerchargeunits": "$/day",
+            "aducustomercharges": [
+                [
+                    {
+                        "adumin": 0,
+						"adumax": 5.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 5.0,
+						"adumax": 16.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 16.0,
+						"adumax": 41.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 41.0,
+						"adumax": 123.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 123.0,
+						"adumax": 99999999.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ]						
+            ],
+            "description": "Core Commercial Gas Rate. Based on customer’s highest Average Daily Usage (ADU) determined from among the billing periods occurring within the last twelve months, including current billing period. PG&E calculates the ADU for each billing period by dividing the total usage by the number of days in the billing period",
+            "procurementcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "procuremin": 0.0,
+						"procuremax": 4000.0,					
+                        "rate": 0.38765,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "procuremin": 4000.0,
+						"procuremax": 99999999.0,										
+                        "rate": 0.38765,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "procuremin": 0.0,
+						"procuremax": 4000.0,										
+                        "rate": 0.38765,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "procuremin": 4000.0,
+						"procuremax": 99999999.0,										
+                        "rate": 0.38765,
+                        "unit": "Therms"
+                    }
+                ]
+            ],
+            "transportationcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "transportationmin": 0.0,
+						"transportationmax": 4000.0,					
+                        "rate": 0.69949,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "transportationmin": 4000.0,
+						"transportationmax": 99999999.0,										
+                        "rate": 0.41959,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "transportationmin": 0.0,
+						"transportationmax": 4000.0,										
+                        "rate": 0.81874,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "transportationmin": 4000.0,
+						"transportationmax": 99999999.0,										
+                        "rate": 0.49112,
+                        "unit": "Therms"
+                    }
+				]	
+                ],			
+            "schedulegppscharges": [
+                [
+                    {
+					    "season": "summer",
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 4000.0,					
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 4000.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 4000.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 4000.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ]
+            ],						
+            "seasonchedule": [
+                [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ]
+            ],
+            "flatcustomercharge": 4.95518,
+            "flatcustomerchargeunits": "$/day",
+            "name": "Schedule G-NR2",
+            "thermspermonthmax": 20800,
+			"thermspermonthmin": 200,
+            "sector": "Commercial",
+            "source": "https://www.pge.com/tariffs/GRF0120.pdf",
+            "startdate": 1556694000,
+			"enddate": 1561878000,
+            "utility": "Pacific Gas & Electric Co",
+            "category": "Large Commercial"
+        },
+        {
+            "country": "USA",
+			"aducustomerchargeunits": "$/day",
+            "aducustomercharges": [
+                [
+                    {
+                        "adumin": 0,
+						"adumax": 5.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 5.0,
+						"adumax": 16.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 16.0,
+						"adumax": 41.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 41.0,
+						"adumax": 123.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 123.0,
+						"adumax": 99999999.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ]						
+            ],
+            "description": "Customers on this schedule pay a Procurement Charge and a Transportation Charge, per dwelling meter (summer & winter on peak only winter off-peak not implemented)",
+            "procurementcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "procuremin": 0.0,
+						"procuremax": 0.23,					
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "procuremin": 0.23,
+						"procuremax": 99999999.0,										
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "procuremin": 0.0,
+						"procuremax": 0.87,										
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "procuremin": 0.87,
+						"procuremax": 99999999.0,										
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ]
+            ],
+            "transportationcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "transportationmin": 0.0,
+						"transportationmax": 0.23,					
+                        "rate": 1.13126,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "transportationmin": 0.23,
+						"transportationmax": 99999999.0,										
+                        "rate": 1.64861,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "transportationmin": 0.0,
+						"transportationmax": 0.87,										
+                        "rate": 1.13126,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "transportationmin": 0.87,
+						"transportationmax": 99999999.0,										
+                        "rate": 1.64861,
+                        "unit": "Therms"
+                    }
+				]	
+                ],			
+            "schedulegppscharges": [
+                [
+                    {
+					    "season": "summer",
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 4000.0,					
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 4000.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 4000.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 4000.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ]
+            ],						
+            "seasonchedule": [
+                [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ]
+            ],
+            "flatcustomercharge": 0.0,
+            "flatcustomerchargeunits": "$/day",
+            "name": "Schedule GM (code W)",
+            "thermspermonthmax": 0,
+			"thermspermonthmin": 0,
+            "sector": "Residential",
+            "source": "https://www.pge.com/tariffs/assets/pdf/tariffbook/GAS_SCHEDS_GM.pdf",
+            "startdate": 1530450000,
+			"enddate": null,
+            "utility": "Pacific Gas & Electric Co",
+            "category": "Master-metered multifamily service"
+        },
+        {
+            "country": "USA",
+			"aducustomerchargeunits": "$/day",
+            "aducustomercharges": [
+                [
+                    {
+                        "adumin": 0,
+						"adumax": 5.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 5.0,
+						"adumax": 16.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 16.0,
+						"adumax": 41.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 41.0,
+						"adumax": 123.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 123.0,
+						"adumax": 99999999.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ]						
+            ],
+            "description": "Customers on this schedule pay a Procurement Charge and a Transportation Charge, per meter. CARE end-use customers recieve a discount (applied in transportation charge) (summer & winter on peak only winter off-peak not implemented)",
+            "procurementcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "procuremin": 0.0,
+						"procuremax": 0.23,					
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "procuremin": 0.23,
+						"procuremax": 99999999.0,										
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "procuremin": 0.0,
+						"procuremax": 0.87,										
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "procuremin": 0.87,
+						"procuremax": 99999999.0,										
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ]
+            ],
+            "transportationcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "transportationmin": 0.0,
+						"transportationmax": 0.23,					
+                        "rate": 0.85902,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "transportationmin": 0.23,
+						"transportationmax": 99999999.0,										
+                        "rate": 1.2729,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "transportationmin": 0.0,
+						"transportationmax": 0.87,										
+                        "rate": 0.85902,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "transportationmin": 0.87,
+						"transportationmax": 99999999.0,										
+                        "rate": 1.2729,
+                        "unit": "Therms"
+                    }
+				]	
+                ],			
+            "schedulegppscharges": [
+                [
+                    {
+					    "season": "summer",
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 4000.0,					
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 4000.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 4000.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 4000.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ]
+            ],						
+            "seasonchedule": [
+                [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ]
+            ],
+            "flatcustomercharge": 0.0,
+            "flatcustomerchargeunits": "$/day",
+            "name": "Schedule GML (code W CARE qualifying)",
+            "thermspermonthmax": 0,
+			"thermspermonthmin": 0,
+            "sector": "Residential",
+            "source": "https://www.pge.com/tariffs/assets/pdf/tariffbook/GAS_SCHEDS_GML.pdf",
+            "startdate": 1572613200,
+			"enddate": null,
+            "utility": "Pacific Gas & Electric Co",
+            "category": "Master-metered multifamily CARE program service"
+        },
+        {
+            "country": "USA",
+			"aducustomerchargeunits": "$/day",
+            "aducustomercharges": [
+                [
+                    {
+                        "adumin": 0,
+						"adumax": 5.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 5.0,
+						"adumax": 16.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 16.0,
+						"adumax": 41.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 41.0,
+						"adumax": 123.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 123.0,
+						"adumax": 99999999.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ]						
+            ],
+            "description": "Customers on this schedule pay a Procurement Charge and a Transportation Charge, per meter (summer & winter on peak only winter off-peak not implemented)",
+            "procurementcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "procuremin": 0.0,
+						"procuremax": 0.39,					
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "procuremin": 0.39,
+						"procuremax": 99999999.0,										
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "procuremin": 0.0,
+						"procuremax": 1.84,										
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "procuremin": 1.84,
+						"procuremax": 99999999.0,										
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ]
+            ],
+            "transportationcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "transportationmin": 0.0,
+						"transportationmax": 0.39,					
+                        "rate": 1.13126,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "transportationmin": 0.39,
+						"transportationmax": 99999999.0,										
+                        "rate": 1.64861,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "transportationmin": 0.0,
+						"transportationmax": 1.84,										
+                        "rate": 1.13126,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "transportationmin": 1.84,
+						"transportationmax": 99999999.0,										
+                        "rate": 1.64861,
+                        "unit": "Therms"
+                    }
+				]	
+                ],			
+            "schedulegppscharges": [
+                [
+                    {
+					    "season": "summer",
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 4000.0,					
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 4000.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 4000.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 4000.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ]
+            ],						
+            "seasonchedule": [
+                [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ]
+            ],
+            "flatcustomercharge": 0.0,
+            "flatcustomerchargeunits": "$/day",
+            "name": "Schedule GS (code W)",
+            "thermspermonthmax": 0,
+			"thermspermonthmin": 0,
+            "sector": "Residential",
+            "source": "https://www.pge.com/tariffs/assets/pdf/tariffbook/GAS_SCHEDS_GS.pdf",
+            "startdate": 1588338000,
+			"enddate": null,
+            "utility": "Pacific Gas & Electric Co",
+            "category": "Multifamily service"
+        },
+        {
+            "country": "USA",
+			"aducustomerchargeunits": "$/day",
+            "aducustomercharges": [
+                [
+                    {
+                        "adumin": 0,
+						"adumax": 5.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 5.0,
+						"adumax": 16.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 16.0,
+						"adumax": 41.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 41.0,
+						"adumax": 123.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 123.0,
+						"adumax": 99999999.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ]						
+            ],
+            "description": "Customers on this schedule pay a Procurement Charge and a Transportation Charge, per meter (summer & winter on peak only winter off-peak not implemented)",
+            "procurementcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "procuremin": 0.0,
+						"procuremax": 0.39,					
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "procuremin": 0.39,
+						"procuremax": 99999999.0,										
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "procuremin": 0.0,
+						"procuremax": 1.84,										
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "procuremin": 1.84,
+						"procuremax": 99999999.0,										
+                        "rate": 0.23187,
+                        "unit": "Therms"
+                    }
+                ]
+            ],
+            "transportationcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "transportationmin": 0.0,
+						"transportationmax": 0.39,					
+                        "rate": 0.85902,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "transportationmin": 0.39,
+						"transportationmax": 99999999.0,										
+                        "rate": 1.2729,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "transportationmin": 0.0,
+						"transportationmax": 1.84,										
+                        "rate": 0.85902,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "transportationmin": 1.84,
+						"transportationmax": 99999999.0,										
+                        "rate": 1.2729,
+                        "unit": "Therms"
+                    }
+				]	
+                ],			
+            "schedulegppscharges": [
+                [
+                    {
+					    "season": "summer",
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 4000.0,					
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 4000.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",					
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 4000.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 4000.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ]
+            ],						
+            "seasonchedule": [
+                [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ]
+            ],
+            "flatcustomercharge": 0.0,
+            "flatcustomerchargeunits": "$/day",
+            "name": "Schedule GSL (code W)",
+            "thermspermonthmax": 0,
+			"thermspermonthmin": 0,
+            "sector": "Residential",
+            "source": "https://www.pge.com/tariffs/assets/pdf/tariffbook/GAS_SCHEDS_GSL.pdf",
+            "startdate": 1588338000,
+			"enddate": null,
+            "utility": "Pacific Gas & Electric Co",
+            "category": "Multifamily CARE program service"
+        },
+        {
+            "country": "USA",
+			"aducustomerchargeunits": "$/day",
+            "aducustomercharges": [
+                [
+                    {
+                        "adumin": 0,
+						"adumax": 5.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 5.0,
+						"adumax": 16.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 16.0,
+						"adumax": 41.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 41.0,
+						"adumax": 123.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 123.0,
+						"adumax": 99999999.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ]						
+            ],
+            "description": "Applicable to natural gas procurement service to non-residential core customers, including service not provided under any other rate schedule (not space heating only customers)",
+            "procurementcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "procuremin": 0.0,
+						"procuremax": 250.0,					
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "procuremin": 250.0,
+						"procuremax": 4167.0,										
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "procuremin": 4167.0,
+						"procuremax": 99999999.0,										
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ],					
+                [
+                    {
+					    "season": "winter",					
+                        "procuremin": 0.0,
+						"procuremax": 250.0,										
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "procuremin": 250.0,
+						"procuremax": 4167.0,										
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "procuremin": 4167.0,
+						"procuremax": 99999999.0,										
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ]				
+            ],
+            "transportationcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "transportationmin": 0.0,
+						"transportationmax": 250.0,					
+                        "rate": 0.78333,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "transportationmin": 250.0,
+						"transportationmax": 4167.0,										
+                        "rate": 0.42707,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "transportationmin": 4167.0,
+						"transportationmax": 99999999.0,										
+                        "rate": 0.18820,
+                        "unit": "Therms"
+                    }
+                ],				
+                [
+                    {
+					    "season": "winter",					
+                        "transportationmin": 0.0,
+						"transportationmax": 250.0,										
+                        "rate": 0.78333,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "transportationmin": 250.0,
+						"transportationmax": 4167.0,										
+                        "rate": 0.42707,
+                        "unit": "Therms"
+                    }
+				],
+                [
+                    {
+					    "season": "winter",						
+                        "transportationmin": 4167.0,
+						"transportationmax": 99999999.0,										
+                        "rate": 0.18820,
+                        "unit": "Therms"
+                    }
+				]			
+                ],			
+            "schedulegppscharges": [
+                [
+                    {
+					    "season": "summer",
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 250.0,					
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 250.0,
+						"schedulegppsmax": 4167.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 4167.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],								
+                [
+                    {
+					    "season": "winter",					
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 250.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 250.0,
+						"schedulegppsmax": 4167.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 4167.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ]				
+            ],						
+            "seasonchedule": [
+                [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0
+                ]
+            ],
+            "flatcustomercharge": 0.49315,
+            "flatcustomerchargeunits": "$/day",
+            "name": "Schedule G10",
+            "thermspermonthmax": 0,
+			"thermspermonthmin": 0,
+            "sector": "Commercial",
+            "source": "https://www2.socalgas.com/regulatory/tariffs/tm2/pdf/G-10.pdf",
+            "startdate": 1285923328,
+			"enddate": null,
+            "utility": "Southern California Gas Co",
+            "category": "Core Commerical and Industrial Service"
+        },
+        {
+            "country": "USA",
+			"aducustomerchargeunits": "$/day",
+            "aducustomercharges": [
+                [
+                    {
+                        "adumin": 0,
+						"adumax": 5.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 5.0,
+						"adumax": 16.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 16.0,
+						"adumax": 41.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 41.0,
+						"adumax": 123.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 123.0,
+						"adumax": 99999999.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ]						
+            ],
+            "description": "Applicable to natural gas procurement service for Multi-family Accommodations supplying Baseline uses only or in a combination of Baseline uses and common facilities through one meter on a premises, in accordance with the provisions of Rule No. 24 (not space heating only customers).",
+            "procurementcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "procuremin": 0.0,
+						"procuremax": 14.19,					
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "procuremin": 14.19,
+						"procuremax": 99999999.0,										
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ],					
+                [
+                    {
+					    "season": "winter",					
+                        "procuremin": 0.0,
+						"procuremax": 54.69,										
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "procuremin": 54.69,
+						"procuremax": 99999999.0,										
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ]				
+            ],
+            "transportationcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "transportationmin": 0.0,
+						"transportationmax": 14.19,					
+                        "rate": 0.45487,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "transportationmin": 14.19,
+						"transportationmax": 99999999.0,										
+                        "rate":  0.65427,
+                        "unit": "Therms"
+                    }
+                ],				
+                [
+                    {
+					    "season": "winter",					
+                        "transportationmin": 0.0,
+						"transportationmax": 54.69,										
+                        "rate":  0.45487,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "transportationmin": 54.69,
+						"transportationmax": 99999999.0,										
+                        "rate":  0.65427,
+                        "unit": "Therms"
+                    }
+				]			
+                ],			
+            "schedulegppscharges": [
+                [
+                    {
+					    "season": "summer",
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 250.0,					
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 250.0,
+						"schedulegppsmax": 4167.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],								
+                [
+                    {
+					    "season": "winter",					
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 250.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 250.0,
+						"schedulegppsmax": 4167.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ]				
+            ],						
+            "seasonchedule": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ]
+            ],
+            "flatcustomercharge": 0.16438,
+            "flatcustomerchargeunits": "$/day",
+            "name": "Schedule GM-BE (CZ-2)",
+            "thermspermonthmax": 0,
+			"thermspermonthmin": 0,
+            "sector": "Residential",
+            "source": "https://www2.socalgas.com/regulatory/tariffs/tm2/pdf/GM.pdf",
+            "startdate": 1205052928,
+			"enddate": null,
+            "utility": "Southern California Gas Co",
+            "category": "Multifamily Service"
+        },
+        {
+            "country": "USA",
+			"aducustomerchargeunits": "$/day",
+            "aducustomercharges": [
+                [
+                    {
+                        "adumin": 0,
+						"adumax": 5.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 5.0,
+						"adumax": 16.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 16.0,
+						"adumax": 41.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 41.0,
+						"adumax": 123.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 123.0,
+						"adumax": 99999999.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ]						
+            ],
+            "description": "Applicable to natural gas procurement service for Multi-family Accommodations and Mobilehome Parks supplied through one meter on a single premises and submetered to all individual units in accordance with the provisions of Rule No. 24 (not space heating only customers).",
+            "procurementcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "procuremin": 0.0,
+						"procuremax": 14.19,					
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "procuremin": 14.19,
+						"procuremax": 99999999.0,										
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ],					
+                [
+                    {
+					    "season": "winter",					
+                        "procuremin": 0.0,
+						"procuremax": 54.69,										
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "procuremin": 54.69,
+						"procuremax": 99999999.0,										
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ]				
+            ],
+            "transportationcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "transportationmin": 0.0,
+						"transportationmax": 14.19,					
+                        "rate": 0.77909,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "transportationmin": 14.19,
+						"transportationmax": 99999999.0,										
+                        "rate":  1.14709,
+                        "unit": "Therms"
+                    }
+                ],				
+                [
+                    {
+					    "season": "winter",					
+                        "transportationmin": 0.0,
+						"transportationmax": 54.69,										
+                        "rate":  0.77909,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "transportationmin": 54.69,
+						"transportationmax": 99999999.0,										
+                        "rate":  1.14709,
+                        "unit": "Therms"
+                    }
+				]			
+                ],			
+            "schedulegppscharges": [
+                [
+                    {
+					    "season": "summer",
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 250.0,					
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 250.0,
+						"schedulegppsmax": 4167.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],								
+                [
+                    {
+					    "season": "winter",					
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 250.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 250.0,
+						"schedulegppsmax": 4167.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ]				
+            ],						
+            "seasonchedule": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ]
+            ],
+            "flatcustomercharge": 0.16438,
+            "flatcustomerchargeunits": "$/day",
+            "name": "Schedule GS (CZ-2)",
+            "thermspermonthmax": 0,
+			"thermspermonthmin": 0,
+            "sector": "Residential",
+            "source": "https://www2.socalgas.com/regulatory/tariffs/tm2/pdf/GS.pdf",
+            "startdate": 1589100928,
+			"enddate": null,
+            "utility": "Southern California Gas Co",
+            "category": "Submetered Multifamily Service"
+        },
+        {
+            "country": "USA",
+			"aducustomerchargeunits": "$/day",
+            "aducustomercharges": [
+                [
+                    {
+                        "adumin": 0,
+						"adumax": 5.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 5.0,
+						"adumax": 16.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 16.0,
+						"adumax": 41.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 41.0,
+						"adumax": 123.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 123.0,
+						"adumax": 99999999.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ]						
+            ],
+            "description": "Applicable to natural gas procurement service for Multi-family Accommodations and Mobilehome Parks supplied through one meter on a single premises and submetered to all individual units in accordance with the provisions of Rule No. 24 CARE discount applied (not space heating only customers).",
+            "procurementcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "procuremin": 0.0,
+						"procuremax": 14.19,					
+                        "rate": 0.205232,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "procuremin": 14.19,
+						"procuremax": 99999999.0,										
+                        "rate": 0.205232,
+                        "unit": "Therms"
+                    }
+                ],					
+                [
+                    {
+					    "season": "winter",					
+                        "procuremin": 0.0,
+						"procuremax": 54.69,										
+                        "rate": 0.205232,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "procuremin": 54.69,
+						"procuremax": 99999999.0,										
+                        "rate": 0.205232,
+                        "unit": "Therms"
+                    }
+                ]				
+            ],
+            "transportationcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "transportationmin": 0.0,
+						"transportationmax": 14.19,					
+                        "rate": 0.623272,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "transportationmin": 14.19,
+						"transportationmax": 99999999.0,										
+                        "rate":  0.917672,
+                        "unit": "Therms"
+                    }
+                ],				
+                [
+                    {
+					    "season": "winter",					
+                        "transportationmin": 0.0,
+						"transportationmax": 54.69,										
+                        "rate":  0.623272,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "transportationmin": 54.69,
+						"transportationmax": 99999999.0,										
+                        "rate":  0.917672,
+                        "unit": "Therms"
+                    }
+				]			
+                ],			
+            "schedulegppscharges": [
+                [
+                    {
+					    "season": "summer",
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 250.0,					
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 250.0,
+						"schedulegppsmax": 4167.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],								
+                [
+                    {
+					    "season": "winter",					
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 250.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 250.0,
+						"schedulegppsmax": 4167.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ]				
+            ],						
+            "seasonchedule": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ]
+            ],
+            "flatcustomercharge": 0.131504,
+            "flatcustomerchargeunits": "$/day",
+            "name": "Schedule GS CARE (CZ-2)",
+            "thermspermonthmax": 0,
+			"thermspermonthmin": 0,
+            "sector": "Residential",
+            "source": "https://www2.socalgas.com/regulatory/tariffs/tm2/pdf/G-CARE.pdf",
+            "startdate": 1242896128,
+			"enddate": null,
+            "utility": "Southern California Gas Co",
+            "category": "California alternate rates for energy (CARE) program"
+        },
+        {
+            "country": "USA",
+			"aducustomerchargeunits": "$/day",
+            "aducustomercharges": [
+                [
+                    {
+                        "adumin": 0,
+						"adumax": 5.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 5.0,
+						"adumax": 16.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 16.0,
+						"adumax": 41.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 41.0,
+						"adumax": 123.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ],
+                [
+                    {
+                        "adumin": 123.0,
+						"adumax": 99999999.0,
+						"rate": 0.0,
+						"unit": "Therms"
+                    }
+                ]						
+            ],
+            "description": "Applicable to natural gas core service for qualifying gas cooling uses, as specified herein, at each Facility classified in Rule No. 23 as Priority 1 and 2A or receiving service under Schedule No. G-10.",
+            "procurementcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "procuremin": 0.0,
+						"procuremax": 99999999.0,					
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ],					
+                [
+                    {
+					    "season": "winter",					
+                        "procuremin": 0.0,
+						"procuremax": 99999999.0,										
+                        "rate": 0.25654,
+                        "unit": "Therms"
+                    }
+                ]			
+            ],
+            "transportationcharges": [
+                [
+                    {
+					    "season": "summer",
+                        "transportationmin": 0.0,
+						"transportationmax": 99999999.0,					
+                        "rate": 0.18015,
+                        "unit": "Therms"
+                    }
+                ],				
+                [
+                    {
+					    "season": "winter",					
+                        "transportationmin": 0.0,
+						"transportationmax": 99999999.0,										
+                        "rate": 0.18015,
+                        "unit": "Therms"
+                    }
+                ]			
+                ],			
+            "schedulegppscharges": [
+                [
+                    {
+					    "season": "summer",
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 250.0,					
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 250.0,
+						"schedulegppsmax": 4167.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "summer",					
+                        "schedulegppsmin": 4167.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],								
+                [
+                    {
+					    "season": "winter",					
+                        "schedulegppsmin": 0.0,
+						"schedulegppsmax": 250.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 250.0,
+						"schedulegppsmax": 4167.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ],
+                [
+                    {
+					    "season": "winter",						
+                        "schedulegppsmin": 4167.0,
+						"schedulegppsmax": 99999999.0,										
+                        "rate": 0.0,
+                        "unit": "Therms"
+                    }
+                ]				
+            ],						
+            "seasonchedule": [
+                [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0
+                ]
+            ],
+            "flatcustomercharge": 5.0,
+            "flatcustomerchargeunits": "$/day",
+            "name": "Schedule G-AC",
+            "thermspermonthmax": 0,
+			"thermspermonthmin": 0,
+            "sector": "Commercial",
+            "source": "https://www2.socalgas.com/regulatory/tariffs/tm2/pdf/G-AC.pdf",
+            "startdate": 1589100928,
+			"enddate": null,
+            "utility": "Southern California Gas Co",
+            "category": "Core air conditioning service for commerical & industrial"
+        }		
+    ]
+}

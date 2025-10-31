@@ -1,0 +1,1850 @@
+{
+    "34851C1D-4AC6-486B-8909-2BE161FAEB67": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_01A",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/01a - PTAC [DX cool - HW heat coil] EA vent",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "C335F250-6A93-4CF5-9CD9-BEB2BEDEB4DD": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_01B",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/01b - PTAC [DX cool - HW heat] Intermit Fan - EA vent",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "E5B89ED6-193D-4D18-99A9-DBBC39DCC6FC": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_01C",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/01c - PTAC [DX cool - HW heat coil] zero or min OA",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "2FC2BF4B-FDC4-4F22-8CC5-D6236910CF43": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_01D",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/01d - PTAC [UCS - DX cool - HW heat coil]",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "0B8F2CA7-9569-4202-9369-23DDEBF870E1": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_02A",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/02a - PTHP [DX ASHP heat-cool bkup ER heat] EA vent",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "A90741AB-F15E-4D80-B1C9-D20FF88799C7": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_02B",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/02b - PTHP [DX ASHP heat-cool bk ER ht]  Int Fan - EA vent",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "1FD442ED-C15A-469E-8AC0-22B52785BB05": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_02C",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/02c - PTHP [DX ASHP heat-cool bkup ER heat] zero or min OA",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "66FF19B6-BE8F-4A0D-94F3-D858BBB4430D": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_02D",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/02d - PTHP [UCS HP heat-cool bkup ER heat]",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "E897C2BF-80C4-4101-BBB6-8E193BACC4CF": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_03A",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/03a - PSZ-AC [DX cooling - Furnace]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "4B8D073D-49E2-4B50-9E11-A6C442BFACA6": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_03B",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/03b - PSZ-AC-vent or CRAC [DX cool-dehum -no heat]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "701ED4B8-A6C5-4041-8663-32143DF37F6B": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_03C",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/03c - PSZ-AC-vent or CRAH [CHW cool-dehum -no heat]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "481BD1E6-3758-4971-A1E9-F616982630E3": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_03D",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/03d - PSZ-AC - CO2-DCV [DX cooling - Furnace]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "B26217F0-D292-4CE7-834F-5BE31A3B09A0": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_04A",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/04a - PSZ-HP [HP heat-cool bkup ER heat]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "8F3296F1-BD2B-46B4-9525-AB3EC8D47AB0": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_05A",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/05a - VAV - Reheat [DX cool - HW boiler]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "A516F383-E296-4373-A84B-646E57924B37": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_05B",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/05b - IDDE VAVr - CO2-DCV [DX bk-up cool - HW blr]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "7F6FD351-489F-441E-A574-B82B30248513": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_05C",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/05c - IDDE VAVr wDX coil upstream of DEC - optional DCV",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "D644E104-EF21-4DE9-90A9-4E97BE6A0EAF": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_05D",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/05d - VAV cool and vent [DX cool only - no re-heat]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "0CFDCDED-5B1A-4DFF-A32E-3141FCD39305": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_05E",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/05e - Basic VAV - min controls [DX cool - HW re-heat]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "E2BD1C79-F676-4E6A-8E52-2C6E8C1779AE": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_05F",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/05f - VAV hotel-dorm public areas plus PTAC rooms",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "FD02F94B-FE33-4F91-BA71-77E1C9B1D353": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_06A",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/06a - VAV - Parallel-Fan-Pwr boxes [DX cool - ER heat]",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "5E6557B0-F69F-4885-A905-67399AD27655": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07A",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07a - VAV - Reheat [EWC chiller - HW boiler]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "CAEDD6D4-FBDC-4D12-9017-861354CE6796": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07B",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07b - VAVr w Steam Humidifier [WSHX pre-cool on CHWL]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "A39A3594-2E42-455A-BFA9-616EC944F800": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07C",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07c - Mix-mode VAVr-NatVent [EWC chlr - HW blr]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "D208562D-CB5B-4361-8A56-93BA7A747828": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07D",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07d - VAV-Single-fan-Dual-duct [EWC chlr - HW blr]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "EC75A2EB-B2F7-49CA-97BB-6CE8C95C4FAF": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07E",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07e - VAV-Dual-fan-Dual-duct [EWC chlr - HW blr]",
+        "Indalo type": 5.0,
+        "checked (y/n/?)": "q"
+    },
+    "3B048C5A-CB13-4AFF-97A7-707CC6DE4EFE": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07F",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07f - UFAD-PFP boxes - RA bypass [EWC chlr - HW blr]",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "C82ADDD7-DDBA-475D-B7C8-ABB0E7072511": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07G",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07g - UFAD-PFP boxes - Heat pipe [EWC chlr - HW blr]",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "1DE52FE2-353A-4C14-8AD2-76F5C1469F41": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07H",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07h - UFAD 4p-PFP bxs Ht-pipe [EWC chlr - HW blr]",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "F84E8C25-362D-4250-9E55-67E9FF282479": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07K",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07k - Adv VAV - sys OA reset - low VAV min flow",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "53F21CC8-E7C4-4799-B5C5-798CB26FDB5C": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07L",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07l - Lab 100pct-OA mod-CAV min-deadband",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "36782AF7-A122-4717-ACFE-0FA863769BDB": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07M",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07m - VAV Reheat with DCV [EWC chiller - HW boiler]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "51946CC9-4432-4864-97E1-77950F877CD4": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07N",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07n - Adv VAV Sys OA reset, DCV [EWC chiller - HW boiler]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "7D4537C3-7E03-4410-84CE-FD6095AE6072": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07O",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07o - VAV Reheat - Adj space with EA requirement",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "8EC1E928-8E1C-4ACE-852B-3DB6E52B6582": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07P",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07p - VAV Reheat with Heat Recovery Chiller",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "7BE7B337-987F-4E18-A6BD-6A50FD0AB91E": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07Q",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07q - VAVr [Air-Source CPHP - Warm climate - small]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "69463B9F-7C0A-470B-8077-2E1044123823": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07R",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07r - VAVr [Air-Source CPHP - Warm climate - large]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "B2CE2629-4C56-4E2A-98F6-52453AA0CF1D": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07S",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07s - VAVr [Air-Source CPHP - Moderate climate]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "8C7003A2-9D45-4373-8DFB-54866542CFF9": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07T",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07t - VAVr [Air-Source CPHP - Cold climate]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "0D30F2E4-1644-4F0E-B643-99DEE8F022F1": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_07U",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/07u - VAVr [Hybrid Air-source CPHP and HRC]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "573B1B45-2A13-48D7-8B64-1E72B40C0E8A": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_08A",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/08a - VAV-PFP boxes [EWC chiller - ER heat]",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "F47F6839-FAE4-478D-99E3-B6BAC2FBB030": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_08B",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/08b - VAV Series Fan-Pwrd Boxes [EWC chlr - ER heat]",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "q"
+    },
+    "95384E14-3C20-4B6D-9689-445D9AC0C1A1": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_08C",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/08c - VAV optional PFP boxes [EWC chlr - ER ht]",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "F3A3C793-09F3-41B2-A202-1A0812E2925E": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09A",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09a - DOAS-FCUs Separate OA [EWC chiller - HW boiler],",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "F3762E2A-7791-4ACB-BEBD-0CE3B4FDEE2A": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09B",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09b - DOAS-FCUs OA through TU [EWC chiller - HW boiler]",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "CA266139-F65F-4C16-9456-598A6294B8B2": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09C",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09c - DOAS-WLHPs [Heat Transfer Loop, CT, Boiler]",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "F95D9C76-0421-4A0B-AA24-CF493CD4183E": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09D",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09d - Active Chilled Beams [EWC chlr - HW blr]",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "479C7D67-1C5B-457A-9120-E10A356A539F": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09E",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09e - 4-pipe Chl-Ht Active Beams [EWC chlr - HW blr]",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "AF57F171-5D50-4435-A034-9CB08D73C5E0": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09F",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09f - 4-pipe Chl-Ht Act Beams RA recirc path [chlr - blr]",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "0230D184-5794-4F5F-9B30-93D0D03D6777": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09G",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09g - Radiant Heat-Cool panels - DCV [chlr - blr]",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "212C0C37-D736-4699-9519-B64402B9815E": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09H",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09h - Rad Heat-Cool - DCV - Heat pipe [chlr - blr]",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "D066A732-6FA7-4A73-8D1F-884DDEA712BD": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09I",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09i - DV Rad Heat-Cool - DCV - Heat pipe [chlr - blr]",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "01B90E24-F6E0-4667-AF75-B8DE85D83806": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09J",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09j - DOAS-PTACs Separate OA [DX cooling - HW heat]",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "185DC924-541E-47C5-9584-D926DA707AFE": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09K",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09k - DOAS-PTHPs Separate OA [ASHP heat and cool]",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "BFC8C03A-067D-45A2-8CB1-5C6D9B1B48A4": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09N",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09n - DOAS-FCUs Occupancy-CO2 DCV [EWC chlr - HW blr]",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "329A1D04-CCCC-410A-A628-DD28A6CA5868": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09O",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09o - DOAS - Zone FCUs - separate OA to Rooms",
+        "Indalo type": 3.0,
+        "checked (y/n/?)": "y"
+    },
+    "5C5E2DD5-A002-408C-ABF5-B40FBCCC59B1": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09P",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09p - DOAS with Air-Source VRF",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "77156F21-3DE2-4730-9D4B-CF1AC54FFCF6": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09Q",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09q - DOAS with Water-Source VRF",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "710129D2-661A-4F79-9132-C9DE6DF7D5F3": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09R",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09r - Rad Heat-Cool Panels DOAS DCV Heat Recovery Chiller",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "EC18F4E1-557B-4F3A-9693-2839CCDC2D84": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09S",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09s - DOAS [FCUs - Air-Source CPHP - Moderate climate]",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "F1E27677-9BEC-4982-9C00-4437A7D19EC6": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09T",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09t - DOAS [FCUs - Ground-water CPHP]",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "959BC227-E110-4A4C-93ED-21B2733274FB": {
+        "VE Variable Name": "GUID_PROTOTYPE_SYSTEM_09U",
+        "InitGUIDtoFileMap": "Prototype systems - standard, fully autosizable/09u - DOAS [Radiant heat-cool - Ground-water CPHP]",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "4B870BE2-7317-4618-A684-EC0897E3952A": {
+        "VE Variable Name": "GUID_PRM_2004_BASELINE_01",
+        "InitGUIDtoFileMap": "90.1 PRM 2004 Baseline systems/PRM-Baseline-01 PTAC",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "3045FF2D-DA91-4FD5-B4F0-E03C783B9389": {
+        "VE Variable Name": "GUID_PRM_2004_BASELINE_02",
+        "InitGUIDtoFileMap": "90.1 PRM 2004 Baseline systems/PRM-Baseline-02 PTHP",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "485AD307-3DB0-4EFB-B808-465655CF0691": {
+        "VE Variable Name": "GUID_PRM_2004_BASELINE_03",
+        "InitGUIDtoFileMap": "90.1 PRM 2004 Baseline systems/PRM-Baseline-03 PSZ-AC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "3C39655F-3D8A-4CA8-B2B0-474022A69CEA": {
+        "VE Variable Name": "GUID_PRM_2004_BASELINE_04",
+        "InitGUIDtoFileMap": "90.1 PRM 2004 Baseline systems/PRM-Baseline-04 PSZ-HP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "19752704-B92A-44A8-A132-0C94D332A115": {
+        "VE Variable Name": "GUID_PRM_2004_BASELINE_05",
+        "InitGUIDtoFileMap": "90.1 PRM 2004 Baseline systems/PRM-Baseline-05 Pkg-VAVr-DX-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "AD0CF05C-291C-4589-A9EA-E4750001F73C": {
+        "VE Variable Name": "GUID_PRM_2004_BASELINE_06",
+        "InitGUIDtoFileMap": "90.1 PRM 2004 Baseline systems/PRM-Baseline-06 Pkg-VAV-PFPb-DX-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "BE7B9BF1-70F1-4F3B-B2EC-07E205FB20A8": {
+        "VE Variable Name": "GUID_PRM_2004_BASELINE_07",
+        "InitGUIDtoFileMap": "90.1 PRM 2004 Baseline systems/PRM-Baseline-07 VAVr-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "82EC7293-CFF2-454A-B98F-3225F1FE4DD1": {
+        "VE Variable Name": "GUID_PRM_2004_BASELINE_08",
+        "InitGUIDtoFileMap": "90.1 PRM 2004 Baseline systems/PRM-Baseline-08 VAV-PFPb-Chlr-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "AF8126D6-203D-4771-BDEF-7A64885B8B25": {
+        "VE Variable Name": "GUID_PRM_2004_BASELINE_09",
+        "InitGUIDtoFileMap": "90.1 PRM 2004 Baseline systems/PRM-Baseline-09 Furnace heat&vent",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "F7FD0A47-4D40-4CA4-9EA4-15A7C09F33D0": {
+        "VE Variable Name": "GUID_PRM_2004_BASELINE_10",
+        "InitGUIDtoFileMap": "90.1 PRM 2004 Baseline systems/PRM-Baseline-10 ER-coil heat&vent",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "7F35C8F0-9479-4255-899C-64630ABA8D76": {
+        "VE Variable Name": "GUID_PRM_2004_BASELINE_11",
+        "InitGUIDtoFileMap": "90.1 PRM 2004 Baseline systems/PRM-Baseline-11 DOAS-FCU",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "6A76FBBE-778F-4CD0-A61E-950CC9E9DD95": {
+        "VE Variable Name": "GUID_PRM_2004_BASELINE_12",
+        "InitGUIDtoFileMap": "90.1 PRM 2004 Baseline systems/PRM-Baseline-12 Prkg-gar-Fan",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "6BA214DD-52A5-4AD0-BA56-AA58C03FA625": {
+        "VE Variable Name": "GUID_PRM_2007_BASELINE_01",
+        "InitGUIDtoFileMap": "90.1 PRM 2007 Baseline systems/PRM-Baseline-01 PTAC",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "CBA6B182-420C-4278-B3DA-1C1618733ECF": {
+        "VE Variable Name": "GUID_PRM_2007_BASELINE_02",
+        "InitGUIDtoFileMap": "90.1 PRM 2007 Baseline systems/PRM-Baseline-02 PTHP",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "B12F1225-693F-40EE-A3D6-821AAEA5CD3B": {
+        "VE Variable Name": "GUID_PRM_2007_BASELINE_03",
+        "InitGUIDtoFileMap": "90.1 PRM 2007 Baseline systems/PRM-Baseline-03 PSZ-AC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "67B0D37D-216A-4466-8F1A-034E5A1D4148": {
+        "VE Variable Name": "GUID_PRM_2007_BASELINE_04",
+        "InitGUIDtoFileMap": "90.1 PRM 2007 Baseline systems/PRM-Baseline-04 PSZ-HP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "50DAAA04-294B-422A-9174-4B9831ACB00C": {
+        "VE Variable Name": "GUID_PRM_2007_BASELINE_05",
+        "InitGUIDtoFileMap": "90.1 PRM 2007 Baseline systems/PRM-Baseline-05 Pkg-VAVr-DX-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "0671AC03-3BCC-421D-982B-BB4771D9C622": {
+        "VE Variable Name": "GUID_PRM_2007_BASELINE_06",
+        "InitGUIDtoFileMap": "90.1 PRM 2007 Baseline systems/PRM-Baseline-06 Pkg-VAV-PFPb-DX-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "851ECC44-E383-4F45-8E0B-D3556EB8CEF4": {
+        "VE Variable Name": "GUID_PRM_2007_BASELINE_07",
+        "InitGUIDtoFileMap": "90.1 PRM 2007 Baseline systems/PRM-Baseline-07 VAVr-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "5F8CFB0A-88C4-4DAF-86A3-32075FE815E1": {
+        "VE Variable Name": "GUID_PRM_2007_BASELINE_08",
+        "InitGUIDtoFileMap": "90.1 PRM 2007 Baseline systems/PRM-Baseline-08 VAV-PFPb-Chlr-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "9B226D75-ADD3-4643-A3D3-F17F45B56E53": {
+        "VE Variable Name": "GUID_PRM_2007_BASELINE_09",
+        "InitGUIDtoFileMap": "90.1 PRM 2007 Baseline systems/PRM-Baseline-09 Furnace heat&vent",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "A0D9C84B-1010-4CD6-91CB-35E578728407": {
+        "VE Variable Name": "GUID_PRM_2007_BASELINE_10",
+        "InitGUIDtoFileMap": "90.1 PRM 2007 Baseline systems/PRM-Baseline-10 ER-coil heat&vent",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "597C5756-8190-435D-ADE8-ADA3FD6BED96": {
+        "VE Variable Name": "GUID_PRM_2007_BASELINE_11",
+        "InitGUIDtoFileMap": "90.1 PRM 2007 Baseline systems/PRM-Baseline-11 DOAS-FCU",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "F3C1A58B-1B51-4DD8-9C2E-3C4520C30E0E": {
+        "VE Variable Name": "GUID_PRM_2007_BASELINE_12",
+        "InitGUIDtoFileMap": "90.1 PRM 2007 Baseline systems/PRM-Baseline-12 Prkg-gar-Fan",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "7D83B9F6-D593-425C-94F3-52C927304D99": {
+        "VE Variable Name": "GUID_PRM_2010_BASELINE_01",
+        "InitGUIDtoFileMap": "90.1 PRM 2010 Baseline systems/PRM-Baseline-01 PTAC",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "57131D1E-E32E-4D2D-A4DD-BD17D14040D7": {
+        "VE Variable Name": "GUID_PRM_2010_BASELINE_02",
+        "InitGUIDtoFileMap": "90.1 PRM 2010 Baseline systems/PRM-Baseline-02 PTHP",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "6AB353A4-FEF9-4736-89F1-9E6DF4049E6E": {
+        "VE Variable Name": "GUID_PRM_2010_BASELINE_03",
+        "InitGUIDtoFileMap": "90.1 PRM 2010 Baseline systems/PRM-Baseline-03 PSZ-AC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "36ED58FF-9421-4EE5-AAFE-0A73B2135AB6": {
+        "VE Variable Name": "GUID_PRM_2010_BASELINE_04",
+        "InitGUIDtoFileMap": "90.1 PRM 2010 Baseline systems/PRM-Baseline-04 PSZ-HP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "1F6D4D84-F1B7-48FD-A59E-7637DAF88F51": {
+        "VE Variable Name": "GUID_PRM_2010_BASELINE_05",
+        "InitGUIDtoFileMap": "90.1 PRM 2010 Baseline systems/PRM-Baseline-05 Pkg-VAVr-DX-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "0D36B3F0-8133-4677-94FC-4EF98F100962": {
+        "VE Variable Name": "GUID_PRM_2010_BASELINE_06",
+        "InitGUIDtoFileMap": "90.1 PRM 2010 Baseline systems/PRM-Baseline-06 Pkg-VAV-PFPb-DX-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "D9EABB16-C322-4705-B172-4A96270BBE33": {
+        "VE Variable Name": "GUID_PRM_2010_BASELINE_07",
+        "InitGUIDtoFileMap": "90.1 PRM 2010 Baseline systems/PRM-Baseline-07 VAVr-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "DA1C5271-9140-46D1-830C-A85604C4CB61": {
+        "VE Variable Name": "GUID_PRM_2010_BASELINE_08",
+        "InitGUIDtoFileMap": "90.1 PRM 2010 Baseline systems/PRM-Baseline-08 VAV-PFPb-Chlr-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "21AC7EC6-82ED-4E6A-8DF1-B26AF6C715F2": {
+        "VE Variable Name": "GUID_PRM_2010_BASELINE_09",
+        "InitGUIDtoFileMap": "90.1 PRM 2010 Baseline systems/PRM-Baseline-09 Furnace heat&vent",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "0279A384-360C-4F20-9427-A0F1AA44061A": {
+        "VE Variable Name": "GUID_PRM_2010_BASELINE_10",
+        "InitGUIDtoFileMap": "90.1 PRM 2010 Baseline systems/PRM-Baseline-10 ER-coil heat&vent",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "E5845700-1FD4-4FD2-BB8F-101EB27132F2": {
+        "VE Variable Name": "GUID_PRM_2010_BASELINE_11",
+        "InitGUIDtoFileMap": "90.1 PRM 2010 Baseline systems/PRM-Baseline-11 DOAS-FCU",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "1D661D87-E856-46A2-94F3-E04DE3A49B9A": {
+        "VE Variable Name": "GUID_PRM_2010_BASELINE_12",
+        "InitGUIDtoFileMap": "90.1 PRM 2010 Baseline systems/PRM-Baseline-12 Prkg-gar-Fan",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "841106F8-D39D-4A6C-BBD2-E8E8B1E82724": {
+        "VE Variable Name": "GUID_ECB_2010_SYSTEM_01",
+        "InitGUIDtoFileMap": "90.1 ECB 2010 systems/ECB System 001_VAV PFB_CW_Elec Heating",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "D7F09501-85CB-44AF-8070-18215841586E": {
+        "VE Variable Name": "GUID_ECB_2010_SYSTEM_02",
+        "InitGUIDtoFileMap": "90.1 ECB 2010 systems/ECB System 002_VAV Reheat_CW_HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "49D04F70-2693-43C8-B190-48E9BF6CA2E4": {
+        "VE Variable Name": "GUID_ECB_2010_SYSTEM_03",
+        "InitGUIDtoFileMap": "90.1 ECB 2010 systems/ECB System 003_Packaged DX VAV FPB_Elec Heating",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "4BBAFF62-4905-4486-8DA4-DFED4AD9F5C1": {
+        "VE Variable Name": "GUID_ECB_2010_SYSTEM_04",
+        "InitGUIDtoFileMap": "90.1 ECB 2010 systems/ECB System 004_Packaged VAV Reheat_HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "863E6F7E-20B7-40E6-8EFB-825A07C70002": {
+        "VE Variable Name": "GUID_ECB_2010_SYSTEM_05",
+        "InitGUIDtoFileMap": "90.1 ECB 2010 systems/ECB System 005_Two Pipe FCU_CW_Elec Heating",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "B6A9B87E-C4D8-42CF-A7FB-2F198F86B9EA": {
+        "VE Variable Name": "GUID_ECB_2010_SYSTEM_06",
+        "InitGUIDtoFileMap": "90.1 ECB 2010 systems/ECB System 006_WSHP_HTF loop_Boiler_Cooling tower",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "D05A656E-C489-492E-9D87-1346A972E4A6": {
+        "VE Variable Name": "GUID_ECB_2010_SYSTEM_07",
+        "InitGUIDtoFileMap": "90.1 ECB 2010 systems/ECB System 007_FCU_CW_HW",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "89FFEB53-90FA-40F5-A142-F536651C72CC": {
+        "VE Variable Name": "GUID_ECB_2010_SYSTEM_08",
+        "InitGUIDtoFileMap": "90.1 ECB 2010 systems/ECB System 008_Packaged terminal HP_Reverse cycle",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "170FA52E-FDF1-40CE-9BF3-E66284399F64": {
+        "VE Variable Name": "GUID_ECB_2010_SYSTEM_09",
+        "InitGUIDtoFileMap": "90.1 ECB 2010 systems/ECB System 009_Packaged rooftop HP_Reverse cycle",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "59A9BC64-9580-4D66-AFF2-04B3B1314DE1": {
+        "VE Variable Name": "GUID_ECB_2010_SYSTEM_10",
+        "InitGUIDtoFileMap": "90.1 ECB 2010 systems/ECB System 010_Packaged terminal AC unit_HW heating",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "7C593F10-9CCE-4A47-9D33-E8479335A09E": {
+        "VE Variable Name": "GUID_ECB_2010_SYSTEM_11",
+        "InitGUIDtoFileMap": "90.1 ECB 2010 systems/ECB System 011_Packaged rooftop AC unit_Furnace heating",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "C307B734-C036-44EE-A924-FC1E920B3D92": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_01",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-01 PTAC",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "32CAD4E5-34CE-4D8B-8F44-265D52B4B080": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_02",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-02 PTHP",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "FF9322E6-8FA1-49BA-8CC1-649A9E553829": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_03",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-03 PSZ-AC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "3E3F986B-4E7A-41CE-ADE7-E1CEDC5DB98F": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_04",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-04 PSZ-HP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "39D4EA47-8A04-4209-AFBA-9BE7E7208B29": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_05",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-05 Pkg-VAVr-DX-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "84CFD405-0031-4E7E-9A10-1BC80ED50F77": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_06",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-06 Pkg-VAV-PFPb-DX-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "8EECDFFB-A9AA-4E5C-9686-5AC500558387": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_07",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-07 VAVr-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "67BF0EC9-EDDB-4E59-93DE-864BFDC6F65F": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_08",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-08 VAV-PFPb-Chlr-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "A558ADC7-3FD6-478F-B8D9-73AE4CC79A98": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_09",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-09 Furnace heat&vent",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "A5510B8C-1570-4C6E-8E3A-6B44E83CE5A2": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_10",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-10 ER-coil heat&vent",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "AB07CBFD-FDB4-4358-AAC5-7B603E761084": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_11A",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-11a SZ-VAV-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "8A130527-41FB-4995-BFD7-3D534CEB2DA5": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_11B",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-11b SZ-VAV-Chlr-ER",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "D272503C-15C4-4F4B-9B00-97D662C88FEB": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_12",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-12 SZ-CV-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "87900A20-91C2-4A3D-90BE-93FEE29AECE2": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_13",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-13 SZ-CV-Chlr-ER",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "CE52C8A1-A277-46D3-8654-1EFF7A8AB287": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_14",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-14 DOAS-FCU",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "57C99364-FDA4-4288-ABEE-48EB23173CEB": {
+        "VE Variable Name": "GUID_PRM_2013_BASELINE_15",
+        "InitGUIDtoFileMap": "90.1 PRM 2013 Baseline systems/PRM-Baseline-15 Prkg-gar-Fan",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "A3BF9241-E877-402C-BA2E-D47CADB224FA": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_01",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-01 PTAC",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "A6649BD1-3528-4D2B-9449-5EEDD4666C6E": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_02",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-02 PTHP",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "53FE24D7-6A01-4C09-A8CA-9292E731DF8D": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_03",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-03 PSZ-AC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "8DAA038E-230B-4341-92E0-43E2F3AC26A6": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_04",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-04 PSZ-HP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "138516D8-FAB0-470C-9A93-65AEE4D6E5C5": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_05",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-05 Pkg-VAVr-DX-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "3F51FCA0-2426-4DE4-9D62-848E2C5B799C": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_06",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-06 Pkg-VAV-PFPb-DX-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "F5F25BC2-925F-48D6-B8E5-6B6D1A7BE0E5": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_07",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-07 VAVr-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "A7048437-628C-4295-8BB9-717DD7ED7A86": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_08",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-08 VAV-PFPb-Chlr-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "1077D5A7-4474-4395-A4A7-D1FD8C2812AD": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_09",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-09 Furnace heat&vent",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "668538EB-3193-462C-B5EA-94182A6B0926": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_10",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-10 ER-coil heat&vent",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "D192BB34-A142-4B81-8CE3-E337351133F4": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_11A",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-11a SZ-VAV-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "F7FC099E-3620-4681-9BF8-25819B301424": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_11B",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-11b SZ-VAV-Chlr-ER",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "589E593B-DF42-4D9F-AAB5-DD5168044801": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_12",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-12 SZ-CV-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "C14FFB66-1960-4479-BD88-78E8FDDAFA01": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_13",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-13 SZ-CV-Chlr-ER",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "4803C418-915A-420A-BBDF-CC91E0159E50": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_14",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-14 DOAS-FCU",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "D64F68EC-2E87-4A8A-8FF4-A52336E25168": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_15",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-15 Prkg-gar-Fan",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "4177E6E7-C947-48F4-82C3-9E96FB61C28F": {
+        "VE Variable Name": "GUID_PRM_2016_BASELINE_16",
+        "InitGUIDtoFileMap": "90.1 PRM 2016 Baseline systems/PRM-Baseline-16 DES VAVr",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "DE94CA12-DF4C-469A-A124-2BF70786B523": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_01",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-01 PTAC",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "648FB2BF-680F-40FF-9F55-1D4A7E3F4229": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_02",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-02 PTHP",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "2BC97357-E1C4-4547-8057-03228A4E7AB5": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_03",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-03 PSZ-AC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "5E2B78C5-CFB4-46B7-99FC-3632534DBDB8": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_04",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-04 PSZ-HP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "7669216A-B405-413C-969D-9F33CA75A8A1": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_05",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-05 Pkg-VAVr-DX-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "583C63C3-D3B0-43A2-9CE7-0C4AB147FDCF": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_06",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-06 Pkg-VAV-PFPb-DX-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "1F927557-E3FE-4944-B380-2329ED22D03B": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_07",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-07 VAVr-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "51720258-F42E-44BC-9B1A-4790FAC02E48": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_08",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-08 VAV-PFPb-Chlr-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "6BED24F6-FD57-4880-B671-08533210269D": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_09",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-09 Furnace heat&vent",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "C66755E5-A00A-49AA-874E-91727E375DC1": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_10",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-10 ER-coil heat&vent",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "339F4784-1EA7-4474-A9E8-AE875EB88643": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_11A",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-11a SZ-VAV-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "51A005B2-83A5-4FD0-977D-7D361FB70DBA": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_11B",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-11b SZ-VAV-Chlr-ER",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "65A9D59A-6299-49A8-881C-086E1A4EFC98": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_12",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-12 SZ-CV-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "EAE035D3-94CA-49DB-B11C-FD28043352E9": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_13",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-13 SZ-CV-Chlr-ER",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "E365D202-B314-4855-8C61-D70E572F058B": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_14",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-14 DOAS-FCU",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "181E8520-01DB-45A7-A839-FBB0FCB10755": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_15",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-15 Prkg-gar-Fan",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "350C54FD-5D58-4AA8-9D54-3C479C3C9C1C": {
+        "VE Variable Name": "GUID_PRM_2019_BASELINE_16",
+        "InitGUIDtoFileMap": "90.1 PRM 2019 Baseline systems/PRM-Baseline-16 DES VAVr",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "A6AA4829-8DD9-4E54-AB51-70A86C2CC745": {
+        "VE Variable Name": "GUID_ECB_2013_SYSTEM_01",
+        "InitGUIDtoFileMap": "90.1 ECB 2013 systems/ECB System 001_VAV PFB_CW_Elec Heating",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "DEAE3083-1B85-4D8C-95C6-B92A9CDDB66D": {
+        "VE Variable Name": "GUID_ECB_2013_SYSTEM_02",
+        "InitGUIDtoFileMap": "90.1 ECB 2013 systems/ECB System 002_VAV Reheat_CW_HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "7A46BD08-17FB-4F20-91E4-DD43840A3969": {
+        "VE Variable Name": "GUID_ECB_2013_SYSTEM_03",
+        "InitGUIDtoFileMap": "90.1 ECB 2013 systems/ECB System 003_Packaged DX VAV FPB_Elec Heating",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "65ACEA02-A956-4D1F-935A-4A061C73D9CD": {
+        "VE Variable Name": "GUID_ECB_2013_SYSTEM_04",
+        "InitGUIDtoFileMap": "90.1 ECB 2013 systems/ECB System 004_Packaged VAV Reheat_HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "69077759-F75B-4E97-A6A0-523E5B66DC13": {
+        "VE Variable Name": "GUID_ECB_2013_SYSTEM_05",
+        "InitGUIDtoFileMap": "90.1 ECB 2013 systems/ECB System 005_Two Pipe FCU_CW_Elec Heating",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "7DAD1886-2CF6-4AA4-B02D-9BF2F5401F27": {
+        "VE Variable Name": "GUID_ECB_2013_SYSTEM_06",
+        "InitGUIDtoFileMap": "90.1 ECB 2013 systems/ECB System 006_WSHP_HTF loop_Boiler_Cooling tower",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "9F6397DA-65FF-48C3-9D7E-32AB4289F4C3": {
+        "VE Variable Name": "GUID_ECB_2013_SYSTEM_07",
+        "InitGUIDtoFileMap": "90.1 ECB 2013 systems/ECB System 007_FCU_CW_HW",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "167BA342-7CC8-4730-B615-6420127A17ED": {
+        "VE Variable Name": "GUID_ECB_2013_SYSTEM_08",
+        "InitGUIDtoFileMap": "90.1 ECB 2013 systems/ECB System 008_Packaged terminal HP_Reverse cycle",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "2E5B9854-0489-48EF-BC47-4FAFD5666F4B": {
+        "VE Variable Name": "GUID_ECB_2013_SYSTEM_09",
+        "InitGUIDtoFileMap": "90.1 ECB 2013 systems/ECB System 009_Packaged rooftop HP_Reverse cycle",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "C7209B1E-0313-4744-B333-7B035A48CB5E": {
+        "VE Variable Name": "GUID_ECB_2013_SYSTEM_10",
+        "InitGUIDtoFileMap": "90.1 ECB 2013 systems/ECB System 010_Packaged terminal AC unit_HW heating",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "E7645BF0-55D6-4C7F-9583-90A9D03B1C3C": {
+        "VE Variable Name": "GUID_ECB_2013_SYSTEM_11",
+        "InitGUIDtoFileMap": "90.1 ECB 2013 systems/ECB System 011_Packaged rooftop AC unit_Furnace heating",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "D0524FA5-0F9F-4AE8-999C-3D0424520950": {
+        "VE Variable Name": "GUID_NECB_2011_REFERENCE_01",
+        "InitGUIDtoFileMap": "NECB 2011 Reference systems/NECB-Reference-01 Unitary air-conditioner with baseboard",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "F2E03654-1D23-46CA-98C5-309B640AB066": {
+        "VE Variable Name": "GUID_NECB_2011_REFERENCE_02",
+        "InitGUIDtoFileMap": "NECB 2011 Reference systems/NECB-Reference-02 Four-pipe fan-coil",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "3F83265E-CB7E-4B96-B6A4-9629FD151684": {
+        "VE Variable Name": "GUID_NECB_2011_REFERENCE_03",
+        "InitGUIDtoFileMap": "NECB 2011 Reference systems/NECB-Reference-03 SZ packaged rooftop with baseboard",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "CD4E747E-D82D-4267-B897-2B40EF9EACEF": {
+        "VE Variable Name": "GUID_NECB_2011_REFERENCE_04",
+        "InitGUIDtoFileMap": "NECB 2011 Reference systems/NECB-Reference-04 SZ makeup with baseboard",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "3D218796-8DAB-4F7F-9C12-29511F7576A5": {
+        "VE Variable Name": "GUID_NECB_2011_REFERENCE_05",
+        "InitGUIDtoFileMap": "NECB 2011 Reference systems/NECB-Reference-05 Two-pipe fan-coil",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "B725E306-2080-4AF7-8BBF-C95B3278DB83": {
+        "VE Variable Name": "GUID_NECB_2011_REFERENCE_06",
+        "InitGUIDtoFileMap": "NECB 2011 Reference systems/NECB-Reference-06 Multi-zone with baseboard",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "170CAAB4-6E76-4CCC-8B6F-69ED52547DAC": {
+        "VE Variable Name": "GUID_NECB_2011_REFERENCE_07",
+        "InitGUIDtoFileMap": "NECB 2011 Reference systems/NECB-Reference-07 Four-pipe fan-coil",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "7F4CBBDF-07D2-459C-A9F9-95C730755148": {
+        "VE Variable Name": "GUID_NECB_2017_REFERENCE_01",
+        "InitGUIDtoFileMap": "NECB 2017 Reference systems/NECB-Reference-01 Unitary air-conditioner with baseboard",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "A52B9B25-62C3-4184-B6CA-6BA82314BC24": {
+        "VE Variable Name": "GUID_NECB_2017_REFERENCE_02",
+        "InitGUIDtoFileMap": "NECB 2017 Reference systems/NECB-Reference-02 Four-pipe fan-coil",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "C2942819-EFB4-4C18-9C96-2276143F007D": {
+        "VE Variable Name": "GUID_NECB_2017_REFERENCE_03",
+        "InitGUIDtoFileMap": "NECB 2017 Reference systems/NECB-Reference-03 SZ packaged rooftop with baseboard",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "CF5D8586-52B0-486A-B126-91EF63EFF336": {
+        "VE Variable Name": "GUID_NECB_2017_REFERENCE_04",
+        "InitGUIDtoFileMap": "NECB 2017 Reference systems/NECB-Reference-04 SZ makeup with baseboard",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "25302C96-E113-4195-9C69-EB3BA90BC8D4": {
+        "VE Variable Name": "GUID_NECB_2017_REFERENCE_05",
+        "InitGUIDtoFileMap": "NECB 2017 Reference systems/NECB-Reference-05 Two-pipe fan-coil",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "241F9D08-32CC-4909-AED8-18D81186A1D3": {
+        "VE Variable Name": "GUID_NECB_2017_REFERENCE_06",
+        "InitGUIDtoFileMap": "NECB 2017 Reference systems/NECB-Reference-06 Multi-zone with baseboard",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "303054C5-513D-4BE5-A52E-FDEAF1CF78C3": {
+        "VE Variable Name": "GUID_NECB_2017_REFERENCE_07",
+        "InitGUIDtoFileMap": "NECB 2017 Reference systems/NECB-Reference-07 Four-pipe fan-coil",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "618BE8E9-9E5B-4014-885D-1982427AB7FD": {
+        "VE Variable Name": "GUID_NECB_2017_REFERENCE_08",
+        "InitGUIDtoFileMap": "NECB 2017 Reference systems/NECB-Reference-08 Garage with DCV",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "E9B46A67-E247-417C-B610-63AF42942182": {
+        "VE Variable Name": "GUID_NECB_2017_REFERENCE_09",
+        "InitGUIDtoFileMap": "NECB 2017 Reference systems/NECB-Reference-09 Commercial kitchen with DCV",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "E239F14D-6F46-4FD9-B342-37B63FC93E54": {
+        "VE Variable Name": "GUID_NECB_2020_REFERENCE_01",
+        "InitGUIDtoFileMap": "NECB 2020 Reference systems/NECB-Reference-01 Unitary air-conditioner with baseboard",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "9A4F4003-C942-4603-8C26-2FF00E7D177C": {
+        "VE Variable Name": "GUID_NECB_2020_REFERENCE_02",
+        "InitGUIDtoFileMap": "NECB 2020 Reference systems/NECB-Reference-02 Four-pipe fan-coil",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "4EC28865-B3FC-4FB3-9E5F-576C68CEDC43": {
+        "VE Variable Name": "GUID_NECB_2020_REFERENCE_03",
+        "InitGUIDtoFileMap": "NECB 2020 Reference systems/NECB-Reference-03 SZ packaged rooftop with baseboard",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "121B847E-38A3-4866-BD26-C4E756B0E7B9": {
+        "VE Variable Name": "GUID_NECB_2020_REFERENCE_04",
+        "InitGUIDtoFileMap": "NECB 2020 Reference systems/NECB-Reference-04 SZ makeup with baseboard",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "C77C358D-3118-4BA6-8D9D-E62027241819": {
+        "VE Variable Name": "GUID_NECB_2020_REFERENCE_05",
+        "InitGUIDtoFileMap": "NECB 2020 Reference systems/NECB-Reference-05 Two-pipe fan-coil",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "7E6FDB08-F0BF-4E27-82A7-3FAC9EF9222B": {
+        "VE Variable Name": "GUID_NECB_2020_REFERENCE_06",
+        "InitGUIDtoFileMap": "NECB 2020 Reference systems/NECB-Reference-06 Multi-zone with baseboard",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "14EE44B2-4C1F-48D9-BDDF-78D103734DA5": {
+        "VE Variable Name": "GUID_NECB_2020_REFERENCE_08",
+        "InitGUIDtoFileMap": "NECB 2020 Reference systems/NECB-Reference-08 Garage with DCV",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "AA536270-6AAC-412A-951E-EBCD4A08ECFA": {
+        "VE Variable Name": "GUID_NECB_2020_REFERENCE_09",
+        "InitGUIDtoFileMap": "NECB 2020 Reference systems/NECB-Reference-09 Commercial kitchen with DCV",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "5E6D7931-708B-4DD6-B051-42C4BD5FC22E": {
+        "VE Variable Name": "GUID_IECC_2012_REFERENCE_01",
+        "InitGUIDtoFileMap": "IECC 2012 Reference systems/IECC-Reference-01 VAV-PFPb-Chlr-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "7B757237-A66A-42D5-B18B-1EA1D5B479D8": {
+        "VE Variable Name": "GUID_IECC_2012_REFERENCE_02",
+        "InitGUIDtoFileMap": "IECC 2012 Reference systems/IECC-Reference-02 VAVr-Chlr-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "3D5F58BA-ED34-4323-B6A3-4E2D56F1068E": {
+        "VE Variable Name": "GUID_IECC_2012_REFERENCE_03",
+        "InitGUIDtoFileMap": "IECC 2012 Reference systems/IECC-Reference-03 Pkg-VAV-PFPb-DX-ER",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "29D1F803-D607-4FD6-9B1B-09D5C28A88A0": {
+        "VE Variable Name": "GUID_IECC_2012_REFERENCE_04",
+        "InitGUIDtoFileMap": "IECC 2012 Reference systems/IECC-Reference-04 Pkg-VAVr-DX-HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "62E94658-B253-4B35-B080-B0F09349C725": {
+        "VE Variable Name": "GUID_IECC_2012_REFERENCE_05",
+        "InitGUIDtoFileMap": "IECC 2012 Reference systems/IECC-Reference-05 Two Pipe FCU-Chlr-ER",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "55D1138C-221A-49EF-A00B-CF4626FE080F": {
+        "VE Variable Name": "GUID_IECC_2012_REFERENCE_06",
+        "InitGUIDtoFileMap": "IECC 2012 Reference systems/IECC-Reference-06 WSHP-HTF loop-HW-Cooling tower",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "DC820AD1-BB89-43BC-946B-A8A72C810E72": {
+        "VE Variable Name": "GUID_IECC_2012_REFERENCE_07",
+        "InitGUIDtoFileMap": "IECC 2012 Reference systems/IECC-Reference-07 Four Pipe FCU-Chlr-HW",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "3A91EB59-5CCE-416B-9C22-2A895D089D1C": {
+        "VE Variable Name": "GUID_IECC_2012_REFERENCE_08",
+        "InitGUIDtoFileMap": "IECC 2012 Reference systems/IECC-Reference-08 PTHP",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "51D1FF20-BE15-413B-AC2B-14493DD72DFE": {
+        "VE Variable Name": "GUID_IECC_2012_REFERENCE_09",
+        "InitGUIDtoFileMap": "IECC 2012 Reference systems/IECC-Reference-09 PSZ-HP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "8013F24F-8B07-4224-9815-218586E7FA6B": {
+        "VE Variable Name": "GUID_IECC_2012_REFERENCE_10",
+        "InitGUIDtoFileMap": "IECC 2012 Reference systems/IECC-Reference-10 PTAC",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "D184A1FA-F269-4243-A7E8-A1DB1B949F69": {
+        "VE Variable Name": "GUID_IECC_2012_REFERENCE_11",
+        "InitGUIDtoFileMap": "IECC 2012 Reference systems/IECC-Reference-11 PSZ-AC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "5809F2CA-0F14-4C13-917D-887DD348CF54": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_01",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 01_Central Radiators",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "19AE5944-FD31-4AB3-A155-D8AF5AE11374": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_02",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 02_Central Heating Air Distribution",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "AF5C680A-8E03-4CA5-ABBC-59D44EE88F3C": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_03",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 03_Local Room Heater Fanned",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "AC6228F9-8BAC-457E-989C-B00726BC716B": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_04",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 04_Fan Coil Sytem",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "B5E7C39D-E63F-4C7E-BB83-4E1C6E837F44": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_05",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 05_Constant Volume (Fixed Fresh Air)",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "77DAE5A2-E4D8-4691-8F3D-ED837FAB7370": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_06",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 06_Constant Volume (Variable Fresh Air)",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "7816A7C3-5221-469D-8E97-57ADB3F0F9FB": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_07",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 07_Single Duct VAV",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "8CF0A3EA-B609-491E-9914-9B183F2065A5": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_08",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 08_Split-Multisplit System",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "68E33346-5274-499C-A0DB-7C06E90F1C75": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_11",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 11_Chilled Ceiling Passive Displacement Vent",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "1B39BE3F-FD4E-4B26-BCE2-E59C1F77D322": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_12",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 12_Active Chilled Beams",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "8A05F326-D059-49C8-A4FA-381E5F3A6FB1": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_13",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 13_Water Loop Heat Pump",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "1FAA8E5A-967B-4B4D-868F-EA0ADF708498": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_14",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 14_Induction System",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "38DFA4B5-E486-43B4-A173-5A87F04A78C9": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_15",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 15_Dual Duct (Constant Volume)",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "97D607C5-6E48-4147-8F03-0F7DAB8CAA8C": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_16",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 16_Multizone (Hot Deck - Cold Deck)",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "20604089-4E0D-42E9-BE5C-FDA63E9D6B82": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_17",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 17_Terminal Reheat (Constant Volume)",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "0474A473-5E05-4445-AC1F-2EEDE3944DA4": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_24",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 24_Central Heating (Convectors)",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "1B839B62-D03D-4E12-9264-A0A975C1A092": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_25",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 25_Central Heating (Floor Heating)",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "7F15A270-E1B2-4A5F-8A3A-82CCD3943FDE": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_26",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 26_Unflued Radiant Heater",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "1181F2BC-65B3-432B-8E7C-DC8D88265C3C": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_27",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 27_Flued Radiant Heater",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "1B5036D9-4CDA-4196-8F3B-7AFFB0F278BB": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_28",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 28_Multiburner Radiant Heaters",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "92C78033-E395-4256-8708-95FA25F456C9": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_29",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 29_Flued Forced-Convection Air Heater",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "9F8BABB7-453E-4369-B9C1-69BA4293573C": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_30",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 30_Unflued Forced-Convection Air Heater",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "0AD39C54-5312-4BFD-B7B4-ACE24AC9A81F": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_31",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 31_Dual Duct VAV",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "FFC124A7-4143-469B-A595-4B94A10FAA04": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_32",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 32_Indoor Packaged Cabinet (VAV)",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "FC52AD91-6033-4653-A336-8B6F287E1183": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_33",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 33_Single Room Cooling System",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "220CB583-FE42-45A0-B3A3-9065C5CD9926": {
+        "VE Variable Name": "GUID_NCM_EQUIVALENT_SYSTEM_34",
+        "InitGUIDtoFileMap": "UK NCM Equivalent/NCM System 34_Other Local Room Heater Unfanned",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "BF1BE613-CA45-449B-88B2-2ED396D5E18B": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_01_HOTEL_MOTEL_GUESTROOMS",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-01 SZAC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "3D68AB59-4041-49F0-B671-DED7E8CE7DCF": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_01_HIGH_RISE_RESI_SUPPLY_ONLY",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-01 Residential - Supply Only",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "7895BC7E-AA90-4601-A348-A661ACF0B7F3": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_01_HIGH_RISE_RESI_EXHAUST_ONLY",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-01 Residential - Exhaust Only",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "A3D6F9CF-134A-4777-A82E-BB42129DDBA2": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_01_HIGH_RISE_RESI_BALANCED",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-01 Residential - Balanced",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "626F0D1D-7388-4448-A24C-89B46CE331A9": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_02",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-02 FPFC",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "4E4A7DB9-C66D-44CA-8AB0-569D28A9FA40": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_03",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-03 PSZ",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "0DB279EA-0C87-4A13-84CE-B7F91F04DB50": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_05",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-05 PVAV",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "A903C1CF-70E0-42CB-A96C-B97C440A4DEC": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_06",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-06 VAV",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "A0EDE85A-9F09-46F5-AF21-2554B68F9B34": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_07",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-07 SZVAV",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "07F11F57-AA23-4DE5-B710-A3483B485F4E": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_09",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-09 HEATVENT",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "EAC89594-FFE6-4228-89E1-F645E95ED224": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_10",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-10 CRAH",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "9FD23AB0-6BEA-4BE4-BD19-937860531204": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_11",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-11 CRAC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "D885A88C-8685-4343-9DA3-60646F581981": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_13_CHW_HW",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-13 KITCH-CHW HW",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "FFF17295-63A0-49D2-AA4B-5F4A71CD1675": {
+        "VE Variable Name": "GUID_TITLE_24_2019_STANDARD_DESIGN_13_DX_FURNACE",
+        "InitGUIDtoFileMap": "Title 24 2019 Standard Design systems/T24 Standard Design-13 KITCH-DX FURNACE",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "42AFA4F0-195C-4E8D-9C89-1AEBBFEA8BB8": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_01A",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-01a RAC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "482C2B96-7E62-4E84-858E-9ECFC43FEE6B": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_03A",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-03a SZAC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "DE86566C-CB28-44AB-A969-AE57E3AAED04": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_03B",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-03b SZHP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "25246810-078A-4AE7-A1ED-76FE79CB1D14": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_03C",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-03c SZDFHP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "16BF53B5-967E-422D-8A9E-82372ECFFCA7": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_05",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-05 PVAV",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "0C895E46-8DD8-4A90-974C-BC236145507D": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_06",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-06 VAV",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "6D7FBF6A-9CB4-4C56-BD5A-CC148D160770": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_07A",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-07a SZVAVAC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "C5232157-7196-4C69-817D-0CF0281B5AA3": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_07B",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-07b SZVAVHP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "D822EE93-AE16-4BA5-8208-9EFABA793911": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_07C",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-07c SZVAVDFHP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "B4C36B2C-B88D-4579-B1D7-3F34BD3DC91A": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_09",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-09 HEATVENT",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "908EF04D-421C-4188-997B-E64C46D93EB8": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_10",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-10 CRAH",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "EC223710-39FA-4C80-84B9-A7DC3E59E502": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_11",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-11 CRAC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "B9CE453A-9764-4423-B9F5-58F1BAC1D33C": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_13A",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-13a BKITCHMAU",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "C79EFF6F-4D83-4193-8C5F-7E2DC63F2E8F": {
+        "VE Variable Name": "GUID_TITLE_24_2022_STANDARD_DESIGN_13B",
+        "InitGUIDtoFileMap": "Title 24 2022 Standard Design systems/T24 Standard Design-13b PKITCHMAU",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "n"
+    },
+    "71626FA8-A957-4A77-8A28-AB306EDEAF2F": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_01",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - Heat and Ventilation Only",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "325B26C0-9E76-45DE-8E1F-1B226D09CE3D": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_02",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - PVAV - Active Beam",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "D1942C52-2A29-4CA3-82E3-D7CE2F810DBC": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_03",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - PVAV - No Reheat",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "061F601D-33DD-4C46-BD89-2C696D84E3AC": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_04",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - PVAV - Parallel Fan Box",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "D704C846-EF27-4031-9465-B9A5E0DC0F54": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_05",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - PVAV - Reheat",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "947D8408-429A-4A72-9BA8-CF80936D402B": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_06",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - PVAV - Series Fan Box",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "1B27E6BF-23B5-4AE6-B464-7D2CD0A574BA": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_07",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - VAV - Active Beam",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "B99F550D-AAAD-464E-89BA-BDFF508D5ECE": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_08",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - CRAC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "AA3D4961-2695-4BAE-9396-D58505CCAEAD": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_09",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - CRAH",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "882A013C-8AE7-4EEF-94AE-44EF929167EE": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_10",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASCV - Active Beam",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "0FF56E35-8522-4D40-B66B-CF43C772D4C9": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_11",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASCV - Fan Coil Unit OA through TU",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "007FB9DF-3704-41B7-ACB8-7C101DFA095B": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_12",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASVAV - Active Beam",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "E1C7BD91-A5B9-4000-8295-11BD247038B8": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_13",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASVAV - Fan Coil Unit OA through TU",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "B6E23DC4-ED29-4750-B9FB-D4A8D3D95E1E": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_14",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - Exhaust - General",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "3A7D4037-25B4-4AE0-85BA-D3F3CBB69746": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_15",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - SZAC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "1AC2ACE0-D06B-463B-A767-BF6C0C10E589": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_16",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - SZHP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "4BAA518F-BB5C-4E6E-BFD2-ACEEBEA9984D": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_17",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - SPVAC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "0643F2BD-E3D3-4AB8-BB4A-C527F720BA0D": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_18",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - SZVAVAC",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "C8790356-997E-49A7-92F9-ED2EC25BA4A8": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_19",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - SZVAVHP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "2EC521D0-EAA6-48D0-AF51-98D33195203B": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_20",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - SPVHP",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "DDEDC8AF-F510-4F66-BED7-1F8AE0F64D80": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_21",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - VAV - No Reheat",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "7D9F36EB-ECD0-4F88-9EA7-8AFDB87950A3": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_22",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - VAV - Parallel Fan Box",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "76ECF6C7-BF88-431D-BFB0-3E47ECB3567D": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_23",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - VAV - Reheat",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "F083FB20-67DB-4B44-9C07-6F0FC047BFDC": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_24",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - VAV - Series Fan Box",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "q"
+    },
+    "23E018DA-07E6-4D08-AD73-BFF5D560C194": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_25",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - VRF - Air-Source",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "5D38824D-2ED5-4AE6-9D6F-C85BED3B60F4": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_27",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - Exhaust - Kitchen",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "F66AC3D7-4DD6-47DC-B636-CCE84CD40CB8": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_28",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - Exhaust - Laboratory",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "2D15B636-3744-463A-99EB-BADCD6CFFA7E": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_29",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - Exhaust - Garage",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "EAA9B33D-943A-45AC-8112-2A63E3538E16": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_30",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - PTAC",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "44D3CBAA-80F3-4550-8BDD-E1FEC781FFB6": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_31",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - PTHP",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "4C35E3C0-3E8C-48A8-9F68-3BADA7B3C506": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_32",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - Mini Split AC",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "C5F3FDEA-AE6B-4E87-8395-F8916B5FACEE": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_33",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - Mini Split HP",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "41007FED-C871-4327-9363-1CE66737425F": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_34",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASCV - Fan Coil Unit Separate OA",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "EE38716C-70EC-40E4-83F3-5333FA5B517B": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_35",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASVAV - Fan Coil Unit Separate OA",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "E0697A1E-E2CB-4FC9-A07E-4C59E0E62C64": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_36",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - FPFC",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "F9227266-322B-4670-8F76-DE070250D081": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_37",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - PVAV - Reheat - Operable Windows",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "1433938F-84CD-4DFD-8F10-162F9D5623F8": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_38",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASCV - Active Chilled Beams",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "7515737A-7757-4327-840C-4D50C020A74A": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_39",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASVAV - 4-pipe Chl-Ht Active Beams",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    },
+    "686AF096-B6D2-45CC-8017-5A5E071EAC64": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_40",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASVAV - 4-pipe Chl-Ht Active Beams RA Recirc Path",
+        "Indalo type": 4.0,
+        "checked (y/n/?)": "y"
+    },
+    "31920C24-2B3D-4BDB-960B-4C30D726C704": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_41",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASCV - Rad Heat-Cool Panels - DCV",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "BAB1C584-793D-4319-941C-8F49880E79C1": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_42",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASCV - Rad Heat-Cool Panels - DCV - Heat Pipe",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "q"
+    },
+    "32CD5755-BD30-4658-BA7B-C7E162FC7124": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_43",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASCV - DV Rad Heat-Cool Panels - DCV - Heat Pipe",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "q"
+    },
+    "AD34C87E-31C0-4238-A27E-3E2502ED21A5": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_44",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASVAV - Rad Heat-Cool Panels DOAS DCV Heat Recovery Chiller",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "25E3C72B-4B58-4499-AA32-E91C81CD20FD": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_45",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - Ventilation Only - Exhaust Only",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "FFD4E18C-6C60-455F-B740-7CD188EFAAAD": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_46",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - Ventilation Only - Supply Only",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "7A8B2071-C458-45CD-AC2A-5EECC693651E": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_47",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - Ventilation Only - Balanced with HR",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "6B63BCFA-3367-434A-884C-1D6A69AF82EB": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_48",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - Ventilation Only - Balanced without HR",
+        "Indalo type": 0.0,
+        "checked (y/n/?)": "y"
+    },
+    "CB22241B-8DCD-4EBA-867E-AEDDEA9F0C1B": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_49",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - VAV - Reheat - Air-Source CPHP for Heating",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "8CA98727-A17F-4A07-9432-3C8D5A4C5C6D": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_50",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - VAV - Reheat - Hybrid Air-source CPHP and HRC for Heating",
+        "Indalo type": 1.0,
+        "checked (y/n/?)": "y"
+    },
+    "40AFC84C-294E-4C28-8C50-89C501F8EA28": {
+        "VE Variable Name": "GUID_TITLE_24_PROPOSED_51",
+        "InitGUIDtoFileMap": "Title 24 Compliance/Title 24 Compliant - DOASCV - Fan Coil Unit Separate OA - Air-Source CPHP for Heating",
+        "Indalo type": 2.0,
+        "checked (y/n/?)": "y"
+    }
+}

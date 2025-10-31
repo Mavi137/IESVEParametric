@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<scripts category="One Click LCA Integration v2021.2" id="_A97CBED8-C734-4A35-B95F-0000LCA20183" VEversion="2024" scriptversion="2024">
+	<script desc="Help" path="help_file.py" args="" help=""/>
+	<script desc="Create One Click LCA User Account" path="create_user.py" args="" help=""/>
+	<script desc="Upload Materials and Energy" path="load_one_click_lca.py" args=""/>
+</scripts>
