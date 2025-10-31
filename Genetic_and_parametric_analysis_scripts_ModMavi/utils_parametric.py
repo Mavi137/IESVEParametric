@@ -23,6 +23,14 @@ from importlib import reload
 reload(utils_model_mod)
 
 
+def diagnose_templates(project):
+    """Wrapper para la función de diagnóstico de templates en utils_model_mod
+    
+    Args:
+        project (iesve object): project
+    """
+    utils_model_mod.diagnose_templates(project)
+
 
 def scenarios(inputs):
     """ Generates a Pandas dataframe of model revision combinations

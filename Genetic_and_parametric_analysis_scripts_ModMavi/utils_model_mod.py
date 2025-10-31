@@ -78,6 +78,77 @@ def get_thermal_templates(project):
     templates = project.thermal_templates(True)     # In-use only
     return templates.values()
 
+def diagnose_templates(project):
+    """Diagnóstico de templates térmicos activos para identificar problemas
+       de configuración que pueden impedir que los cambios se apliquen
+
+    Args:
+        project (iesve object): project
+    """
+    print('\n' + '='*70)
+    print('DIAGNÓSTICO DE TEMPLATES TÉRMICOS')
+    print('='*70)
+    
+    # Obtener templates activos (in-use)
+    templates_active = project.thermal_templates(True)
+    templates_all = project.thermal_templates(False)
+    
+    print(f'\nTemplates totales en proyecto: {len(templates_all)}')
+    print(f'Templates activos (asignados a habitaciones): {len(templates_active)}')
+    
+    if len(templates_active) == 0:
+        print('\n⚠️  PROBLEMA ENCONTRADO: No hay templates activos!')
+        print('   → Los templates deben estar asignados a habitaciones para ser modificados')
+        print('   → Asigna templates a las habitaciones en Model-iT o Apache')
+        print('='*70 + '\n')
+        return
+    
+    print('\nDetalles de templates activos:')
+    print('-'*70)
+    
+    for name, template in templates_active.items():
+        print(f'\nTemplate: {name}')
+        
+        try:
+            room_conditions = template.get_room_conditions()
+            
+            # Información de setpoints
+            heat_type = room_conditions.get('heating_setpoint_type', 'N/A')
+            cool_type = room_conditions.get('cooling_setpoint_type', 'N/A')
+            heat_val = room_conditions.get('heating_setpoint', 'N/A')
+            cool_val = room_conditions.get('cooling_setpoint', 'N/A')
+            
+            print(f'  Calefacción: tipo={heat_type}, valor={heat_val}°C')
+            print(f'  Refrigeración: tipo={cool_type}, valor={cool_val}°C')
+            
+            # Verificar si los setpoints son modificables
+            # Nota: algunas versiones de IES-VE pueden no tener setpoint_type.profile
+            try:
+                profile_type = iesve.setpoint_type.profile
+            except AttributeError:
+                profile_type = None
+            
+            if profile_type and heat_type == profile_type:
+                print(f'    ⚠️  Setpoint de calefacción usa PERFIL (necesitará cambio a constante)')
+            elif heat_type not in [iesve.setpoint_type.constant, iesve.setpoint_type.two_value]:
+                print(f'    ⚠️  Tipo de setpoint de calefacción no estándar: {heat_type}')
+            
+            if profile_type and cool_type == profile_type:
+                print(f'    ⚠️  Setpoint de refrigeración usa PERFIL (necesitará cambio a constante)')
+            elif cool_type not in [iesve.setpoint_type.constant, iesve.setpoint_type.two_value]:
+                print(f'    ⚠️  Tipo de setpoint de refrigeración no estándar: {cool_type}')
+                
+        except Exception as e:
+            print(f'  ERROR al leer condiciones: {e}')
+        
+        try:
+            apsys = template.get_apache_systems()
+            print(f'  Sistema HVAC: {apsys.get("HVAC_system", "N/A")}')
+        except Exception as e:
+            print(f'  Sistema HVAC: Error al leer ({e})')
+    
+    print('\n' + '='*70 + '\n')
+
 def revise_ap_systems(project, value):
     """ For active templates using Apsys only:
         Assign ap system = value to hvac, aux and dhw
@@ -134,17 +205,51 @@ def set_heating_setpoint(project, value):
         project (iesve object) : object
         value (float) : setpoint
     """
+    # Get active templates
+    templates = list(get_thermal_templates(project))
+    
+    if len(templates) == 0:
+        print('ADVERTENCIA: No se encontraron templates térmicos activos (in-use)')
+        print('  → Los templates deben estar asignados a habitaciones para ser modificados')
+        return
+    
+    print(f'Modificando setpoint de calefacción a {value}°C en {len(templates)} template(s)')
+    
     # Loop through active templates and revise setpoints
-    for template in get_thermal_templates(project):
+    for template in templates:
         room_conditions = template.get_room_conditions()
+        sp_type = room_conditions['heating_setpoint_type']
+        
+        print(f'  Template: {template.name}, tipo setpoint: {sp_type}')
 
-        if room_conditions['heating_setpoint_type']==iesve.setpoint_type.constant:
+        if sp_type == iesve.setpoint_type.constant:
             template.set_room_conditions({'heating_setpoint' : value})
-        elif room_conditions['heating_setpoint_type']==iesve.setpoint_type.two_value:
+            print(f'    → Setpoint constante cambiado a {value}°C')
+        elif sp_type == iesve.setpoint_type.two_value:
             template.set_room_conditions(
                 {'heating_setpoint_twovalue_main_setpoint': value})
+            print(f'    → Setpoint two-value (main) cambiado a {value}°C')
         else:
-            print(template.name, ' heating setpoint not single or two value, not set')
+            # Intentar manejar otros tipos de setpoint (como profile si existe)
+            try:
+                profile_type = iesve.setpoint_type.profile
+                if sp_type == profile_type:
+                    print(f'    ADVERTENCIA: Template {template.name} usa setpoint por PERFIL')
+                    print(f'    → Intentando cambiar a setpoint constante...')
+                    try:
+                        template.set_room_conditions({
+                            'heating_setpoint_type': iesve.setpoint_type.constant,
+                            'heating_setpoint': value
+                        })
+                        print(f'    → Cambiado a constante {value}°C')
+                    except Exception as e:
+                        print(f'    ERROR: No se pudo cambiar el tipo de setpoint: {e}')
+                else:
+                    print(f'    ADVERTENCIA: {template.name} - tipo de setpoint no soportado: {sp_type}')
+            except AttributeError:
+                # setpoint_type.profile no existe en esta versión
+                if sp_type not in [iesve.setpoint_type.constant, iesve.setpoint_type.two_value]:
+                    print(f'    ADVERTENCIA: {template.name} - tipo de setpoint no soportado: {sp_type}')
 
         template.apply_changes()
 
@@ -156,17 +261,51 @@ def set_cooling_setpoint(project, value):
         project (iesve object) : object
         value (float) : setpoint
     """
+    # Get active templates
+    templates = list(get_thermal_templates(project))
+    
+    if len(templates) == 0:
+        print('ADVERTENCIA: No se encontraron templates térmicos activos (in-use)')
+        print('  → Los templates deben estar asignados a habitaciones para ser modificados')
+        return
+    
+    print(f'Modificando setpoint de refrigeración a {value}°C en {len(templates)} template(s)')
+    
     # Loop through active templates and revise setpoints
-    for template in get_thermal_templates(project):
+    for template in templates:
         room_conditions = template.get_room_conditions()
+        sp_type = room_conditions['cooling_setpoint_type']
+        
+        print(f'  Template: {template.name}, tipo setpoint: {sp_type}')
 
-        if room_conditions['cooling_setpoint_type'] == iesve.setpoint_type.constant:
+        if sp_type == iesve.setpoint_type.constant:
             template.set_room_conditions({'cooling_setpoint' : value})
-        elif room_conditions['cooling_setpoint_type'] == iesve.setpoint_type.two_value:
+            print(f'    → Setpoint constante cambiado a {value}°C')
+        elif sp_type == iesve.setpoint_type.two_value:
             template.set_room_conditions(
                 {'cooling_setpoint_twovalue_main_setpoint': value})
+            print(f'    → Setpoint two-value (main) cambiado a {value}°C')
         else:
-            print(template.name, ' cooling setpoint not single or two value, not set')
+            # Intentar manejar otros tipos de setpoint (como profile si existe)
+            try:
+                profile_type = iesve.setpoint_type.profile
+                if sp_type == profile_type:
+                    print(f'    ADVERTENCIA: Template {template.name} usa setpoint por PERFIL')
+                    print(f'    → Intentando cambiar a setpoint constante...')
+                    try:
+                        template.set_room_conditions({
+                            'cooling_setpoint_type': iesve.setpoint_type.constant,
+                            'cooling_setpoint': value
+                        })
+                        print(f'    → Cambiado a constante {value}°C')
+                    except Exception as e:
+                        print(f'    ERROR: No se pudo cambiar el tipo de setpoint: {e}')
+                else:
+                    print(f'    ADVERTENCIA: {template.name} - tipo de setpoint no soportado: {sp_type}')
+            except AttributeError:
+                # setpoint_type.profile no existe en esta versión
+                if sp_type not in [iesve.setpoint_type.constant, iesve.setpoint_type.two_value]:
+                    print(f'    ADVERTENCIA: {template.name} - tipo de setpoint no soportado: {sp_type}')
 
         template.apply_changes()
 

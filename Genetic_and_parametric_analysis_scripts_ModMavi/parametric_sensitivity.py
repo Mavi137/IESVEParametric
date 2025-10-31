@@ -97,6 +97,9 @@ if __name__ == "__main__":
     # Get the current project
     project = iesve.VEProject.get_current_project()
 
+    # Diagnóstico de templates antes de ejecutar
+    utils_parametric.diagnose_templates(project)
+    
     # Archive the project before we run parametric changes to the model
     print('Archiving project ...')
     project_folder = project.path
