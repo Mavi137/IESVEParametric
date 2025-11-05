@@ -15,7 +15,6 @@ from os import listdir
 from os.path import isfile, join
 from pathlib import Path
 
-
 def revise_bldg_orientation(project, value):
     """ Sets model angle from north
         Positive is anticlockwise from north
@@ -34,7 +33,6 @@ def revise_bldg_orientation(project, value):
     # Set angle
     geom = iesve.VEGeometry
     geom.set_building_orientation(value)
-
 
 def revise_weather_file(project, value):
     """ Sets weather file
@@ -63,7 +61,6 @@ def revise_weather_file(project, value):
         loc.save_and_close()
     else:
         print(value, ' is not in shared content\\weather. Not set')
-
 
 def get_thermal_templates(project):
     """Get list of thermal templates
@@ -221,7 +218,6 @@ def set_heating_setpoint(project, value):
         sp_type = room_conditions['heating_setpoint_type']
         
         print(f'  Template: {template.name}, tipo setpoint: {sp_type}')
-
         if sp_type == iesve.setpoint_type.constant:
             template.set_room_conditions({'heating_setpoint' : value})
             print(f'    → Setpoint constante cambiado a {value}°C')
@@ -277,7 +273,6 @@ def set_cooling_setpoint(project, value):
         sp_type = room_conditions['cooling_setpoint_type']
         
         print(f'  Template: {template.name}, tipo setpoint: {sp_type}')
-
         if sp_type == iesve.setpoint_type.constant:
             template.set_room_conditions({'cooling_setpoint' : value})
             print(f'    → Setpoint constante cambiado a {value}°C')
@@ -340,7 +335,6 @@ def find_exchange(project, value):
             return exchange
     return None
 
-
 def revise_air_exchange(project, value, type):
     """ For active templates
         Delete air exchange = type
@@ -363,7 +357,6 @@ def revise_air_exchange(project, value, type):
                 template.add_air_exchange(find_exchange(project, value))
         template.apply_changes()
 
-
 def find_gain(project, value):
 
     """ Finds casual gain with name = value
@@ -381,7 +374,6 @@ def find_gain(project, value):
         if casual_gain.name == value:
             return casual_gain
     return None
-
 
 def revise_gain(project, value, type):
 
@@ -472,6 +464,10 @@ def set_dhw_flow_per_person(project, value):
 
     Dado que el API puede exponer nombres de clave distintos según versión,
     se prueban varias claves conocidas y se aplica la primera disponible.
+    
+    IMPORTANTE: Excluye templates de espacios técnicos (plenums, voids, parking)
+    que no deberían tener consumo de DHW relevante para análisis de sensibilidad.
+    Esto asegura que el caso base coincida con el modelo original sin modificaciones.
 
     Args:
         project (iesve object): proyecto VE
@@ -486,8 +482,20 @@ def set_dhw_flow_per_person(project, value):
         'dhw_per_person_flowrate',
         'dhw_occupancy_flow'
     ]
-
+    
+    # Templates a excluir: espacios técnicos sin ocupación que no deberían tener DHW
+    excluded_keywords = [
+        'plenum', 'Plenum', 'PLENUM',
+        'void', 'Void', 'VOID',
+        'parking', 'Parking', 'PARKING',
+        'garage', 'Garage', 'GARAGE'
+    ]
     for template in get_thermal_templates(project):
+        # Excluir templates de espacios técnicos
+        template_name = template.name.lower()
+        if any(keyword.lower() in template_name for keyword in excluded_keywords):
+            continue
+        
         try:
             room_conditions = template.get_room_conditions()
         except Exception:
@@ -545,6 +553,7 @@ def revise_ncm_terminal_sfp(model, value):
         model (iesve object) : object
         value (float) : terminal unit SFP w/(l/s)
     """
+
     for room_data in get_all_room_data(model):
         room_data.set_apache_systems({'mech_sfp' : value})
 
@@ -558,6 +567,7 @@ def revise_ncm_localexhaust_sfp(model,value):
         model (iesve object) : object
         value (float) : local mech exhaust SFP w/(l/s)
     """
+
     for room_data in get_all_room_data(model):
         room_data.set_apache_systems({'extract_SFP' : value})
 
@@ -570,6 +580,7 @@ def revise_ncm_light_photoelectric_parasitic(model,value):
         model (iesve object) : object
         value (float) : parasitic power w/m2
     """
+
     for room_data in get_all_room_data(model):
         room_data.set_ncm_lighting({'photoelectric_parasitic_power' : value})
 
@@ -582,6 +593,7 @@ def revise_ncm_light_occupancy_parasitic(model,value):
         model (iesve object) : object
         value (float) : parasitic power w/m2
     """
+
     for room_data in get_all_room_data(model):
         room_data.set_ncm_lighting({'occupancy_parasitic_power' : value})
 
@@ -610,6 +622,7 @@ def revise_glazing(model,value):
         model (iesve object) : object
         value (int) : %
     """
+
     for room in get_all_rooms(model):
         if room.get_areas()['ext_wall_glazed'] > 0:
             room.select()
@@ -624,6 +637,7 @@ def get_cdb_project():
     Returns:
         iesve object: construction data base project
     """
+
     db = iesve.VECdbDatabase.get_current_database()
     cdb_projects = db.get_projects()
     cdb_project_list = cdb_projects[0]
@@ -638,6 +652,7 @@ def change_opaque_construction(model, value, type):
         value (str) : construction id
         type (enum) : surface type
     """
+
     cdb_project = get_cdb_project()
 
     # Get construction with ID = value
@@ -671,6 +686,7 @@ def change_glazed_construction(model, value):
         model (iesve object) : object
         value (str) : construction id
     """
+
     cdb_project = get_cdb_project()
 
     # Get construction with ID = value
@@ -707,6 +723,7 @@ def get_active_constructions(model):
     Returns:
         list: active constructions
     """
+
     active_constr_list = []
 
     for room in get_all_rooms(model):
@@ -730,6 +747,7 @@ def revise_constr_layer(model, value, type, property, position):
         property (str) : material property to revise (dict key)
         position (int) : layer position (0 indexed from outside to inside layer)
     """
+
     # If value is specified to change
     # Get a list of all the active constructions in the model
     active_constr_list = get_active_constructions(model)
@@ -766,6 +784,7 @@ def revise_glazed_constr_u_value(model, value):
         model (iesve object) : object
         value (float) : revised u value w/m2.k
     """
+
     # If value is specified to change
     # Get a list of all the active constructions in the model
     active_constr_list = get_active_constructions(model)
@@ -824,6 +843,7 @@ def revise_opaque_constr_u_value(model, value, subtype):
         value (float) : revised u value w/m2.k
         subtype (enum) : iesve.element_categories.wall/roof/ground_floor
     """
+
     # If value is specified to change
     # Get a list of all the active constructions in the model
     active_constr_list = get_active_constructions(model)
@@ -887,6 +907,7 @@ def get_bodies_local_shaded(model):
     Returns:
         list: local shaded bodies
     """
+
     bodies = [body for body in model.get_bodies(False)
                 if body.type == iesve.VEBody_type.local_shade]
     return bodies
@@ -907,6 +928,7 @@ def revise_shade_overhang(model, overhang_change):
         Limitation: surfaces at exactly the test orientation boundaries (set to XYZ.01)
         Limitation: using 0 as an input will make no changes
     """
+
     for body in get_bodies_local_shaded(model):
         # Get body name
         body_object = body.get_room_data(type = iesve.attribute_type.real_attributes)
@@ -958,6 +980,7 @@ def revise_shade_depth(model, depth_change):
         Limitation: surfaces at exactly the test orientation boundaries (set to XYZ.01)
         Limitation: using 0 as an input will make no changes
     """
+
     for body in get_bodies_local_shaded(model):
         # Get body name
         body_object = body.get_room_data(type = iesve.attribute_type.real_attributes)
