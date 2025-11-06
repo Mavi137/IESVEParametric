@@ -195,8 +195,12 @@ def revise_ap_system_cop(project, value, type):
                 ap_system.set_cooling({'SSEER' : value})
 
 def set_heating_setpoint(project, value):
-    """ Sets room heating setpoint on active templates
+    """ Sets room heating setpoint on active templates AND directly on rooms
+        This is necessary for Apache HVAC where setpoints may be controlled at room level
         Sets either constant setpoint or two value main setpoint
+        
+        IMPORTANTE: Solo modifica templates importantes (OfficeEnclosed, Bedroom)
+        para evitar modificar templates de espacios técnicos que no afectan resultados
 
     Args:
         project (iesve object) : object
@@ -210,10 +214,20 @@ def set_heating_setpoint(project, value):
         print('  → Los templates deben estar asignados a habitaciones para ser modificados')
         return
     
-    print(f'Modificando setpoint de calefacción a {value}°C en {len(templates)} template(s)')
+    # Filtrar solo templates importantes (OfficeEnclosed, Bedroom)
+    # Estos son los que realmente afectan los resultados de energía
+    important_templates = [t for t in templates if 'OfficeEnclosed' in t.name or 'Bedroom' in t.name]
     
-    # Loop through active templates and revise setpoints
-    for template in templates:
+    if len(important_templates) == 0:
+        print(f'ADVERTENCIA: No se encontraron templates importantes (OfficeEnclosed, Bedroom)')
+        print(f'  → Modificando todos los {len(templates)} templates disponibles')
+        important_templates = templates
+    else:
+        print(f'Modificando setpoint de calefacción a {value}°C en {len(important_templates)} template(s) importante(s)')
+        print(f'  (Templates encontrados: {[t.name for t in important_templates]})')
+    
+    # Loop through important templates and revise setpoints
+    for template in important_templates:
         room_conditions = template.get_room_conditions()
         sp_type = room_conditions['heating_setpoint_type']
         
@@ -248,10 +262,94 @@ def set_heating_setpoint(project, value):
                     print(f'    ADVERTENCIA: {template.name} - tipo de setpoint no soportado: {sp_type}')
 
         template.apply_changes()
+        
+        # Verificar que el cambio se aplicó correctamente
+        try:
+            verify_conditions = template.get_room_conditions()
+            if sp_type == iesve.setpoint_type.constant:
+                actual_value = verify_conditions.get('heating_setpoint', None)
+            elif sp_type == iesve.setpoint_type.two_value:
+                actual_value = verify_conditions.get('heating_setpoint_twovalue_main_setpoint', None)
+            else:
+                actual_value = verify_conditions.get('heating_setpoint', None)
+            
+            if actual_value is not None:
+                if abs(actual_value - value) < 0.01:  # Tolerancia de 0.01°C
+                    print(f'    ✓ Verificado: setpoint aplicado correctamente ({actual_value}°C)')
+                else:
+                    print(f'    ⚠️  ADVERTENCIA: Setpoint esperado {value}°C pero leído {actual_value}°C')
+        except Exception as e:
+            print(f'    ⚠️  No se pudo verificar el cambio: {e}')
+    
+    # CRÍTICO: También modificar setpoints directamente en las habitaciones
+    # Esto es necesario para Apache HVAC donde los setpoints pueden estar controlados a nivel de habitación
+    # Solo modificar habitaciones que usan los templates importantes
+    model = project.models[0]
+    rooms = get_all_rooms(model)
+    rooms_modified = 0
+    
+    # Obtener IDs de los templates importantes
+    important_template_names = [t.name for t in important_templates]
+    
+    print(f'\n  Modificando setpoints directamente en habitaciones con templates importantes...')
+    for room in rooms:
+        try:
+            room_data = room.get_room_data(iesve.attribute_type.real_attributes)
+            
+            # Verificar qué template usa esta habitación
+            try:
+                template_name = room_data.get_template().name
+                if template_name not in important_template_names:
+                    continue  # Saltar habitaciones que no usan templates importantes
+            except:
+                # Si no se puede obtener el template, intentar modificar de todas formas
+                pass
+            
+            room_conditions = room_data.get_room_conditions()
+            
+            # Solo modificar si la habitación usa setpoints del template o tiene setpoints propios
+            sp_type_room = room_conditions.get('heating_setpoint_type', None)
+            
+            if sp_type_room is not None:
+                if sp_type_room == iesve.setpoint_type.constant:
+                    room_data.set_room_conditions({
+                        'heating_setpoint': value,
+                        'heating_setpoint_from_template': False  # Forzar que no use template
+                    })
+                    rooms_modified += 1
+                elif sp_type_room == iesve.setpoint_type.two_value:
+                    room_data.set_room_conditions({
+                        'heating_setpoint_twovalue_main_setpoint': value,
+                        'heating_setpoint_from_template': False
+                    })
+                    rooms_modified += 1
+                else:
+                    # Intentar cambiar a constante
+                    try:
+                        room_data.set_room_conditions({
+                            'heating_setpoint_type': iesve.setpoint_type.constant,
+                            'heating_setpoint': value,
+                            'heating_setpoint_from_template': False
+                        })
+                        rooms_modified += 1
+                    except Exception as e:
+                        pass  # Ignorar si no se puede cambiar
+        except Exception as e:
+            # Ignorar habitaciones que no tienen room_data o no son habitaciones térmicas
+            pass
+    
+    if rooms_modified > 0:
+        print(f'  ✓ Setpoints modificados directamente en {rooms_modified} habitación(es) con templates importantes')
+    
+    # Nota: Los cambios se guardan automáticamente en IES-VE cuando se aplican
 
 def set_cooling_setpoint(project, value):
-    """ Sets room cooling setpoint on active templates
+    """ Sets room cooling setpoint on active templates AND directly on rooms
+        This is necessary for Apache HVAC where setpoints may be controlled at room level
         Sets either constant setpoint or two value main setpoint
+        
+        IMPORTANTE: Solo modifica templates importantes (OfficeEnclosed, Bedroom)
+        para evitar modificar templates de espacios técnicos que no afectan resultados
 
     Args:
         project (iesve object) : object
@@ -265,10 +363,20 @@ def set_cooling_setpoint(project, value):
         print('  → Los templates deben estar asignados a habitaciones para ser modificados')
         return
     
-    print(f'Modificando setpoint de refrigeración a {value}°C en {len(templates)} template(s)')
+    # Filtrar solo templates importantes (OfficeEnclosed, Bedroom)
+    # Estos son los que realmente afectan los resultados de energía
+    important_templates = [t for t in templates if 'OfficeEnclosed' in t.name or 'Bedroom' in t.name]
     
-    # Loop through active templates and revise setpoints
-    for template in templates:
+    if len(important_templates) == 0:
+        print(f'ADVERTENCIA: No se encontraron templates importantes (OfficeEnclosed, Bedroom)')
+        print(f'  → Modificando todos los {len(templates)} templates disponibles')
+        important_templates = templates
+    else:
+        print(f'Modificando setpoint de refrigeración a {value}°C en {len(important_templates)} template(s) importante(s)')
+        print(f'  (Templates encontrados: {[t.name for t in important_templates]})')
+    
+    # Loop through important templates and revise setpoints
+    for template in important_templates:
         room_conditions = template.get_room_conditions()
         sp_type = room_conditions['cooling_setpoint_type']
         
@@ -303,6 +411,86 @@ def set_cooling_setpoint(project, value):
                     print(f'    ADVERTENCIA: {template.name} - tipo de setpoint no soportado: {sp_type}')
 
         template.apply_changes()
+        
+        # Verificar que el cambio se aplicó correctamente
+        try:
+            verify_conditions = template.get_room_conditions()
+            if sp_type == iesve.setpoint_type.constant:
+                actual_value = verify_conditions.get('cooling_setpoint', None)
+            elif sp_type == iesve.setpoint_type.two_value:
+                actual_value = verify_conditions.get('cooling_setpoint_twovalue_main_setpoint', None)
+            else:
+                actual_value = verify_conditions.get('cooling_setpoint', None)
+            
+            if actual_value is not None:
+                if abs(actual_value - value) < 0.01:  # Tolerancia de 0.01°C
+                    print(f'    ✓ Verificado: setpoint aplicado correctamente ({actual_value}°C)')
+                else:
+                    print(f'    ⚠️  ADVERTENCIA: Setpoint esperado {value}°C pero leído {actual_value}°C')
+        except Exception as e:
+            print(f'    ⚠️  No se pudo verificar el cambio: {e}')
+    
+    # CRÍTICO: También modificar setpoints directamente en las habitaciones
+    # Esto es necesario para Apache HVAC donde los setpoints pueden estar controlados a nivel de habitación
+    # Solo modificar habitaciones que usan los templates importantes
+    model = project.models[0]
+    rooms = get_all_rooms(model)
+    rooms_modified = 0
+    
+    # Obtener IDs de los templates importantes
+    important_template_names = [t.name for t in important_templates]
+    
+    print(f'\n  Modificando setpoints directamente en habitaciones con templates importantes...')
+    for room in rooms:
+        try:
+            room_data = room.get_room_data(iesve.attribute_type.real_attributes)
+            
+            # Verificar qué template usa esta habitación
+            try:
+                template_name = room_data.get_template().name
+                if template_name not in important_template_names:
+                    continue  # Saltar habitaciones que no usan templates importantes
+            except:
+                # Si no se puede obtener el template, intentar modificar de todas formas
+                pass
+            
+            room_conditions = room_data.get_room_conditions()
+            
+            # Solo modificar si la habitación usa setpoints del template o tiene setpoints propios
+            sp_type_room = room_conditions.get('cooling_setpoint_type', None)
+            
+            if sp_type_room is not None:
+                if sp_type_room == iesve.setpoint_type.constant:
+                    room_data.set_room_conditions({
+                        'cooling_setpoint': value,
+                        'cooling_setpoint_from_template': False  # Forzar que no use template
+                    })
+                    rooms_modified += 1
+                elif sp_type_room == iesve.setpoint_type.two_value:
+                    room_data.set_room_conditions({
+                        'cooling_setpoint_twovalue_main_setpoint': value,
+                        'cooling_setpoint_from_template': False
+                    })
+                    rooms_modified += 1
+                else:
+                    # Intentar cambiar a constante
+                    try:
+                        room_data.set_room_conditions({
+                            'cooling_setpoint_type': iesve.setpoint_type.constant,
+                            'cooling_setpoint': value,
+                            'cooling_setpoint_from_template': False
+                        })
+                        rooms_modified += 1
+                    except Exception as e:
+                        pass  # Ignorar si no se puede cambiar
+        except Exception as e:
+            # Ignorar habitaciones que no tienen room_data o no son habitaciones térmicas
+            pass
+    
+    if rooms_modified > 0:
+        print(f'  ✓ Setpoints modificados directamente en {rooms_modified} habitación(es) con templates importantes')
+    
+    # Nota: Los cambios se guardan automáticamente en IES-VE cuando se aplican
 
 def revise_free_cooling(project, value):
     """ For active templates using Apsys only
@@ -1388,3 +1576,19 @@ def apply_model_modifications(project, model, mod_categories, row):
     # ... set simulation options - HVAC file
     if 'asp_file' in mod_categories:
         set_sim_options(row.asp_file)
+    
+    # CRÍTICO para Apache HVAC: Si se modificaron setpoints, regenerar ASP para sincronizar cambios
+    # Esto es necesario porque el ASP puede estar usando valores antiguos de templates/habitaciones
+    # NOTA: Comentado temporalmente porque puede causar problemas - se regenerará automáticamente antes de la simulación
+    # if 'room_heating_setpoint' in mod_categories or 'room_cooling_setpoint' in mod_categories:
+    #     try:
+    #         sim = iesve.ApacheSim()
+    #         print('  → Regenerando ASP para sincronizar setpoints modificados con Apache HVAC...')
+    #         sim.run_room_zone_loads()
+    #         print('  ✓ ASP regenerado con nuevos setpoints')
+    #     except Exception as e:
+    #         print(f'  ⚠️  ADVERTENCIA: No se pudo regenerar ASP: {e}')
+    #         print('  → Los setpoints pueden no reflejarse correctamente en la simulación')
+    
+    # Nota: En IES-VE los cambios se guardan automáticamente cuando se aplican
+    # No es necesario llamar a project.save() ya que no existe ese método
