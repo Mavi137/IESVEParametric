@@ -169,6 +169,8 @@ if __name__ == "__main__":
     #inputs['room_heating_setpoint'] = [19.0, 21.0, 22.0]
     #inputs['room_cooling_setpoint'] = [25.0, 26.0, 28.0]
     #inputs['apsys_scop'] = [0.7, 0.8, 0.9]
+    inputs['dhw_lph_per_person'] = [0.4, 0.7, 0.2]
+    inputs['people_m2_per_person'] = [8.6, 17.24, 5.75]
     #inputs['apsys_sseer'] = [2.0, 2.5, 3.0]
     #inputs['sys_free_cooling'] = [4.0, 5.0]
     #inputs['ncm_terminal_sfp'] = [0.1, 0.5]            # NCM only
@@ -177,7 +179,7 @@ if __name__ == "__main__":
     #inputs['ncm_light_occ_parasit'] = [0.01, 0.05]     # NCM only
     #inputs['window_openable_area'] = [25.0, 30.0, 35.0]
     #inputs['ext_wall_glazing'] = [20, 30, 40]
-    inputs['wall_const_u_value'] = [0.1, 0.3]
+    #inputs['wall_const_u_value'] = [0.1, 0.3]
     #inputs['window_const_u_value'] = [1.0, 1.2, 1.5]
     #inputs['roof_const_u_value'] = [0.1, 0.2, 0.3]
     #inputs['floor_const_u_value'] = [0.1, 0.2, 0.3]
@@ -191,8 +193,8 @@ if __name__ == "__main__":
     #inputs['weather_file'] = ['LondonDSY2020H.fwt', 'LondonDSY2050H.fwt', 'LondonDSY2080H.fwt']
     #inputs['ap_system'] = ['SYST0001', 'SYST0002', 'SYST0003']
     #inputs['infiltration_rate'] = ['Infiltration 0.5', 'Infiltration 0.75']
-    #inputs['gen_lighting_gain'] = ['General Lighting 5','General Lighting 10']
-    #inputs['computer_gain'] = ['Computers 3','Computers 5']
+    inputs['gen_lighting_gain'] = ['Lighting1', 'Lighting2', 'Lighting3']
+    inputs['computer_gain'] = ['Equipment1', 'Equipment2', 'Equipment3']
     #inputs['wall_construction'] = ['STD_WAL2','STD_WAL3']
     #inputs['window_construction'] = ['STD_EXT1','STD_EXT2']
     #inputs['roof_construction'] = ['STD_ROO1', 'STD_ROO2']

@@ -182,9 +182,11 @@ if __name__ == "__main__":
 
     # ... numeric inputs
     #inputs['building_orientation'] = [90.0, 135.0, 180.0, 270]
-    #inputs['room_heating_setpoint'] = np.arange(16.0, 22.0, 0.25).tolist()
+    #inputs['room_heating_setpoint'] = [21.0, 19.0, 23.0]
     #inputs['room_cooling_setpoint'] = np.arange(23.0, 29.0, 0.25).tolist()
     #inputs['apsys_scop'] = np.arange(0.70, 0.95, 0.0125).tolist()
+    inputs['dhw_lph_per_person'] = [0.4, 0.7, 0.2]
+    inputs['people_m2_per_person'] = [8.6, 17.24, 5.75]
     #inputs['apsys_sseer'] = np.arange(2.0, 5.0, 0.15).tolist()
     #inputs['sys_free_cooling'] = np.arange(4.0, 6.0, 0.1).tolist()
     #inputs['ncm_terminal_sfp'] = np.arange(0.1, 0.5, 0.02).tolist()          # NCM only
@@ -193,7 +195,7 @@ if __name__ == "__main__":
     #inputs['ncm_light_occ_parasit'] = np.arange(0.01, 0.05, 0.002).tolist()  # NCM only
     #inputs['window_openable_area'] = np.arange(10.0, 30.0, 1.0).tolist()
     #inputs['ext_wall_glazing'] = np.arange(20.0, 40.0, 1.0).tolist()
-    inputs['wall_const_u_value'] = np.arange(0.2, 0.6, 0.1).tolist()
+    #inputs['wall_const_u_value'] = np.arange(0.2, 0.6, 0.1).tolist()
     #inputs['window_const_u_value'] = np.arange(1.0, 1.8, 0.02).tolist()
     #inputs['roof_const_u_value'] = np.arange(0.1, 0.3, 0.01).tolist()
     #inputs['floor_const_u_value'] = np.arange(0.1, 0.3, 0.01).tolist()
@@ -212,8 +214,8 @@ if __name__ == "__main__":
     #inputs['weather_file'] = ['LondonDSY2020H.fwt', 'LondonDSY2050H.fwt', 'LondonDSY2080H.fwt']
     #inputs['ap_system'] = ['SYST0001', 'SYST0002', 'SYST0003']
     #inputs['infiltration_rate'] = ['Infiltration 0.5', 'Infiltration 0.75']
-    #inputs['gen_lighting_gain'] = ['General Lighting 5','General Lighting 10']
-    #inputs['computer_gain'] = ['Computers 3','Computers 5']
+    inputs['gen_lighting_gain'] = ['Lighting1', 'Lighting2', 'Lighting3']
+    inputs['computer_gain'] = ['Equipment1', 'Equipment2', 'Equipment3']
     #inputs['wall_construction'] = ['STD_WAL2','STD_WAL3']
     # inputs['window_construction'] = ['STD_EXT1','STD_EXT2']
     #inputs['roof_construction'] = ['STD_ROO1', 'STD_ROO2']

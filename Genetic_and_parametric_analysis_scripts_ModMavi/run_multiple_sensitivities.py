@@ -114,18 +114,6 @@ def main():
     # Obtener el proyecto actual
     project = iesve.VEProject.get_current_project()
     
-    # Configurar Apache Sim para simulaciones rápidas de análisis de sensibilidad
-    print("Configurando opciones de simulación para análisis rápido...")
-    sim = iesve.ApacheSim()
-    sim.set_options(
-        time_step=10,           # 10 minutos (balance velocidad/precisión)
-        HVAC=False,             # Desactivar HVAC detallado
-        Suncast=False,          # Desactivar cálculo de sombras (no necesario para U-values)
-        RadianceIES=False,      # Desactivar iluminación natural detallada
-    )
-    print("✓ Opciones configuradas: timestep=10min, Suncast=OFF, RadianceIES=OFF")
-    print()
-    
     # Archivar el proyecto antes de ejecutar cambios paramétricos
     print("Archivando proyecto...")
     project_folder = project.path
@@ -171,11 +159,11 @@ def main():
     
     ### Definir las variables a analizar
     # Descomenta las variables que quieras analizar y ajusta los rangos según necesites
-    variables_to_test = {
+    variables_to_test =
         # Orientación y setpoints
-        # 'building_orientation': [90.0, 135.0, 180.0, 270.0],
-        # 'room_heating_setpoint': np.arange(16.0, 22.0, 0.25).tolist(),
-        # 'room_cooling_setpoint': np.arange(23.0, 29.0, 0.25).tolist(),
+         'building_orientation': [90.0, 135.0],
+         'room_heating_setpoint': np.arange(18.0, 22.0, 0.25).tolist(),
+         'room_cooling_setpoint': np.arange(23.0, 27.0, 0.25).tolist(),
         
         # Sistemas HVAC
         # 'apsys_scop': np.arange(0.70, 0.95, 0.0125).tolist(),

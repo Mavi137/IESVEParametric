@@ -119,10 +119,6 @@ def simulations(project, model_index, route, loads_on, df: pd.DataFrame, simulat
         print(f'\nApplying scenario {index} modifications to model ...')
 
         utils_model_mod.apply_model_modifications(project, model, df.columns, row)
-        
-        # Pequeño delay para asegurar que los cambios se hayan guardado completamente
-        # Esto es especialmente importante para los setpoints que deben persistir antes de la simulación
-        time.sleep(1)
 
         path_list = []
         # ... create aps, asp & shd filenames

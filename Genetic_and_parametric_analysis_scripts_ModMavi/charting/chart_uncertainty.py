@@ -78,4 +78,4 @@ if __name__ == "__main__":
      df = pd.read_csv(simulations_output_name)
 
      # Plot uncertainty histogram chart
-     uncertainty(df, 'Boilers_MWh')
+     uncertainty(df, 'Elec_kWh/m2')

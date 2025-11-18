@@ -89,7 +89,7 @@ if __name__ == "__main__":
     # 'Ta_max_degC',
     # 'Boiler_max_kW',
     # 'Chiller_max_kW'
-     target = 'Gas_MWh'
+     target = 'Elec_kWh/m2'
 
      # Ask the user for csv files
      root = tk.Tk()
