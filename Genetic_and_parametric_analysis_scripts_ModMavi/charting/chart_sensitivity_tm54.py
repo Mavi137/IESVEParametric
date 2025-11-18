@@ -210,7 +210,7 @@ def load_and_process_variables(results_folder, variables_config, target_metric):
         columns=['beta']
     )
     
-    # Ordenar por valor absoluto de beta (descendente)
+    # Ordenar por valor absoluto de beta (descendente) - de mayor a menor impacto
     plot_data = plot_data.sort_values(by=['beta'], ascending=False, key=abs)
     
     return plot_data, colors_map
@@ -301,62 +301,94 @@ def create_tm54_sensitivity_chart(plot_data, target_metric, colors_map):
         showlegend=False
     )
     
-    # Agregar anotaciones explicativas
-    # Agrupar por impacto
-    high_impact = plot_data[abs(plot_data['beta']) > 0.4]
-    moderate_impact = plot_data[(abs(plot_data['beta']) >= 0.1) & (abs(plot_data['beta']) <= 0.4)]
-    low_impact = plot_data[abs(plot_data['beta']) < 0.1]
+    return fig
+
+
+def create_tm54_sensitivity_chart_vertical(plot_data, target_metric, colors_map):
+    """
+    Crea el gráfico de sensibilidad estilo TM54 con barras VERTICALES.
     
-    # Anotación para variables de alto impacto
-    if len(high_impact) > 0:
-        fig.add_annotation(
-            text='<b>Most impactful variables</b><br>'
-                 'As these values change, energy use changes significantly',
-            xref='paper',
-            yref='paper',
-            x=0.02,
-            y=0.95,
-            showarrow=False,
-            font=dict(size=10, family='Arial', color='darkorange'),
-            bgcolor='rgba(255, 200, 150, 0.2)',
-            bordercolor='darkorange',
-            borderwidth=1,
-            borderpad=4
-        )
+    Args:
+        plot_data (pd.DataFrame): DataFrame con variables y coeficientes beta
+        target_metric (str): Métrica objetivo analizada
+        colors_map (dict): Diccionario con colores por variable (display_name -> color)
     
-    # Anotación para variables de impacto moderado
-    if len(moderate_impact) > 0:
-        fig.add_annotation(
-            text='<b>Moderate impact variables</b><br>'
-                 'Moderate influence on energy use',
-            xref='paper',
-            yref='paper',
-            x=0.02,
-            y=0.85,
-            showarrow=False,
-            font=dict(size=10, family='Arial', color='gray'),
-            bgcolor='rgba(200, 200, 200, 0.1)',
-            bordercolor='gray',
-            borderwidth=1,
-            borderpad=4
-        )
+    Returns:
+        go.Figure: Figura de Plotly
+    """
+    # Preparar datos
+    variables = plot_data.index.tolist()
+    betas = plot_data['beta'].values
     
-    # Anotación para variables de bajo impacto
-    if len(low_impact) > 0:
-        fig.add_annotation(
-            text='<b>Low impact variables</b><br>'
-                 'Minimal influence - not critical for design',
-            xref='paper',
-            yref='paper',
-            x=0.02,
-            y=0.75,
-            showarrow=False,
-            font=dict(size=10, family='Arial', color='lightgray'),
-            bgcolor='rgba(230, 230, 230, 0.1)',
-            bordercolor='lightgray',
-            borderwidth=1,
-            borderpad=4
-        )
+    # Obtener colores individuales para cada variable
+    colors = [colors_map.get(var, '#FF9966') for var in variables]  # Color por defecto si no existe
+    
+    # Crear figura
+    fig = go.Figure()
+    
+    # Agregar barras VERTICALES con colores individuales
+    fig.add_trace(go.Bar(
+        x=variables,
+        y=betas,
+        orientation='v',  # Vertical
+        marker=dict(
+            color=colors,
+            line=dict(color='white', width=1.5)  # Borde blanco para mejor contraste
+        ),
+        text=[f'{b:.3f}' for b in betas],
+        textposition='outside',
+        textfont=dict(size=10, color='gray'),
+        name='Beta coefficient'
+    ))
+    
+    # Línea de referencia en y=0
+    fig.add_hline(
+        y=0,
+        line_width=2,
+        line_color='black',
+        line_dash='solid',
+        annotation_text='No effect',
+        annotation_position='right'
+    )
+    
+    # Actualizar layout
+    fig.update_layout(
+        title={
+            'text': f'Sensitivity Analysis: Impact on {target_metric}<br>'
+                   f'<sub>Standardized Regression Coefficient (SRC)</sub>',
+            'x': 0.5,
+            'xanchor': 'center',
+            'y': 0.98,
+            'yanchor': 'top',
+            'font': {'size': 16, 'family': 'Arial'}
+        },
+        xaxis=dict(
+            title='',
+            showgrid=False,
+            tickfont=dict(size=11, family='Arial', color='gray'),
+            tickangle=-45  # Rotar etiquetas para mejor legibilidad
+        ),
+        yaxis=dict(
+            title=dict(
+                text='Standardized Regression Coefficient (SRC)',
+                font=dict(size=12, family='Arial', color='gray')
+            ),
+            showgrid=True,
+            gridwidth=1,
+            gridcolor='lightgray',
+            zeroline=True,
+            zerolinewidth=2,
+            zerolinecolor='black',
+            range=[min(betas.min() * 1.2, -1), max(betas.max() * 1.2, 1)]
+        ),
+        font={'size': 12, 'family': 'Arial', 'color': 'gray'},
+        plot_bgcolor='white',
+        paper_bgcolor='white',
+        width=max(600, len(variables) * 120),
+        height=700,
+        margin=dict(l=80, r=100, t=120, b=150),  # Más margen inferior para etiquetas rotadas
+        showlegend=False
+    )
     
     return fig
 
@@ -386,27 +418,38 @@ if __name__ == "__main__":
         print(plot_data)
         print("-" * 60)
         
-        # Crear gráfico con colores personalizados
-        fig = create_tm54_sensitivity_chart(plot_data, TARGET_METRIC, colors_map)
+        # Crear gráficos con colores personalizados (horizontal y vertical)
+        fig_horizontal = create_tm54_sensitivity_chart(plot_data, TARGET_METRIC, colors_map)
+        fig_vertical = create_tm54_sensitivity_chart_vertical(plot_data, TARGET_METRIC, colors_map)
         
-        # Guardar imagen automáticamente
+        # Guardar imágenes automáticamente
         output_dir = Path(__file__).parent.parent / 'Logs' / 'analisis'
         output_dir.mkdir(parents=True, exist_ok=True)
         
         # Nombre del archivo: limpiar caracteres especiales de la métrica
         metric_clean = TARGET_METRIC.replace('/', '_').replace('(', '').replace(')', '')
-        output_file = output_dir / f'Sensibilidad_TM54_{metric_clean}.png'
         
-        # Guardar como PNG (alta resolución)
-        fig.write_image(
-            str(output_file),
+        # Guardar versión HORIZONTAL
+        output_file_h = output_dir / f'Sensibilidad_TM54_Horizontal_{metric_clean}.png'
+        fig_horizontal.write_image(
+            str(output_file_h),
             width=1200,
             height=max(600, len(plot_data) * 100),
             scale=2  # Doble resolución para mejor calidad
         )
-        
-        print(f"\n[OK] Imagen guardada en: {output_file}")
+        print(f"\n[OK] Imagen HORIZONTAL guardada en: {output_file_h.name}")
         print(f"     Dimensiones: {1200}x{max(600, len(plot_data) * 100)} px (escala 2x)")
+        
+        # Guardar versión VERTICAL
+        output_file_v = output_dir / f'Sensibilidad_TM54_Vertical_{metric_clean}.png'
+        fig_vertical.write_image(
+            str(output_file_v),
+            width=max(800, len(plot_data) * 150),
+            height=1000,
+            scale=2  # Doble resolución para mejor calidad
+        )
+        print(f"[OK] Imagen VERTICAL guardada en: {output_file_v.name}")
+        print(f"     Dimensiones: {max(800, len(plot_data) * 150)}x1000 px (escala 2x)")
         
         # Opcional: También guardar HTML interactivo (descomentar si lo necesitas)
         # html_file = output_dir / f'Sensibilidad_TM54_{metric_clean}.html'

@@ -182,10 +182,11 @@ def create_tm54_uncertainty_chart(plot_data, end_use_config):
             name=category,
             boxmean='sd',  # Mostrar media y desviación estándar
             marker_color=color,
-            line=dict(color='black', width=1.5),
+            line=dict(color='black', width=2),
             fillcolor=color,
             opacity=0.7,
-            showlegend=True
+            showlegend=True,
+            width=0.6  # Hacer las cajas más anchas (0.6 = 60% del espacio disponible)
         ))
     
     # Actualizar layout
@@ -224,9 +225,9 @@ def create_tm54_uncertainty_chart(plot_data, end_use_config):
         font={'size': 12, 'family': 'Arial', 'color': 'gray'},
         plot_bgcolor='white',
         paper_bgcolor='white',
-        width=1000,
-        height=700,
-        margin=dict(l=80, r=80, t=120, b=80),
+        width=1400,
+        height=900,
+        margin=dict(l=100, r=100, t=120, b=100),
         boxmode='group',
         showlegend=True,
         legend=dict(
@@ -311,13 +312,13 @@ if __name__ == "__main__":
         # Guardar como PNG (alta resolución)
         fig.write_image(
             str(output_file),
-            width=1200,
-            height=900,
+            width=1600,
+            height=1100,
             scale=2  # Doble resolución para mejor calidad
         )
         
         print(f"\n[OK] Imagen guardada en: {output_file}")
-        print(f"     Dimensiones: 1200x900 px (escala 2x)")
+        print(f"     Dimensiones: 1600x1100 px (escala 2x)")
         
         # Opcional: También guardar HTML interactivo (descomentar si lo necesitas)
         # html_file = output_dir / 'Incertidumbre_UsoFinal_TM54.html'
