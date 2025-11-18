@@ -46,30 +46,35 @@ import statsmodels.formula.api as smf
 # ============================================================================
 
 # Variables a analizar (activar/desactivar comentando líneas)
+# Paleta TECH: Colores profesionales con significado semántico
 VARIABLES_CONFIG = {
     'dhw_lph_per_person': {
         'csv_file': 'dhw_lph_per_person.csv',
         'enabled': True,
         'display_name': 'DHW demand (L/person)',
-        'is_categorical': False
+        'is_categorical': False,
+        'color': '#0077B6'  # Azul brillante - representa agua
     },
     'people_m2_per_person': {
         'csv_file': 'people_m2_per_person.csv',
         'enabled': True,
         'display_name': 'Occupancy density (m²/person)',
-        'is_categorical': False
+        'is_categorical': False,
+        'color': '#7209B7'  # Púrpura - representa personas/ocupación
     },
     'gen_lighting_gain': {
         'csv_file': 'gen_lighting_gain.csv',
         'enabled': True,
         'display_name': 'Lighting power density',
-        'is_categorical': True
+        'is_categorical': True,
+        'color': '#F77F00'  # Naranja cálido - representa luz
     },
     'computer_gain': {
         'csv_file': 'computer_gain.csv',
         'enabled': True,
         'display_name': 'Equipment power density',
-        'is_categorical': True
+        'is_categorical': True,
+        'color': '#D62828'  # Rojo - representa equipos/calor
     }
 }
 
@@ -78,9 +83,6 @@ TARGET_METRIC = 'EUI_kWh/m2'  # Cambiar aquí para analizar otra métrica
 
 # Carpeta donde están los CSV
 RESULTS_FOLDER = 'Resultados'  # Relativo a la carpeta del script
-
-# Color de las barras (estilo TM54)
-BAR_COLOR = '#FF9966'  # Naranja salmón
 
 # ============================================================================
 # FUNCIONES
@@ -142,9 +144,10 @@ def load_and_process_variables(results_folder, variables_config, target_metric):
         target_metric (str): Métrica objetivo
     
     Returns:
-        pd.DataFrame: DataFrame con variables y sus coeficientes beta
+        tuple: (DataFrame con variables y betas, dict con colores por variable)
     """
     results = {}
+    colors_map = {}
     
     # Obtener ruta absoluta de la carpeta resultados
     script_dir = Path(__file__).parent.parent
@@ -189,8 +192,10 @@ def load_and_process_variables(results_folder, variables_config, target_metric):
                 target_metric,
                 is_categorical=var_config['is_categorical']
             )
-            results[var_config['display_name']] = beta
-            print(f"[OK] {var_config['display_name']}: beta = {beta:.4f}")
+            display_name = var_config['display_name']
+            results[display_name] = beta
+            colors_map[display_name] = var_config.get('color', '#FF9966')  # Color por defecto si no existe
+            print(f"[OK] {display_name}: beta = {beta:.4f}")
         except Exception as e:
             print(f"Error procesando {var_key}: {e}")
             continue
@@ -208,17 +213,17 @@ def load_and_process_variables(results_folder, variables_config, target_metric):
     # Ordenar por valor absoluto de beta (descendente)
     plot_data = plot_data.sort_values(by=['beta'], ascending=False, key=abs)
     
-    return plot_data
+    return plot_data, colors_map
 
 
-def create_tm54_sensitivity_chart(plot_data, target_metric, bar_color=BAR_COLOR):
+def create_tm54_sensitivity_chart(plot_data, target_metric, colors_map):
     """
     Crea el gráfico de sensibilidad estilo TM54 Figura 7.
     
     Args:
         plot_data (pd.DataFrame): DataFrame con variables y coeficientes beta
         target_metric (str): Métrica objetivo analizada
-        bar_color (str): Color de las barras (hex)
+        colors_map (dict): Diccionario con colores por variable (display_name -> color)
     
     Returns:
         go.Figure: Figura de Plotly
@@ -227,21 +232,20 @@ def create_tm54_sensitivity_chart(plot_data, target_metric, bar_color=BAR_COLOR)
     variables = plot_data.index.tolist()
     betas = plot_data['beta'].values
     
+    # Obtener colores individuales para cada variable
+    colors = [colors_map.get(var, '#FF9966') for var in variables]  # Color por defecto si no existe
+    
     # Crear figura
     fig = go.Figure()
     
-    # Colores: naranja para positivos, azul para negativos (opcional)
-    # O todos naranja como en TM54
-    colors = [bar_color] * len(betas)
-    
-    # Agregar barras horizontales
+    # Agregar barras horizontales con colores individuales
     fig.add_trace(go.Bar(
         x=betas,
         y=variables,
         orientation='h',
         marker=dict(
             color=colors,
-            line=dict(color='darkorange', width=1)
+            line=dict(color='white', width=1.5)  # Borde blanco para mejor contraste
         ),
         text=[f'{b:.3f}' for b in betas],
         textposition='outside',
@@ -371,7 +375,7 @@ if __name__ == "__main__":
     
     try:
         # Cargar datos y calcular betas
-        plot_data = load_and_process_variables(
+        plot_data, colors_map = load_and_process_variables(
             RESULTS_FOLDER, 
             VARIABLES_CONFIG, 
             TARGET_METRIC
@@ -382,8 +386,8 @@ if __name__ == "__main__":
         print(plot_data)
         print("-" * 60)
         
-        # Crear gráfico
-        fig = create_tm54_sensitivity_chart(plot_data, TARGET_METRIC)
+        # Crear gráfico con colores personalizados
+        fig = create_tm54_sensitivity_chart(plot_data, TARGET_METRIC, colors_map)
         
         # Guardar imagen automáticamente
         output_dir = Path(__file__).parent.parent / 'Logs' / 'analisis'
