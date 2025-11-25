@@ -192,28 +192,28 @@ def create_tm54_uncertainty_chart(plot_data, end_use_config):
     # Actualizar layout
     fig.update_layout(
         title={
-            'text': 'Uncertainty Analysis: Energy Use by End Use Category<br>'
+            'text': '<b>UNCERTAINTY ANALYSIS: ENERGY USE BY END USE CATEGORY</b><br>'
                    '<sub>Distribution of energy consumption across parametric simulations</sub>',
             'x': 0.5,
             'xanchor': 'center',
             'y': 0.98,
             'yanchor': 'top',
-            'font': {'size': 16, 'family': 'Arial'}
+            'font': {'size': 22, 'family': 'Arial', 'color': 'black'}
         },
         xaxis=dict(
             title=dict(
                 text='End Use Category',
-                font=dict(size=12, family='Arial', color='gray')
+                font=dict(size=14, family='Arial', color='black')
             ),
             showgrid=True,
             gridwidth=1,
             gridcolor='lightgray',
-            tickfont=dict(size=11, family='Arial', color='gray')
+            tickfont=dict(size=12, family='Arial', color='gray')
         ),
         yaxis=dict(
             title=dict(
-                text='Energy Use Intensity (kWh/m2/annum)',
-                font=dict(size=12, family='Arial', color='gray')
+                text='Energy Use Intensity (kWh/m²/annum)',
+                font=dict(size=14, family='Arial', color='black')
             ),
             showgrid=True,
             gridwidth=1,
@@ -235,7 +235,9 @@ def create_tm54_uncertainty_chart(plot_data, end_use_config):
             yanchor='bottom',
             y=1.02,
             xanchor='right',
-            x=1
+            x=1,
+            font=dict(size=13, family='Arial', color='black'),
+            title=dict(text='Category', font=dict(size=14, family='Arial'))
         )
     )
     

@@ -168,28 +168,28 @@ def create_uncertainty_histogram(metric_key, metric_config, values):
     # Actualizar layout
     fig.update_layout(
         title={
-            'text': f'Uncertainty Analysis: {metric_config["display_name"]}<br>'
+            'text': f'<b>UNCERTAINTY ANALYSIS: {metric_config["display_name"].upper()}</b><br>'
                    '<sub>Distribution of results across parametric simulations</sub>',
             'x': 0.5,
             'xanchor': 'center',
             'y': 0.98,
             'yanchor': 'top',
-            'font': {'size': 16, 'family': 'Arial'}
+            'font': {'size': 22, 'family': 'Arial', 'color': 'black'}
         },
         xaxis=dict(
             title=dict(
                 text=f'{metric_config["display_name"]} ({metric_config["unit"]})',
-                font=dict(size=13, family='Arial', color='gray')
+                font=dict(size=14, family='Arial', color='black')
             ),
             showgrid=True,
             gridwidth=1,
             gridcolor='lightgray',
-            tickfont=dict(size=11, family='Arial', color='gray')
+            tickfont=dict(size=12, family='Arial', color='gray')
         ),
         yaxis=dict(
             title=dict(
                 text='Frequency',
-                font=dict(size=13, family='Arial', color='gray')
+                font=dict(size=14, family='Arial', color='black')
             ),
             showgrid=True,
             gridwidth=1,
@@ -210,7 +210,9 @@ def create_uncertainty_histogram(metric_key, metric_config, values):
             yanchor='top',
             y=0.98,
             xanchor='left',
-            x=1.02
+            x=1.02,
+            font=dict(size=13, family='Arial', color='black'),
+            title=dict(text='Legend', font=dict(size=14, family='Arial'))
         )
     )
     

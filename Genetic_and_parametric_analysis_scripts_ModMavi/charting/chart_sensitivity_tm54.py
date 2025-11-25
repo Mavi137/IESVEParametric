@@ -266,18 +266,18 @@ def create_tm54_sensitivity_chart(plot_data, target_metric, colors_map):
     # Actualizar layout
     fig.update_layout(
         title={
-            'text': f'Sensitivity Analysis: Impact on {target_metric}<br>'
+            'text': f'<b>SENSITIVITY ANALYSIS: IMPACT ON {target_metric.upper()}</b><br>'
                    f'<sub>Standardized Regression Coefficient (SRC)</sub>',
             'x': 0.5,
             'xanchor': 'center',
             'y': 0.98,
             'yanchor': 'top',
-            'font': {'size': 16, 'family': 'Arial'}
+            'font': {'size': 22, 'family': 'Arial', 'color': 'black'}
         },
         xaxis=dict(
             title=dict(
                 text='Standardized Regression Coefficient (SRC)',
-                font=dict(size=12, family='Arial', color='gray')
+                font=dict(size=14, family='Arial', color='black')
             ),
             showgrid=True,
             gridwidth=1,
@@ -290,7 +290,7 @@ def create_tm54_sensitivity_chart(plot_data, target_metric, colors_map):
         yaxis=dict(
             title='',
             showgrid=False,
-            tickfont=dict(size=11, family='Arial', color='gray')
+            tickfont=dict(size=13, family='Arial', color='black')
         ),
         font={'size': 12, 'family': 'Arial', 'color': 'gray'},
         plot_bgcolor='white',
@@ -354,24 +354,24 @@ def create_tm54_sensitivity_chart_vertical(plot_data, target_metric, colors_map)
     # Actualizar layout
     fig.update_layout(
         title={
-            'text': f'Sensitivity Analysis: Impact on {target_metric}<br>'
+            'text': f'<b>SENSITIVITY ANALYSIS: IMPACT ON {target_metric.upper()}</b><br>'
                    f'<sub>Standardized Regression Coefficient (SRC)</sub>',
             'x': 0.5,
             'xanchor': 'center',
             'y': 0.98,
             'yanchor': 'top',
-            'font': {'size': 16, 'family': 'Arial'}
+            'font': {'size': 22, 'family': 'Arial', 'color': 'black'}
         },
         xaxis=dict(
             title='',
             showgrid=False,
-            tickfont=dict(size=11, family='Arial', color='gray'),
+            tickfont=dict(size=13, family='Arial', color='black'),
             tickangle=-45  # Rotar etiquetas para mejor legibilidad
         ),
         yaxis=dict(
             title=dict(
                 text='Standardized Regression Coefficient (SRC)',
-                font=dict(size=12, family='Arial', color='gray')
+                font=dict(size=14, family='Arial', color='black')
             ),
             showgrid=True,
             gridwidth=1,
