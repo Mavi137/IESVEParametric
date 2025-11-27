@@ -1,36 +1,35 @@
 """
 ==========================================
-Sensitivity Analysis Chart - TM54 Style
+Normalized Impact Analysis Chart - TM54 Style
 ==========================================
 
 Module description
 ------------------
-Creates a horizontal bar chart showing sensitivity analysis (beta coefficients) 
-following CIBSE TM54 Figure 7 style. Reads individual CSV files for each 
-input variable and calculates standardized regression coefficients.
+Creates horizontal and vertical bar charts showing normalized impact analysis 
+for better visualization when impacts have very different scales. 
+Normalizes impacts to a 0-1 scale (or -1 to 1) for relative comparison.
 
 The chart displays:
-- Horizontal bars in orange/salmon color (#FF9966)
-- Positive bars extend right (increasing variable → increases energy)
-- Negative bars extend left (increasing variable → decreases energy)
-- Sorted by absolute beta value (most impactful first)
-- Annotations explaining the direction of effect
+- Horizontal/vertical bars with custom colors
+- Normalized impact values (0-1 or -1 to 1 scale)
+- Better visual comparison when absolute impacts differ greatly
+- Same style and colors as sensitivity/impact charts
 
 Usage
 -----
-python chart_sensitivity_tm54.py
+python chart_impact_normalized_tm54.py
 
 The script will:
 1. Load CSV files from 'resultados' folder
-2. Calculate beta coefficients for each variable
-3. Generate and display TM54-style sensitivity chart
-4. Optionally save as HTML/PNG
+2. Calculate absolute impact coefficients for each variable
+3. Normalize impacts for better visualization
+4. Generate and save TM54-style normalized impact charts as PNG images
 
 Notes
 -----
 - Requires: pandas, numpy, plotly, scipy, statsmodels
 - Input: CSV files in 'resultados' folder
-- Output: Interactive Plotly chart
+- Output: PNG images in 'Logs/analisis' folder
 - Variables can be easily enabled/disabled via configuration
 """
 
@@ -46,7 +45,7 @@ import statsmodels.formula.api as smf
 # ============================================================================
 
 # Variables a analizar (activar/desactivar comentando líneas)
-# Paleta personalizada con significado semántico
+# Paleta personalizada con significado semántico (igual que sensitivity)
 VARIABLES_CONFIG = {
     'dhw_lph_per_person': {
         'csv_file': 'dhw_lph_per_person.csv',
@@ -84,13 +83,19 @@ TARGET_METRIC = 'EUI_kWh/m2'  # Cambiar aquí para analizar otra métrica
 # Carpeta donde están los CSV
 RESULTS_FOLDER = 'Resultados'  # Relativo a la carpeta del script
 
+# Carpeta donde guardar las imágenes
+OUTPUT_FOLDER = 'Logs/analisis'  # Relativo a la carpeta del script
+
 # ============================================================================
 # FUNCIONES
 # ============================================================================
 
-def calculate_beta(df, var_name, target, is_categorical=False):
+def calculate_absolute_impact(df, var_name, target, is_categorical=False):
     """
-    Calcula el coeficiente beta estandarizado mediante regresión.
+    Calcula el impacto absoluto (cambio en kWh/m² por unidad de cambio en variable).
+    
+    Para variables numéricas: pendiente de regresión no estandarizada
+    Para variables categóricas: diferencia promedio en EUI entre niveles consecutivos
     
     Args:
         df (pd.DataFrame): Datos con la variable y el target
@@ -99,44 +104,79 @@ def calculate_beta(df, var_name, target, is_categorical=False):
         is_categorical (bool): Si la variable es categórica (string)
     
     Returns:
-        float: Coeficiente beta estandarizado
+        float: Impacto absoluto (kWh/m² por unidad de cambio)
     """
     # Seleccionar columnas relevantes
     df_work = df[[var_name, target]].copy()
     
-    # Si es categórica, codificar numéricamente
     if is_categorical:
+        # Para categóricas: calcular diferencia promedio entre niveles consecutivos
         df_work['x'] = pd.Categorical(df_work[var_name]).codes
+        df_work['y'] = df_work[target]
+        df_work = df_work[['x', 'y']].dropna()
+        
+        # Calcular media de EUI por cada nivel
+        means = df_work.groupby('x')['y'].mean().sort_index()
+        
+        if len(means) < 2:
+            return 0.0
+        
+        # Calcular diferencias entre niveles consecutivos
+        diffs = means.diff().dropna()
+        
+        # Retornar la diferencia promedio (impacto por nivel)
+        if len(diffs) > 0:
+            return diffs.mean()
+        else:
+            return 0.0
     else:
+        # Para numéricas: regresión no estandarizada
         df_work['x'] = df_work[var_name]
+        df_work['y'] = df_work[target]
+        df_work = df_work[['x', 'y']].dropna()
+        
+        # Verificar que hay variación en los datos
+        if df_work['x'].std() == 0 or df_work['y'].std() == 0:
+            print(f"Advertencia: Sin variación en {var_name}, impacto = 0")
+            return 0.0
+        
+        # Regresión lineal NO estandarizada
+        model = smf.ols('y ~ x', data=df_work)
+        result = model.fit()
+        
+        # Obtener coeficiente (pendiente) - cambio en kWh/m² por unidad de x
+        impact = result.params['x']
+        
+        return impact
+
+
+def normalize_impacts(impacts):
+    """
+    Normaliza los impactos para mejor visualización.
+    Usa normalización min-max preservando el signo.
     
-    # Renombrar target para statsmodels
-    df_work.rename(columns={target: 'y'}, inplace=True)
+    Args:
+        impacts (pd.Series): Serie con impactos
     
-    # Seleccionar solo las columnas necesarias y filtrar valores nulos
-    df_work = df_work[['x', 'y']].dropna()
+    Returns:
+        pd.Series: Impactos normalizados (preservando signo)
+    """
+    abs_impacts = impacts.abs()
+    max_abs = abs_impacts.max()
     
-    # Verificar que hay variación en los datos
-    if df_work['x'].std() == 0 or df_work['y'].std() == 0:
-        print(f"Advertencia: Sin variación en {var_name}, beta = 0")
-        return 0.0
+    if max_abs == 0:
+        return impacts
     
-    # Estandarizar datos usando z-score
-    df_z = df_work.apply(stats.zscore)
+    # Normalizar dividiendo por el máximo absoluto
+    # Esto preserva el signo y escala todos a -1 a 1
+    normalized = impacts / max_abs
     
-    # Regresión lineal estandarizada
-    model = smf.ols('y ~ x', data=df_z)
-    result = model.fit()
-    
-    # Obtener coeficiente beta (pendiente)
-    beta = result.params['x']
-    
-    return beta
+    return normalized
 
 
 def load_and_process_variables(results_folder, variables_config, target_metric):
     """
-    Carga los CSV y calcula los coeficientes beta para cada variable.
+    Carga los CSV y calcula los impactos absolutos y normalizados para cada variable.
     
     Args:
         results_folder (str): Ruta a la carpeta con los CSV
@@ -144,9 +184,10 @@ def load_and_process_variables(results_folder, variables_config, target_metric):
         target_metric (str): Métrica objetivo
     
     Returns:
-        tuple: (DataFrame con variables y betas, dict con colores por variable)
+        tuple: (DataFrame con variables e impactos normalizados, dict con colores, dict con impactos absolutos)
     """
-    results = {}
+    results_absolute = {}
+    results_normalized = {}
     colors_map = {}
     
     # Obtener ruta absoluta de la carpeta resultados
@@ -184,56 +225,61 @@ def load_and_process_variables(results_folder, variables_config, target_metric):
             print(f"Advertencia: Métrica '{target_metric}' no encontrada en {csv_file}")
             continue
         
-        # Calcular beta
+        # Calcular impacto absoluto
         try:
-            beta = calculate_beta(
+            impact = calculate_absolute_impact(
                 df, 
                 var_key, 
                 target_metric,
                 is_categorical=var_config['is_categorical']
             )
             display_name = var_config['display_name']
-            # Invertir beta para Occupancy para que quede positivo
+            # Invertir impacto para Occupancy para que quede positivo
             if display_name == 'Occupancy':
-                beta = -beta
-            results[display_name] = beta
+                impact = -impact
+            results_absolute[display_name] = impact
             colors_map[display_name] = var_config.get('color', '#FF9966')  # Color por defecto si no existe
-            print(f"[OK] {display_name}: beta = {beta:.4f}")
+            print(f"[OK] {display_name}: impacto absoluto = {impact:.2f} kWh/m² por unidad")
         except Exception as e:
             print(f"Error procesando {var_key}: {e}")
             continue
     
-    if not results:
-        raise ValueError("No se pudieron calcular coeficientes beta. Verifica los archivos CSV.")
+    if not results_absolute:
+        raise ValueError("No se pudieron calcular impactos. Verifica los archivos CSV.")
     
-    # Crear DataFrame para el gráfico
+    # Normalizar impactos
+    impacts_series = pd.Series(results_absolute)
+    impacts_normalized = normalize_impacts(impacts_series)
+    
+    # Crear DataFrame para el gráfico (normalizado)
     plot_data = pd.DataFrame.from_dict(
-        results, 
+        impacts_normalized.to_dict(), 
         orient='index', 
-        columns=['beta']
+        columns=['impact']
     )
     
-    # Ordenar por valor absoluto de beta (descendente) - de mayor a menor impacto
-    plot_data = plot_data.sort_values(by=['beta'], ascending=False, key=abs)
+    # Ordenar por valor absoluto de impacto (descendente) - de mayor a menor impacto
+    plot_data = plot_data.sort_values(by=['impact'], ascending=False, key=abs)
     
-    return plot_data, colors_map
+    return plot_data, colors_map, results_absolute
 
 
-def create_tm54_sensitivity_chart(plot_data, target_metric, colors_map):
+def create_tm54_normalized_impact_chart(plot_data, target_metric, colors_map, absolute_impacts):
     """
-    Crea el gráfico de sensibilidad estilo TM54 Figura 7.
+    Crea el gráfico de impacto normalizado estilo TM54 con barras HORIZONTALES.
     
     Args:
-        plot_data (pd.DataFrame): DataFrame con variables y coeficientes beta
+        plot_data (pd.DataFrame): DataFrame con variables e impactos normalizados
         target_metric (str): Métrica objetivo analizada
         colors_map (dict): Diccionario con colores por variable (display_name -> color)
+        absolute_impacts (dict): Diccionario con impactos absolutos para anotaciones
     
     Returns:
         go.Figure: Figura de Plotly
     """
     # Preparar datos
     variables = plot_data.index.tolist()
-    betas = plot_data['beta'].values
+    impacts = plot_data['impact'].values
     
     # Obtener colores individuales para cada variable
     colors = [colors_map.get(var, '#FF9966') for var in variables]  # Color por defecto si no existe
@@ -242,18 +288,22 @@ def create_tm54_sensitivity_chart(plot_data, target_metric, colors_map):
     fig = go.Figure()
     
     # Agregar barras horizontales con colores individuales
+    # Usar texto con valores absolutos para mejor comprensión
+    text_labels = [f'{absolute_impacts.get(var, 0):.2f}' for var in variables]
+    
     fig.add_trace(go.Bar(
-        x=betas,
+        x=impacts,
         y=variables,
         orientation='h',
         marker=dict(
             color=colors,
             line=dict(color='white', width=1.5)  # Borde blanco para mejor contraste
         ),
-        text=[f'{b:.3f}' for b in betas],
+        text=text_labels,
         textposition='outside',
         textfont=dict(size=13, color='gray'),
-        name='Beta coefficient'
+        name='Normalized Impact',
+        hovertemplate='<b>%{y}</b><br>Impacto normalizado: %{x:.3f}<br>Impacto absoluto: %{text} kWh/m²<extra></extra>'
     ))
     
     # Línea de referencia en x=0
@@ -269,7 +319,8 @@ def create_tm54_sensitivity_chart(plot_data, target_metric, colors_map):
     # Actualizar layout
     fig.update_layout(
         title={
-            'text': f'<b>SENSITIVITY ANALYSIS: IMPACT ON {target_metric.upper()}</b>',
+            'text': f'<b>NORMALIZED IMPACT ANALYSIS: IMPACT ON {target_metric.upper()}</b><br>'
+                   '<sub>Normalized scale for better visualization (values show absolute impact in kWh/m²)</sub>',
             'x': 0.5,
             'xanchor': 'center',
             'y': 0.98,
@@ -278,7 +329,7 @@ def create_tm54_sensitivity_chart(plot_data, target_metric, colors_map):
         },
         xaxis=dict(
             title=dict(
-                text='Standardized Regression Coefficient (SRC)',
+                text='Normalized Impact (relative scale)',
                 font=dict(size=14, family='Arial', color='black')
             ),
             showgrid=True,
@@ -287,7 +338,7 @@ def create_tm54_sensitivity_chart(plot_data, target_metric, colors_map):
             zeroline=True,
             zerolinewidth=2,
             zerolinecolor='black',
-            range=[min(betas.min() * 1.2, -1), max(betas.max() * 1.2, 1)]
+            range=[-1.2, 1.2]  # Rango fijo para mejor comparación
         ),
         yaxis=dict(
             title='',
@@ -299,28 +350,29 @@ def create_tm54_sensitivity_chart(plot_data, target_metric, colors_map):
         paper_bgcolor='white',
         width=900,
         height=max(400, len(variables) * 80),
-        margin=dict(l=250, r=100, t=120, b=80),
+        margin=dict(l=250, r=100, t=140, b=80),
         showlegend=False
     )
     
     return fig
 
 
-def create_tm54_sensitivity_chart_vertical(plot_data, target_metric, colors_map):
+def create_tm54_normalized_impact_chart_vertical(plot_data, target_metric, colors_map, absolute_impacts):
     """
-    Crea el gráfico de sensibilidad estilo TM54 con barras VERTICALES.
+    Crea el gráfico de impacto normalizado estilo TM54 con barras VERTICALES.
     
     Args:
-        plot_data (pd.DataFrame): DataFrame con variables y coeficientes beta
+        plot_data (pd.DataFrame): DataFrame con variables e impactos normalizados
         target_metric (str): Métrica objetivo analizada
         colors_map (dict): Diccionario con colores por variable (display_name -> color)
+        absolute_impacts (dict): Diccionario con impactos absolutos para anotaciones
     
     Returns:
         go.Figure: Figura de Plotly
     """
     # Preparar datos
     variables = plot_data.index.tolist()
-    betas = plot_data['beta'].values
+    impacts = plot_data['impact'].values
     
     # Obtener colores individuales para cada variable
     colors = [colors_map.get(var, '#FF9966') for var in variables]  # Color por defecto si no existe
@@ -329,18 +381,22 @@ def create_tm54_sensitivity_chart_vertical(plot_data, target_metric, colors_map)
     fig = go.Figure()
     
     # Agregar barras VERTICALES con colores individuales
+    # Usar texto con valores absolutos para mejor comprensión
+    text_labels = [f'{absolute_impacts.get(var, 0):.2f}' for var in variables]
+    
     fig.add_trace(go.Bar(
         x=variables,
-        y=betas,
+        y=impacts,
         orientation='v',  # Vertical
         marker=dict(
             color=colors,
             line=dict(color='white', width=1.5)  # Borde blanco para mejor contraste
         ),
-        text=[f'{b:.3f}' for b in betas],
+        text=text_labels,
         textposition='outside',
         textfont=dict(size=13, color='gray'),
-        name='Beta coefficient'
+        name='Normalized Impact',
+        hovertemplate='<b>%{x}</b><br>Impacto normalizado: %{y:.3f}<br>Impacto absoluto: %{text} kWh/m²<extra></extra>'
     ))
     
     # Línea de referencia en y=0
@@ -356,7 +412,8 @@ def create_tm54_sensitivity_chart_vertical(plot_data, target_metric, colors_map)
     # Actualizar layout
     fig.update_layout(
         title={
-            'text': f'<b>SENSITIVITY ANALYSIS: IMPACT ON {target_metric.upper()}</b>',
+            'text': f'<b>NORMALIZED IMPACT ANALYSIS: IMPACT ON {target_metric.upper()}</b><br>'
+                   '<sub>Normalized scale for better visualization (values show absolute impact in kWh/m²)</sub>',
             'x': 0.5,
             'xanchor': 'center',
             'y': 0.98,
@@ -371,7 +428,7 @@ def create_tm54_sensitivity_chart_vertical(plot_data, target_metric, colors_map)
         ),
         yaxis=dict(
             title=dict(
-                text='Standardized Regression Coefficient (SRC)',
+                text='Normalized Impact (relative scale)',
                 font=dict(size=14, family='Arial', color='black')
             ),
             showgrid=True,
@@ -380,90 +437,76 @@ def create_tm54_sensitivity_chart_vertical(plot_data, target_metric, colors_map)
             zeroline=True,
             zerolinewidth=2,
             zerolinecolor='black',
-            range=[min(betas.min() * 1.2, -1), max(betas.max() * 1.2, 1)]
+            range=[-1.2, 1.2]  # Rango fijo para mejor comparación
         ),
-        font={'size': 12, 'family': 'Arial', 'color': 'gray'},
+        font={'size': 13, 'family': 'Arial', 'color': 'black'},
         plot_bgcolor='white',
         paper_bgcolor='white',
-        width=max(600, len(variables) * 120),
-        height=700,
-        margin=dict(l=80, r=100, t=120, b=150),  # Más margen inferior para etiquetas rotadas
+        width=max(800, len(variables) * 150),
+        height=1000,
+        margin=dict(l=80, r=100, t=140, b=150),
         showlegend=False
     )
     
     return fig
 
 
-# ============================================================================
-# MAIN
-# ============================================================================
-
-if __name__ == "__main__":
+def main():
+    """Función principal"""
     print("=" * 60)
-    print("Análisis de Sensibilidad - Estilo TM54")
+    print("Análisis de Impacto Normalizado - Estilo TM54")
     print("=" * 60)
     print(f"Métrica objetivo: {TARGET_METRIC}")
     print(f"Carpeta de resultados: {RESULTS_FOLDER}")
     print("-" * 60)
     
-    try:
-        # Cargar datos y calcular betas
-        plot_data, colors_map = load_and_process_variables(
-            RESULTS_FOLDER, 
-            VARIABLES_CONFIG, 
-            TARGET_METRIC
-        )
-        
-        print("-" * 60)
-        print("\nCoeficientes Beta calculados:")
-        print(plot_data)
-        print("-" * 60)
-        
-        # Crear gráficos con colores personalizados (horizontal y vertical)
-        fig_horizontal = create_tm54_sensitivity_chart(plot_data, TARGET_METRIC, colors_map)
-        fig_vertical = create_tm54_sensitivity_chart_vertical(plot_data, TARGET_METRIC, colors_map)
-        
-        # Guardar imágenes automáticamente
-        output_dir = Path(__file__).parent.parent / 'Logs' / 'analisis'
-        output_dir.mkdir(parents=True, exist_ok=True)
-        
-        # Nombre del archivo: limpiar caracteres especiales de la métrica
-        metric_clean = TARGET_METRIC.replace('/', '_').replace('(', '').replace(')', '')
-        
-        # Guardar versión HORIZONTAL
-        output_file_h = output_dir / f'Sensibilidad_TM54_Horizontal_{metric_clean}.png'
-        fig_horizontal.write_image(
-            str(output_file_h),
-            width=1200,
-            height=max(600, len(plot_data) * 100),
-            scale=2  # Doble resolución para mejor calidad
-        )
-        print(f"\n[OK] Imagen HORIZONTAL guardada en: {output_file_h.name}")
-        print(f"     Dimensiones: {1200}x{max(600, len(plot_data) * 100)} px (escala 2x)")
-        
-        # Guardar versión VERTICAL
-        output_file_v = output_dir / f'Sensibilidad_TM54_Vertical_{metric_clean}.png'
-        fig_vertical.write_image(
-            str(output_file_v),
-            width=max(800, len(plot_data) * 150),
-            height=1000,
-            scale=2  # Doble resolución para mejor calidad
-        )
-        print(f"[OK] Imagen VERTICAL guardada en: {output_file_v.name}")
-        print(f"     Dimensiones: {max(800, len(plot_data) * 150)}x1000 px (escala 2x)")
-        
-        # Opcional: También guardar HTML interactivo (descomentar si lo necesitas)
-        # html_file = output_dir / f'Sensibilidad_TM54_{metric_clean}.html'
-        # fig.write_html(str(html_file))
-        # print(f"[OK] Version HTML guardada en: {html_file}")
-        
-    except FileNotFoundError as e:
-        print(f"\n[ERROR] Error: {e}")
-        print("\nAsegurate de que la carpeta 'resultados' existe y contiene los archivos CSV.")
-    except ValueError as e:
-        print(f"\n[ERROR] Error: {e}")
-    except Exception as e:
-        print(f"\n[ERROR] Error inesperado: {e}")
-        import traceback
-        traceback.print_exc()
+    # Cargar y procesar variables
+    plot_data, colors_map, absolute_impacts = load_and_process_variables(
+        RESULTS_FOLDER, 
+        VARIABLES_CONFIG, 
+        TARGET_METRIC
+    )
+    
+    print("-" * 60)
+    print("\nImpactos normalizados (para visualización):")
+    print(plot_data)
+    print("\nImpactos absolutos (valores reales):")
+    for var, impact in absolute_impacts.items():
+        print(f"  {var}: {impact:.2f} kWh/m² por unidad")
+    print("-" * 60)
+    
+    # Crear gráficos
+    print("\nGenerando gráficos normalizados...\n")
+    
+    # Gráfico horizontal
+    fig_horizontal = create_tm54_normalized_impact_chart(plot_data, TARGET_METRIC, colors_map, absolute_impacts)
+    
+    # Gráfico vertical
+    fig_vertical = create_tm54_normalized_impact_chart_vertical(plot_data, TARGET_METRIC, colors_map, absolute_impacts)
+    
+    # Guardar imágenes
+    script_dir = Path(__file__).parent.parent
+    output_path = script_dir / OUTPUT_FOLDER
+    output_path.mkdir(parents=True, exist_ok=True)
+    
+    # Nombre del archivo
+    metric_clean = TARGET_METRIC.replace('/', '_').replace('(', '').replace(')', '')
+    filename_h = output_path / f'Impacto_Normalizado_TM54_Horizontal_{metric_clean}.png'
+    filename_v = output_path / f'Impacto_Normalizado_TM54_Vertical_{metric_clean}.png'
+    
+    # Guardar con alta resolución
+    scale_factor = 2
+    fig_horizontal.write_image(str(filename_h), width=fig_horizontal.layout.width * scale_factor, 
+                               height=fig_horizontal.layout.height * scale_factor, scale=scale_factor)
+    print(f"[OK] Imagen HORIZONTAL guardada en: {filename_h.name}")
+    print(f"     Dimensiones: {fig_horizontal.layout.width * scale_factor}x{fig_horizontal.layout.height * scale_factor} px (escala {scale_factor}x)")
+    
+    fig_vertical.write_image(str(filename_v), width=fig_vertical.layout.width * scale_factor, 
+                             height=fig_vertical.layout.height * scale_factor, scale=scale_factor)
+    print(f"[OK] Imagen VERTICAL guardada en: {filename_v.name}")
+    print(f"     Dimensiones: {fig_vertical.layout.width * scale_factor}x{fig_vertical.layout.height * scale_factor} px (escala {scale_factor}x)")
+
+
+if __name__ == '__main__':
+    main()
 

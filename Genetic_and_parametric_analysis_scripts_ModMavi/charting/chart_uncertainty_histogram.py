@@ -268,9 +268,9 @@ if __name__ == "__main__":
         print(f"        Ruta esperada: {csv_path}")
         exit(1)
     
-    # Cargar CSV
+    # Cargar CSV (usar punto y coma como separador)
     print(f"Cargando datos de: {csv_path}")
-    df = pd.read_csv(csv_path)
+    df = pd.read_csv(csv_path, sep=';')
     print(f"[OK] Datos cargados: {len(df)} simulaciones")
     
     output_dir = Path(__file__).parent.parent / 'Logs' / 'analisis'

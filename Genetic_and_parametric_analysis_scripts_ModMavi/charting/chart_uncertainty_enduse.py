@@ -44,47 +44,41 @@ from pathlib import Path
 
 # Mapeo de categorías de uso final y sus columnas en el CSV
 END_USE_CONFIG = {
-    'Heating': {
-        'columns': ['Space_heating_(gas)_kWh/m2', 'Space_heating_(elec)_kWh/m2'],
-        'enabled': True,
-        'color': '#E74C3C',  # Rojo - calefacción
-        'operation': 'sum'  # Sumar gas y eléctrico
-    },
-    'Cooling': {
-        'columns': ['Space_cooling_kWh/m2'],
-        'enabled': True,
-        'color': '#3498DB',  # Azul - refrigeración
-        'operation': 'single'
-    },
-    'Hot Water': {
-        'columns': ['DHW_heating_kWh/m2'],
-        'enabled': True,
-        'color': '#85C1E9',  # Azul claro - agua caliente
-        'operation': 'single'
-    },
     'Lighting': {
         'columns': ['Interior_lighting_kWh/m2', 'Exterior_lighting_kWh/m2'],
         'enabled': True,
-        'color': '#F1C40F',  # Amarillo - iluminación
-        'operation': 'sum'
+        'color': '#A699A9',  # Gris - iluminación (igual que en sensibilidad)
+        'operation': 'sum'  # Sumar interior y exterior
     },
-    'Equipment': {
+    'Space heating': {
+        'columns': ['Space_heating_(elec)_kWh/m2'],
+        'enabled': True,
+        'color': '#E74C3C',  # Rojo - calefacción (mantener)
+        'operation': 'single'  # Columna W (eléctrica)
+    },
+    'Space cooling': {
+        'columns': ['Space_cooling_kWh/m2'],
+        'enabled': True,
+        'color': '#3498DB',  # Azul - refrigeración (mantener)
+        'operation': 'single'  # Columna X
+    },
+    'Fans interior': {
+        'columns': ['Fans_interior_kWh/m2'],
+        'enabled': True,
+        'color': '#95A5A6',  # Gris - ventilación (mantener)
+        'operation': 'single'  # Columna Z
+    },
+    'DHW heating': {
+        'columns': ['DHW_heating_kWh/m2'],
+        'enabled': True,
+        'color': '#CCCCFF',  # Morado-ACS (igual que DHW en sensibilidad)
+        'operation': 'single'  # Columna AA
+    },
+    'Receptacle equipment': {
         'columns': ['Receptacle_equipment_kWh/m2'],
         'enabled': True,
-        'color': '#E67E22',  # Naranja - equipos
-        'operation': 'single'
-    },
-    'Fans/Pumps': {
-        'columns': ['Fans_interior_kWh/m2', 'Pumps_kWh/m2'],
-        'enabled': True,
-        'color': '#95A5A6',  # Gris - ventilación/bombas
-        'operation': 'sum'
-    },
-    'Total': {
-        'columns': ['EUI_kWh/m2'],
-        'enabled': True,
-        'color': '#9B59B6',  # Púrpura - total
-        'operation': 'single'
+        'color': '#CCECFF',  # Azulito-EQUIPMENT (igual que Equipment en sensibilidad)
+        'operation': 'single'  # Columna AB
     }
 }
 
@@ -132,9 +126,9 @@ def process_end_use_data(df, end_use_config):
             print(f"Advertencia: Operación desconocida para {category}: {config['operation']}")
             continue
         
-        # Filtrar valores nulos y negativos (si aplica)
+        # Filtrar valores nulos (permitir ceros para Space heating)
         values = values.dropna()
-        values = values[values >= 0]  # Solo valores positivos para energía
+        # No filtrar ceros, ya que pueden ser válidos (ej: Space heating puede ser 0)
         
         if len(values) == 0:
             print(f"Advertencia: No hay datos válidos para {category}")
@@ -180,7 +174,7 @@ def create_tm54_uncertainty_chart(plot_data, end_use_config):
         fig.add_trace(go.Box(
             y=category_data,
             name=category,
-            boxmean='sd',  # Mostrar media y desviación estándar
+            boxmean=False,  # Sin rombo de media/desviación estándar
             marker_color=color,
             line=dict(color='black', width=2),
             fillcolor=color,
@@ -203,24 +197,25 @@ def create_tm54_uncertainty_chart(plot_data, end_use_config):
         xaxis=dict(
             title=dict(
                 text='End Use Category',
-                font=dict(size=14, family='Arial', color='black')
+                font=dict(size=24, family='Arial', color='black')
             ),
             showgrid=True,
             gridwidth=1,
             gridcolor='lightgray',
-            tickfont=dict(size=12, family='Arial', color='gray')
+            tickfont=dict(size=22, family='Arial', color='black')
         ),
         yaxis=dict(
             title=dict(
-                text='Energy Use Intensity (kWh/m²/annum)',
-                font=dict(size=14, family='Arial', color='black')
+                text='Energy Use Intensity (kWh/m²/year)',
+                font=dict(size=24, family='Arial', color='black')
             ),
             showgrid=True,
             gridwidth=1,
             gridcolor='lightgray',
             zeroline=True,
             zerolinewidth=1,
-            zerolinecolor='lightgray'
+            zerolinecolor='lightgray',
+            tickfont=dict(size=22, family='Arial', color='black')
         ),
         font={'size': 12, 'family': 'Arial', 'color': 'gray'},
         plot_bgcolor='white',
@@ -241,17 +236,6 @@ def create_tm54_uncertainty_chart(plot_data, end_use_config):
         )
     )
     
-    # Agregar anotaciones explicativas
-    fig.add_annotation(
-        text='Box plots show quartiles (Q1-Q3), median, and outliers<br>'
-             'Wider boxes indicate greater uncertainty',
-        xref='paper',
-        yref='paper',
-        x=0.5,
-        y=-0.12,
-        showarrow=False,
-        font=dict(size=10, family='Arial', color='gray', style='italic')
-    )
     
     return fig
 
@@ -279,9 +263,9 @@ if __name__ == "__main__":
                 f"Ruta esperada: {csv_path}"
             )
         
-        # Cargar CSV
+        # Cargar CSV (usar punto y coma como separador)
         print(f"Cargando datos de: {csv_path}")
-        df = pd.read_csv(csv_path)
+        df = pd.read_csv(csv_path, sep=';')
         print(f"[OK] Datos cargados: {len(df)} simulaciones")
         
         # Procesar datos por categoría
