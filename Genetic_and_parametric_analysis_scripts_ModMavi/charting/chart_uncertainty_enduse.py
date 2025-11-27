@@ -245,7 +245,7 @@ def create_tm54_uncertainty_chart(plot_data, end_use_config):
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("Análisis de Incertidumbre por Uso Final - Estilo TM54")
+    print("Análisis de Incertidumbre por Uso final - Estilo TM54")
     print("=" * 60)
     print(f"Archivo CSV: {CSV_FILE}")
     print(f"Carpeta de resultados: {RESULTS_FOLDER}")
