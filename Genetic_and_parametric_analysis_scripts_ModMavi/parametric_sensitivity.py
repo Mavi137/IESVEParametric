@@ -84,6 +84,7 @@ import os
 import iesve
 import importlib
 import numpy as np
+import pandas as pd
 import utils_parametric as utils_parametric
 from datetime import datetime
 from pathlib import Path
@@ -258,4 +259,9 @@ if __name__ == "__main__":
                                      outputs)
 
         # Reset model back to index[0] state ready for the next model change list
-        utils_parametric.reset_changes(project, model_index, scenarios_df)
+        # Create reset dataframe with all active variables set to their index[0] values
+        reset_dict = {}
+        for var_name, var_list in inputs.items():
+            reset_dict[var_name] = var_list[0]
+        reset_df = pd.DataFrame([reset_dict])
+        utils_parametric.reset_changes(project, model_index, reset_df)
