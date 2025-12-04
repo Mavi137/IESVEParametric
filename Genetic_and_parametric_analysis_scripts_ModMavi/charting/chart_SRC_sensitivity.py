@@ -15,9 +15,10 @@ El script:
 - Estandariza todas las variables (X e Y) usando z-score
 - Realiza regresión multivariada con statsmodels
 - Calcula correlaciones simples (Pearson) para comparación
-- Genera visualizaciones: Tornado chart y scatter plots
+- Genera 8 visualizaciones: Tornado charts, scatter plots, matriz de correlación,
+  histograma de incertidumbre, box plots, análisis de residuos y contribución a varianza
 - Valida resultados (multicolinealidad, R², significancia)
-- Exporta resultados en CSV y gráficos en HTML/PNG
+- Exporta resultados en CSV y gráficos en PNG
 
 Usage
 -----
@@ -32,7 +33,11 @@ Output
 - SRC_Tornado_TM54_Horizontal_EUI_kWh_m2.png: Gráfico tornado horizontal
 - SRC_Tornado_TM54_Vertical_EUI_kWh_m2.png: Gráfico tornado vertical
 - SRC_Scatter_TM54_EUI_kWh_m2.png: Scatter plots con líneas de regresión
-- Archivos HTML interactivos (opcional)
+- SRC_CorrelationMatrix_TM54_EUI_kWh_m2.png: Matriz de correlación
+- SRC_UncertaintyHistogram_TM54_EUI_kWh_m2.png: Histograma de distribución EUI
+- SRC_BoxPlots_TM54_EUI_kWh_m2.png: Box plots por nivel de parámetro
+- SRC_Residuals_TM54_EUI_kWh_m2.png: Análisis de residuos del modelo
+- SRC_VarianceContribution_TM54_EUI_kWh_m2.png: Contribución % a varianza
 
 Notes
 -----
@@ -45,7 +50,7 @@ Notes
 
 import pandas as pd
 import numpy as np
-from scipy.stats import zscore
+from scipy.stats import zscore, probplot
 import statsmodels.api as sm
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
@@ -801,6 +806,363 @@ def save_plots_png(
 
 
 # ============================================================================
+# FUNCIONES DE VISUALIZACIONES ADICIONALES
+# ============================================================================
+
+def create_correlation_matrix(
+    X: pd.DataFrame,
+    y: pd.Series,
+    output_path: Path
+) -> go.Figure:
+    """
+    Crea heatmap de matriz de correlación entre parámetros y EUI.
+    
+    Args:
+        X: DataFrame con parámetros
+        y: Series con variable objetivo
+        output_path: Ruta donde guardar el gráfico
+        
+    Returns:
+        Figura de Plotly
+    """
+    # Combinar X e Y
+    df_corr = X.copy()
+    df_corr['EUI_kWh/m2'] = y.values
+    
+    # Calcular matriz de correlación
+    corr_matrix = df_corr.corr()
+    
+    # Crear heatmap
+    fig = go.Figure(data=go.Heatmap(
+        z=corr_matrix.values,
+        x=corr_matrix.columns,
+        y=corr_matrix.columns,
+        colorscale='RdBu',
+        zmid=0,
+        zmin=-1,
+        zmax=1,
+        text=corr_matrix.values.round(3),
+        texttemplate='%{text}',
+        textfont={"size": 10},
+        colorbar=dict(title="Correlation (r)")
+    ))
+    
+    fig.update_layout(
+        title="Correlation Matrix - Parameters and EUI",
+        xaxis_title="",
+        yaxis_title="",
+        height=600,
+        width=700,
+        template='plotly_white'
+    )
+    
+    # Guardar
+    fig.write_image(str(output_path), width=700, height=600, scale=2)
+    print(f"  - {output_path.name}")
+    
+    return fig
+
+
+def create_uncertainty_histogram(
+    y: pd.Series,
+    output_path: Path
+) -> go.Figure:
+    """
+    Crea histograma de distribución del EUI con estadísticas.
+    
+    Args:
+        y: Series con variable objetivo (EUI)
+        output_path: Ruta donde guardar el gráfico
+        
+    Returns:
+        Figura de Plotly
+    """
+    # Estadísticas
+    mean_val = y.mean()
+    median_val = y.median()
+    std_val = y.std()
+    p10 = y.quantile(0.10)
+    p90 = y.quantile(0.90)
+    min_val = y.min()
+    max_val = y.max()
+    
+    # Histograma
+    fig = go.Figure()
+    
+    fig.add_trace(go.Histogram(
+        x=y,
+        nbinsx=20,
+        name='EUI Distribution',
+        marker=dict(color='steelblue', line=dict(color='white', width=1)),
+        opacity=0.7
+    ))
+    
+    # Líneas de estadísticas
+    fig.add_vline(
+        x=mean_val, 
+        line_dash="dash", 
+        line_color="red", 
+        annotation_text=f"Mean: {mean_val:.1f}", 
+        annotation_position="top"
+    )
+    fig.add_vline(
+        x=median_val, 
+        line_dash="dash", 
+        line_color="green",
+        annotation_text=f"Median: {median_val:.1f}", 
+        annotation_position="top"
+    )
+    fig.add_vline(
+        x=p10, 
+        line_dash="dot", 
+        line_color="orange",
+        annotation_text=f"P10: {p10:.1f}", 
+        annotation_position="bottom left"
+    )
+    fig.add_vline(
+        x=p90, 
+        line_dash="dot", 
+        line_color="orange",
+        annotation_text=f"P90: {p90:.1f}", 
+        annotation_position="bottom right"
+    )
+    
+    fig.update_layout(
+        title=f"EUI Uncertainty Distribution<br>Range: [{min_val:.1f}, {max_val:.1f}] kWh/m² | σ = {std_val:.1f}",
+        xaxis_title="EUI (kWh/m²)",
+        yaxis_title="Frequency",
+        height=500,
+        showlegend=True,
+        template='plotly_white'
+    )
+    
+    # Guardar
+    fig.write_image(str(output_path), width=1000, height=500, scale=2)
+    print(f"  - {output_path.name}")
+    
+    return fig
+
+
+def create_boxplots_by_parameter(
+    X: pd.DataFrame,
+    y: pd.Series,
+    params: List[str],
+    params_config: Dict,
+    output_path: Path
+) -> go.Figure:
+    """
+    Crea box plots mostrando distribución de EUI para cada nivel de cada parámetro.
+    
+    Args:
+        X: DataFrame con parámetros
+        y: Series con variable objetivo
+        params: Lista de nombres de parámetros
+        params_config: Diccionario con configuración de parámetros
+        output_path: Ruta donde guardar el gráfico
+        
+    Returns:
+        Figura de Plotly
+    """
+    fig = make_subplots(
+        rows=2, cols=2,
+        subplot_titles=[params_config[p]['display_name'] for p in params],
+        vertical_spacing=0.12,
+        horizontal_spacing=0.1
+    )
+    
+    positions = [(1, 1), (1, 2), (2, 1), (2, 2)]
+    
+    for i, param in enumerate(params):
+        row, col = positions[i]
+        
+        # Obtener valores únicos del parámetro
+        unique_vals = sorted(X[param].unique())
+        
+        for val in unique_vals:
+            mask = X[param] == val
+            eui_subset = y[mask]
+            
+            fig.add_trace(
+                go.Box(
+                    y=eui_subset,
+                    name=f"{val}",
+                    boxmean='sd',  # Mostrar media y std
+                    marker=dict(size=4)
+                ),
+                row=row, col=col
+            )
+        
+        fig.update_xaxes(
+            title_text=params_config[param]['display_name'], 
+            row=row, col=col
+        )
+        fig.update_yaxes(title_text="EUI (kWh/m²)", row=row, col=col)
+    
+    fig.update_layout(
+        title_text="EUI Distribution by Parameter Level",
+        height=800,
+        showlegend=False,
+        template='plotly_white'
+    )
+    
+    # Guardar
+    fig.write_image(str(output_path), width=1600, height=800, scale=2)
+    print(f"  - {output_path.name}")
+    
+    return fig
+
+
+def create_residuals_plot(
+    model: sm.regression.linear_model.RegressionResultsWrapper,
+    X_std: pd.DataFrame,
+    y_std: pd.Series,
+    output_path: Path
+) -> go.Figure:
+    """
+    Crea gráfico de residuos para diagnóstico del modelo.
+    
+    Args:
+        model: Modelo de regresión ajustado
+        X_std: Parámetros estandarizados
+        y_std: Variable objetivo estandarizada
+        output_path: Ruta donde guardar el gráfico
+        
+    Returns:
+        Figura de Plotly
+    """
+    # Calcular residuos
+    y_pred = model.predict(sm.add_constant(X_std))
+    residuals = y_std - y_pred
+    
+    # Crear subplots
+    fig = make_subplots(
+        rows=1, cols=2,
+        subplot_titles=("Residuals vs Fitted", "Q-Q Plot"),
+        horizontal_spacing=0.12
+    )
+    
+    # 1. Residuals vs Fitted
+    fig.add_trace(
+        go.Scatter(
+            x=y_pred,
+            y=residuals,
+            mode='markers',
+            marker=dict(size=6, color='steelblue', opacity=0.6),
+            name='Residuals'
+        ),
+        row=1, col=1
+    )
+    fig.add_hline(y=0, line_dash="dash", line_color="red", row=1, col=1)
+    
+    # 2. Q-Q Plot
+    (quantiles, values), (slope, intercept, r) = probplot(residuals, dist="norm")
+    
+    fig.add_trace(
+        go.Scatter(
+            x=quantiles,
+            y=values,
+            mode='markers',
+            marker=dict(size=6, color='steelblue', opacity=0.6),
+            name='Sample Quantiles'
+        ),
+        row=1, col=2
+    )
+    
+    # Línea teórica
+    fig.add_trace(
+        go.Scatter(
+            x=quantiles,
+            y=slope * quantiles + intercept,
+            mode='lines',
+            line=dict(color='red', width=2),
+            name='Theoretical Line'
+        ),
+        row=1, col=2
+    )
+    
+    fig.update_xaxes(title_text="Fitted Values", row=1, col=1)
+    fig.update_yaxes(title_text="Residuals", row=1, col=1)
+    fig.update_xaxes(title_text="Theoretical Quantiles", row=1, col=2)
+    fig.update_yaxes(title_text="Sample Quantiles", row=1, col=2)
+    
+    fig.update_layout(
+        title_text="Model Diagnostics - Residual Analysis",
+        height=400,
+        showlegend=False,
+        template='plotly_white'
+    )
+    
+    # Guardar
+    fig.write_image(str(output_path), width=1600, height=400, scale=2)
+    print(f"  - {output_path.name}")
+    
+    return fig
+
+
+def create_variance_contribution(
+    results: pd.DataFrame,
+    r_squared: float,
+    params_config: Dict,
+    output_path: Path
+) -> go.Figure:
+    """
+    Crea gráfico de barras mostrando % de varianza explicada por cada parámetro.
+    
+    Args:
+        results: DataFrame con resultados del análisis
+        r_squared: R² del modelo
+        params_config: Diccionario con configuración de parámetros
+        output_path: Ruta donde guardar el gráfico
+        
+    Returns:
+        Figura de Plotly
+    """
+    # Calcular contribución a varianza (aproximación: SRC²)
+    results_sorted = results.copy()
+    results_sorted = results_sorted.sort_values('SRC', key=abs, ascending=True)
+    
+    # R² parcial aproximado
+    src_squared = results_sorted['SRC'] ** 2
+    total_src_squared = src_squared.sum()
+    variance_contrib = (src_squared / total_src_squared) * r_squared * 100
+    
+    # Obtener nombres de visualización
+    display_names = [params_config[p]['display_name'] for p in results_sorted['Parameter']]
+    
+    # Crear gráfico
+    fig = go.Figure()
+    
+    fig.add_trace(go.Bar(
+        y=display_names,
+        x=variance_contrib,
+        orientation='h',
+        marker=dict(
+            color=variance_contrib,
+            colorscale='Blues',
+            showscale=True,
+            colorbar=dict(title="% Variance")
+        ),
+        text=[f"{v:.1f}%" for v in variance_contrib],
+        textposition='outside',
+        textfont=dict(size=12)
+    ))
+    
+    fig.update_layout(
+        title=f"Contribution to Total Variance (R² = {r_squared:.2%})",
+        xaxis_title="% of Explained Variance",
+        yaxis_title="Parameter",
+        height=500,
+        template='plotly_white'
+    )
+    
+    # Guardar
+    fig.write_image(str(output_path), width=1000, height=500, scale=2)
+    print(f"  - {output_path.name}")
+    
+    return fig
+
+
+# ============================================================================
 # FUNCIÓN DE RESUMEN EJECUTIVO
 # ============================================================================
 
@@ -853,16 +1215,16 @@ def main():
     
     try:
         # 1. Cargar y validar datos
-        print("\n[1/9] Cargando datos...")
+        print("\n[1/14] Cargando datos...")
         csv_path = find_csv_file()
         df, X, y = load_and_validate_data(csv_path, PARAMS, TARGET)
         
         # 2. Estandarizar variables
-        print("\n[2/9] Estandarizando variables...")
+        print("\n[2/14] Estandarizando variables...")
         X_std, y_std = standardize_variables(X, y)
         
         # 3. Ajustar regresión multivariada
-        print("\n[3/9] Ajustando modelo de regresión multivariada...")
+        print("\n[3/14] Ajustando modelo de regresión multivariada...")
         model = fit_multivariate_regression(X_std, y_std)
         
         r_squared = model.rsquared
@@ -873,7 +1235,7 @@ def main():
         print(f"\n{model.summary()}")
         
         # 4. Calcular correlaciones simples
-        print("\n[4/9] Calculando correlaciones simples...")
+        print("\n[4/14] Calculando correlaciones simples...")
         correlations = calculate_simple_correlations(X, y, PARAMS)
         
         print("\n✓ Correlaciones simples (r):")
@@ -881,7 +1243,7 @@ def main():
             print(f"  {param}: {r:.4f}")
         
         # 5. Crear tabla de resultados
-        print("\n[5/9] Creando tabla de resultados...")
+        print("\n[5/14] Creando tabla de resultados...")
         results = create_results_table(PARAMS, model, correlations)
         
         print("\n" + "=" * 70)
@@ -903,31 +1265,60 @@ def main():
             print(format_table_simple(results))
         
         # 6. Validaciones
-        print("\n[6/9] Validando resultados...")
+        print("\n[6/14] Validando resultados...")
         validate_results(results, model, X)
         
         # 7. Guardar resultados CSV
-        print("\n[7/9] Guardando resultados...")
+        print("\n[7/14] Guardando resultados...")
         csv_output = save_results(results)
         print(f"\n✓ Resultados guardados en: {csv_output}")
         
-        # 8. Crear visualizaciones
-        print("\n[8/9] Creando visualizaciones...")
+        # 8. Crear visualizaciones principales
+        print("\n[8/14] Creando visualizaciones principales...")
         fig_tornado_h = create_tornado_chart_horizontal(results, TARGET, PARAMS_CONFIG)
         fig_tornado_v = create_tornado_chart_vertical(results, TARGET, PARAMS_CONFIG)
         fig_scatter = create_scatter_plots(X, y, PARAMS, PARAMS_CONFIG, correlations)
         
-        # 9. Guardar gráficos PNG
-        print("\n[9/9] Guardando gráficos PNG...")
+        # 9. Guardar gráficos PNG principales
+        print("\n[9/14] Guardando gráficos PNG principales...")
         tornado_h_file, tornado_v_file, scatter_file = save_plots_png(
             fig_tornado_h, fig_tornado_v, fig_scatter, TARGET
         )
         
-        print("\n✓ Gráficos PNG guardados:")
+        print("\n✓ Gráficos PNG principales guardados:")
         print(f"  - {tornado_h_file.name}")
         print(f"  - {tornado_v_file.name}")
         print(f"  - {scatter_file.name}")
-        print(f"\n  Ubicación: {tornado_h_file.parent}")
+        
+        # 10. Crear visualizaciones adicionales
+        print("\n[10/14] Creando visualizaciones adicionales...")
+        
+        # Definir directorio de salida
+        output_dir = tornado_h_file.parent
+        metric_clean = TARGET.replace('/', '_').replace('(', '').replace(')', '')
+        
+        # 1. Matriz de correlación
+        corr_path = output_dir / f"SRC_CorrelationMatrix_TM54_{metric_clean}.png"
+        create_correlation_matrix(X, y, corr_path)
+        
+        # 2. Uncertainty histogram
+        hist_path = output_dir / f"SRC_UncertaintyHistogram_TM54_{metric_clean}.png"
+        create_uncertainty_histogram(y, hist_path)
+        
+        # 3. Box plots
+        box_path = output_dir / f"SRC_BoxPlots_TM54_{metric_clean}.png"
+        create_boxplots_by_parameter(X, y, PARAMS, PARAMS_CONFIG, box_path)
+        
+        # 4. Residuals plot
+        resid_path = output_dir / f"SRC_Residuals_TM54_{metric_clean}.png"
+        create_residuals_plot(model, X_std, y_std, resid_path)
+        
+        # 5. Variance contribution
+        var_path = output_dir / f"SRC_VarianceContribution_TM54_{metric_clean}.png"
+        create_variance_contribution(results, r_squared, PARAMS_CONFIG, var_path)
+        
+        print("\n✓ Visualizaciones adicionales guardadas:")
+        print(f"  Total: 8 gráficos PNG en {output_dir}")
         
         # Resumen ejecutivo
         print_executive_summary(results, r_squared, adj_r_squared)
