@@ -81,6 +81,7 @@ The script will archive the model before making any changes.
 """
 
 import os
+import time
 import iesve
 import importlib
 import numpy as np
@@ -265,3 +266,6 @@ if __name__ == "__main__":
             reset_dict[var_name] = var_list[0]
         reset_df = pd.DataFrame([reset_dict])
         utils_parametric.reset_changes(project, model_index, reset_df)
+        
+        # Wait a moment to ensure reset changes are fully applied before next analysis
+        time.sleep(2)
