@@ -39,6 +39,7 @@ from scipy import stats
 import pandas as pd
 import plotly.graph_objects as go
 from pathlib import Path
+from datetime import datetime
 import statsmodels.formula.api as smf
 
 # ============================================================================
@@ -423,9 +424,13 @@ if __name__ == "__main__":
         fig_horizontal = create_tm54_sensitivity_chart(plot_data, TARGET_METRIC, colors_map)
         fig_vertical = create_tm54_sensitivity_chart_vertical(plot_data, TARGET_METRIC, colors_map)
         
-        # Guardar imágenes automáticamente
-        output_dir = Path(__file__).parent.parent / 'Logs' / 'analisis'
+        # Crear directorio de salida con fecha y hora en Resultados/
+        script_dir = Path(__file__).parent.parent
+        resultados_dir = script_dir / 'Resultados'
+        timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+        output_dir = resultados_dir / f'Sensibilidad_TM54_{timestamp}'
         output_dir.mkdir(parents=True, exist_ok=True)
+        print(f"\n✓ Directorio de salida: {output_dir.name}")
         
         # Nombre del archivo: limpiar caracteres especiales de la métrica
         metric_clean = TARGET_METRIC.replace('/', '_').replace('(', '').replace(')', '')
@@ -451,6 +456,7 @@ if __name__ == "__main__":
         )
         print(f"[OK] Imagen VERTICAL guardada en: {output_file_v.name}")
         print(f"     Dimensiones: {max(800, len(plot_data) * 150)}x1000 px (escala 2x)")
+        print(f"\n📁 Todos los archivos guardados en: {output_dir}")
         
         # Opcional: También guardar HTML interactivo (descomentar si lo necesitas)
         # html_file = output_dir / f'Sensibilidad_TM54_{metric_clean}.html'

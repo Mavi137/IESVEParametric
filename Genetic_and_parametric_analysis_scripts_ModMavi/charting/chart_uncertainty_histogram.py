@@ -37,6 +37,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from scipy import stats
 from pathlib import Path
+from datetime import datetime
 
 # ============================================================================
 # CONFIGURACIÓN - Fácil activar/desactivar métricas
@@ -273,8 +274,13 @@ if __name__ == "__main__":
     df = pd.read_csv(csv_path, sep=';')
     print(f"[OK] Datos cargados: {len(df)} simulaciones")
     
-    output_dir = Path(__file__).parent.parent / 'Logs' / 'analisis'
+    # Crear directorio de salida con fecha y hora en Resultados/
+    script_dir = Path(__file__).parent.parent
+    resultados_dir = script_dir / 'Resultados'
+    timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    output_dir = resultados_dir / f'Uncertainty_Histogram_{timestamp}'
     output_dir.mkdir(parents=True, exist_ok=True)
+    print(f"\n✓ Directorio de salida: {output_dir.name}")
     
     success_count = 0
     error_count = 0
@@ -322,5 +328,6 @@ if __name__ == "__main__":
     print(f"Resumen: {success_count} histogramas generados exitosamente")
     if error_count > 0:
         print(f"         {error_count} errores encontrados")
+    print(f"\n📁 Todos los archivos guardados en: {output_dir}")
     print("=" * 60)
 
