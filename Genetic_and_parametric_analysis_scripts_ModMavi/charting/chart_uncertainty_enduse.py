@@ -197,24 +197,25 @@ def create_tm54_uncertainty_chart(plot_data, end_use_config):
         xaxis=dict(
             title=dict(
                 text='End Use Category',
-                font=dict(size=14, family='Arial', color='black')
+                font=dict(size=18, family='Arial', color='black')
             ),
             showgrid=True,
             gridwidth=1,
             gridcolor='lightgray',
-            tickfont=dict(size=15, family='Arial', color='black')
+            tickfont=dict(size=18, family='Arial', color='black')
         ),
         yaxis=dict(
             title=dict(
                 text='Energy Use Intensity (kWh/m²/year)',
-                font=dict(size=14, family='Arial', color='black')
+                font=dict(size=18, family='Arial', color='black')
             ),
             showgrid=True,
             gridwidth=1,
             gridcolor='lightgray',
             zeroline=True,
             zerolinewidth=1,
-            zerolinecolor='lightgray'
+            zerolinecolor='lightgray',
+            tickfont=dict(size=16, family='Arial', color='black')
         ),
         font={'size': 12, 'family': 'Arial', 'color': 'gray'},
         plot_bgcolor='white',

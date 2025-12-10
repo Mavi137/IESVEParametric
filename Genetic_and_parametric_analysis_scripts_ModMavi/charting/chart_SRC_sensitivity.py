@@ -513,7 +513,7 @@ def create_tornado_chart_horizontal(
         xaxis=dict(
             title=dict(
                 text='Standardized Regression Coefficient (SRC)',
-                font=dict(size=14, family='Arial', color='black')
+                font=dict(size=18, family='Arial', color='black')
             ),
             showgrid=True,
             gridwidth=1,
@@ -521,12 +521,13 @@ def create_tornado_chart_horizontal(
             zeroline=True,
             zerolinewidth=2,
             zerolinecolor='black',
-            range=x_range
+            range=x_range,
+            tickfont=dict(size=16, family='Arial', color='black')
         ),
         yaxis=dict(
             title='',
             showgrid=False,
-            tickfont=dict(size=13, family='Arial', color='black')
+            tickfont=dict(size=18, family='Arial', color='black')
         ),
         font={'size': 12, 'family': 'Arial', 'color': 'gray'},
         plot_bgcolor='white',
@@ -560,6 +561,12 @@ def create_tornado_chart_vertical(
     results_plot = results.copy()
     results_plot = results_plot.sort_values('SRC', ascending=False, key=abs)
     
+    # Invertir signo del SRC de Occupancy solo para este gráfico vertical
+    # (para que salga positivo como en chart_sensitivity_tm54.py)
+    occupancy_mask = results_plot['Parameter'] == 'people_m2_per_person'
+    if occupancy_mask.any():
+        results_plot.loc[occupancy_mask, 'SRC'] = -results_plot.loc[occupancy_mask, 'SRC']
+    
     # Obtener nombres de visualización y colores
     display_names = [params_config[p]['display_name'] for p in results_plot['Parameter']]
     colors = [params_config[p]['color'] for p in results_plot['Parameter']]
@@ -582,19 +589,14 @@ def create_tornado_chart_vertical(
         name='SRC'
     ))
     
-    # Línea horizontal en y=0
-    fig.add_hline(
-        y=0,
-        line_width=2,
-        line_color='black',
-        line_dash='solid',
-        annotation_text='No effect',
-        annotation_position='right'
-    )
+    # Línea horizontal en y=0 (solo si hay valores negativos)
+    # Como todos los valores son positivos después de invertir Occupancy, no se muestra
     
-    # Calcular rango apropiado
-    max_abs_src = abs(src_values).max()
-    y_range = [min(src_values.min() * 1.2, -1), max(src_values.max() * 1.2, 1)]
+    # Calcular rango apropiado (solo parte positiva)
+    max_src = src_values.max()
+    min_src = src_values.min()
+    # Rango desde 0 hasta el máximo con un poco de margen
+    y_range = [0, max_src * 1.15]  # 15% de margen superior
     
     # Actualizar layout estilo TM54
     fig.update_layout(
@@ -609,21 +611,20 @@ def create_tornado_chart_vertical(
         xaxis=dict(
             title='',
             showgrid=False,
-            tickfont=dict(size=13, family='Arial', color='black'),
+            tickfont=dict(size=18, family='Arial', color='black'),
             tickangle=-45  # Rotar etiquetas para mejor legibilidad
         ),
         yaxis=dict(
             title=dict(
                 text='Standardized Regression Coefficient (SRC)',
-                font=dict(size=14, family='Arial', color='black')
+                font=dict(size=18, family='Arial', color='black')
             ),
             showgrid=True,
             gridwidth=1,
             gridcolor='lightgray',
-            zeroline=True,
-            zerolinewidth=2,
-            zerolinecolor='black',
-            range=y_range
+            zeroline=False,  # No mostrar línea en y=0 ya que solo hay valores positivos
+            range=y_range,
+            tickfont=dict(size=16, family='Arial', color='black')
         ),
         font={'size': 12, 'family': 'Arial', 'color': 'gray'},
         plot_bgcolor='white',
@@ -706,8 +707,18 @@ def create_scatter_plots(
         )
         
         # Etiquetas de ejes
-        fig.update_xaxes(title_text=params_config[param]['display_name'], row=row, col=col)
-        fig.update_yaxes(title_text="EUI (kWh/m²)", row=row, col=col)
+        fig.update_xaxes(
+            title_text=params_config[param]['display_name'], 
+            title_font=dict(size=18, family='Arial', color='black'),
+            tickfont=dict(size=16, family='Arial', color='black'),
+            row=row, col=col
+        )
+        fig.update_yaxes(
+            title_text="EUI (kWh/m²)", 
+            title_font=dict(size=18, family='Arial', color='black'),
+            tickfont=dict(size=16, family='Arial', color='black'),
+            row=row, col=col
+        )
     
     fig.update_layout(
         title_text="Parameter vs EUI - Individual R² Values",
@@ -849,11 +860,17 @@ def create_correlation_matrix(
     
     fig.update_layout(
         title="Correlation Matrix - Parameters and EUI",
-        xaxis_title="",
-        yaxis_title="",
         height=600,
         width=700,
         template='plotly_white'
+    )
+    fig.update_xaxes(
+        title_text="",
+        tickfont=dict(size=16, family='Arial', color='black')
+    )
+    fig.update_yaxes(
+        title_text="",
+        tickfont=dict(size=16, family='Arial', color='black')
     )
     
     # Guardar
@@ -929,11 +946,19 @@ def create_uncertainty_histogram(
     
     fig.update_layout(
         title=f"EUI Uncertainty Distribution<br>Range: [{min_val:.1f}, {max_val:.1f}] kWh/m² | σ = {std_val:.1f}",
-        xaxis_title="EUI (kWh/m²)",
-        yaxis_title="Frequency",
         height=500,
         showlegend=True,
         template='plotly_white'
+    )
+    fig.update_xaxes(
+        title_text="EUI (kWh/m²)",
+        title_font=dict(size=18, family='Arial', color='black'),
+        tickfont=dict(size=16, family='Arial', color='black')
+    )
+    fig.update_yaxes(
+        title_text="Frequency",
+        title_font=dict(size=18, family='Arial', color='black'),
+        tickfont=dict(size=16, family='Arial', color='black')
     )
     
     # Guardar
@@ -993,10 +1018,17 @@ def create_boxplots_by_parameter(
             )
         
         fig.update_xaxes(
-            title_text=params_config[param]['display_name'], 
+            title_text=params_config[param]['display_name'],
+            title_font=dict(size=18, family='Arial', color='black'),
+            tickfont=dict(size=16, family='Arial', color='black'),
             row=row, col=col
         )
-        fig.update_yaxes(title_text="EUI (kWh/m²)", row=row, col=col)
+        fig.update_yaxes(
+            title_text="EUI (kWh/m²)",
+            title_font=dict(size=18, family='Arial', color='black'),
+            tickfont=dict(size=16, family='Arial', color='black'),
+            row=row, col=col
+        )
     
     fig.update_layout(
         title_text="EUI Distribution by Parameter Level",
@@ -1080,10 +1112,30 @@ def create_residuals_plot(
         row=1, col=2
     )
     
-    fig.update_xaxes(title_text="Fitted Values", row=1, col=1)
-    fig.update_yaxes(title_text="Residuals", row=1, col=1)
-    fig.update_xaxes(title_text="Theoretical Quantiles", row=1, col=2)
-    fig.update_yaxes(title_text="Sample Quantiles", row=1, col=2)
+    fig.update_xaxes(
+        title_text="Fitted Values",
+        title_font=dict(size=18, family='Arial', color='black'),
+        tickfont=dict(size=16, family='Arial', color='black'),
+        row=1, col=1
+    )
+    fig.update_yaxes(
+        title_text="Residuals",
+        title_font=dict(size=18, family='Arial', color='black'),
+        tickfont=dict(size=16, family='Arial', color='black'),
+        row=1, col=1
+    )
+    fig.update_xaxes(
+        title_text="Theoretical Quantiles",
+        title_font=dict(size=18, family='Arial', color='black'),
+        tickfont=dict(size=16, family='Arial', color='black'),
+        row=1, col=2
+    )
+    fig.update_yaxes(
+        title_text="Sample Quantiles",
+        title_font=dict(size=18, family='Arial', color='black'),
+        tickfont=dict(size=16, family='Arial', color='black'),
+        row=1, col=2
+    )
     
     fig.update_layout(
         title_text="Model Diagnostics - Residual Analysis",
@@ -1149,10 +1201,18 @@ def create_variance_contribution(
     
     fig.update_layout(
         title=f"Contribution to Total Variance (R² = {r_squared:.2%})",
-        xaxis_title="% of Explained Variance",
-        yaxis_title="Parameter",
         height=500,
         template='plotly_white'
+    )
+    fig.update_xaxes(
+        title_text="% of Explained Variance",
+        title_font=dict(size=18, family='Arial', color='black'),
+        tickfont=dict(size=16, family='Arial', color='black')
+    )
+    fig.update_yaxes(
+        title_text="Parameter",
+        title_font=dict(size=18, family='Arial', color='black'),
+        tickfont=dict(size=16, family='Arial', color='black')
     )
     
     # Guardar
