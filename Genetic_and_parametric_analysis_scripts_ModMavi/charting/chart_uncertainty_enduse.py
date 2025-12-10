@@ -37,6 +37,7 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 from pathlib import Path
+from datetime import datetime
 
 # ============================================================================
 # CONFIGURACIÓN - Fácil activar/desactivar categorías
@@ -289,8 +290,11 @@ if __name__ == "__main__":
         print("\nGenerando gráfico...")
         fig = create_tm54_uncertainty_chart(plot_data, END_USE_CONFIG)
         
-        # Guardar imagen automáticamente
-        output_dir = Path(__file__).parent.parent / 'Logs' / 'analisis'
+        # Crear directorio de salida con fecha y hora en Resultados/
+        script_dir = Path(__file__).parent.parent
+        resultados_dir = script_dir / 'Resultados'
+        timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+        output_dir = resultados_dir / f'Uncertainty_EndUse_{timestamp}'
         output_dir.mkdir(parents=True, exist_ok=True)
         
         output_file = output_dir / 'Incertidumbre_UsoFinal_TM54.png'
@@ -303,8 +307,9 @@ if __name__ == "__main__":
             scale=2  # Doble resolución para mejor calidad
         )
         
-        print(f"\n[OK] Imagen guardada en: {output_file}")
+        print(f"\n[OK] Imagen guardada en: {output_file.name}")
         print(f"     Dimensiones: 1600x1100 px (escala 2x)")
+        print(f"     Ubicación: {output_dir}")
         
         # Opcional: También guardar HTML interactivo (descomentar si lo necesitas)
         # html_file = output_dir / 'Incertidumbre_UsoFinal_TM54.html'

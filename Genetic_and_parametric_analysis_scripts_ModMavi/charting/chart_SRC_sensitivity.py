@@ -56,6 +56,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from pathlib import Path
 from typing import Tuple, Dict, List
+from datetime import datetime
 import sys
 
 # Intentar importar tabulate, si no está disponible usar función alternativa
@@ -733,6 +734,25 @@ def create_scatter_plots(
 # FUNCIONES DE EXPORTACIÓN
 # ============================================================================
 
+def get_output_directory() -> Path:
+    """
+    Crea y retorna un directorio de salida con fecha y hora en Resultados/.
+    
+    Returns:
+        Path: Directorio de salida con formato YYYY-MM-DD_HH-MM-SS
+    """
+    # Obtener ruta a Resultados/
+    script_dir = Path(__file__).parent.parent
+    resultados_dir = script_dir / 'Resultados'
+    
+    # Crear subcarpeta con fecha y hora
+    timestamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    output_dir = resultados_dir / f'SRC_Analysis_{timestamp}'
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    return output_dir
+
+
 def save_results(
     results: pd.DataFrame,
     output_dir: Path = None
@@ -773,14 +793,14 @@ def save_plots_png(
         fig_tornado_v: Figura del gráfico tornado vertical
         fig_scatter: Figura de scatter plots
         target_metric: Nombre de la métrica objetivo
-        output_dir: Directorio de salida (None = Logs/analisis)
+        output_dir: Directorio de salida (None = Resultados/SRC_Analysis_YYYY-MM-DD_HH-MM-SS)
         
     Returns:
         Tuple: (Path tornado_h, Path tornado_v, Path scatter)
     """
     if output_dir is None:
-        # Guardar en Logs/analisis como los otros scripts
-        output_dir = Path(__file__).parent.parent / 'Logs' / 'analisis'
+        # Guardar en Resultados/ con subcarpeta de fecha y hora
+        output_dir = get_output_directory()
     output_dir.mkdir(parents=True, exist_ok=True)
     
     # Limpiar nombre de métrica para el archivo
@@ -1275,16 +1295,16 @@ def main():
     
     try:
         # 1. Cargar y validar datos
-        print("\n[1/14] Cargando datos...")
+        print("\n[1/11] Cargando datos...")
         csv_path = find_csv_file()
         df, X, y = load_and_validate_data(csv_path, PARAMS, TARGET)
         
         # 2. Estandarizar variables
-        print("\n[2/14] Estandarizando variables...")
+        print("\n[2/11] Estandarizando variables...")
         X_std, y_std = standardize_variables(X, y)
         
         # 3. Ajustar regresión multivariada
-        print("\n[3/14] Ajustando modelo de regresión multivariada...")
+        print("\n[3/11] Ajustando modelo de regresión multivariada...")
         model = fit_multivariate_regression(X_std, y_std)
         
         r_squared = model.rsquared
@@ -1295,7 +1315,7 @@ def main():
         print(f"\n{model.summary()}")
         
         # 4. Calcular correlaciones simples
-        print("\n[4/14] Calculando correlaciones simples...")
+        print("\n[4/11] Calculando correlaciones simples...")
         correlations = calculate_simple_correlations(X, y, PARAMS)
         
         print("\n✓ Correlaciones simples (r):")
@@ -1303,7 +1323,7 @@ def main():
             print(f"  {param}: {r:.4f}")
         
         # 5. Crear tabla de resultados
-        print("\n[5/14] Creando tabla de resultados...")
+        print("\n[5/11] Creando tabla de resultados...")
         results = create_results_table(PARAMS, model, correlations)
         
         print("\n" + "=" * 70)
@@ -1325,24 +1345,32 @@ def main():
             print(format_table_simple(results))
         
         # 6. Validaciones
-        print("\n[6/14] Validando resultados...")
+        print("\n[6/11] Validando resultados...")
         validate_results(results, model, X)
         
-        # 7. Guardar resultados CSV
-        print("\n[7/14] Guardando resultados...")
-        csv_output = save_results(results)
-        print(f"\n✓ Resultados guardados en: {csv_output}")
+        # 7. Crear directorio de salida con fecha y hora
+        output_dir = get_output_directory()
+        print(f"\n✓ Directorio de salida: {output_dir.name}")
         
-        # 8. Crear visualizaciones principales
-        print("\n[8/14] Creando visualizaciones principales...")
+        # 7. Crear directorio de salida con fecha y hora
+        output_dir = get_output_directory()
+        print(f"\n✓ Directorio de salida: {output_dir.name}")
+        
+        # 8. Guardar resultados CSV
+        print("\n[8/14] Guardando resultados...")
+        csv_output = save_results(results, output_dir)
+        print(f"\n✓ Resultados guardados en: {csv_output.name}")
+        
+        # 9. Crear visualizaciones principales
+        print("\n[9/14] Creando visualizaciones principales...")
         fig_tornado_h = create_tornado_chart_horizontal(results, TARGET, PARAMS_CONFIG)
         fig_tornado_v = create_tornado_chart_vertical(results, TARGET, PARAMS_CONFIG)
         fig_scatter = create_scatter_plots(X, y, PARAMS, PARAMS_CONFIG, correlations)
         
-        # 9. Guardar gráficos PNG principales
-        print("\n[9/14] Guardando gráficos PNG principales...")
+        # 10. Guardar gráficos PNG principales
+        print("\n[10/14] Guardando gráficos PNG principales...")
         tornado_h_file, tornado_v_file, scatter_file = save_plots_png(
-            fig_tornado_h, fig_tornado_v, fig_scatter, TARGET
+            fig_tornado_h, fig_tornado_v, fig_scatter, TARGET, output_dir
         )
         
         print("\n✓ Gráficos PNG principales guardados:")
@@ -1350,11 +1378,8 @@ def main():
         print(f"  - {tornado_v_file.name}")
         print(f"  - {scatter_file.name}")
         
-        # 10. Crear visualizaciones adicionales
-        print("\n[10/14] Creando visualizaciones adicionales...")
-        
-        # Definir directorio de salida
-        output_dir = tornado_h_file.parent
+        # 11. Crear visualizaciones adicionales
+        print("\n[11/14] Creando visualizaciones adicionales...")
         metric_clean = TARGET.replace('/', '_').replace('(', '').replace(')', '')
         
         # 1. Matriz de correlación
@@ -1378,7 +1403,8 @@ def main():
         create_variance_contribution(results, r_squared, PARAMS_CONFIG, var_path)
         
         print("\n✓ Visualizaciones adicionales guardadas:")
-        print(f"  Total: 8 gráficos PNG en {output_dir}")
+        print(f"  Total: 8 gráficos PNG + 1 CSV en {output_dir}")
+        print(f"\n📁 Todos los archivos guardados en: {output_dir}")
         
         # Resumen ejecutivo
         print_executive_summary(results, r_squared, adj_r_squared)
